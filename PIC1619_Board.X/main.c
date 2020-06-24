@@ -42,6 +42,8 @@
 */
 
 #include "mcc_generated_files/mcc.h"
+#include "SourceFiles/SunSensor/Led.h"
+#include "SourceFiles/COS/COS_Main.h"
 
 /*
                          Main application
@@ -50,15 +52,17 @@ void main(void)
 {
     // initialize the device
     SYSTEM_Initialize();
+    COS_Init();
+    TMR2_SetInterruptHandler(Led2_PWM);
 
     // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
     // Use the following macros to:
 
     // Enable the Global Interrupts
-    //INTERRUPT_GlobalInterruptEnable();
+    INTERRUPT_GlobalInterruptEnable();
 
     // Enable the Peripheral Interrupts
-    //INTERRUPT_PeripheralInterruptEnable();
+    INTERRUPT_PeripheralInterruptEnable();
 
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
@@ -68,6 +72,12 @@ void main(void)
 
     while (1)
     {
+        COS_TmrHandler();
+        
+        if (COS_tsk_ena)
+        {
+            COS_TskMan();
+        }
         // Add your application code
     }
 }

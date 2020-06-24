@@ -20,6 +20,21 @@
         <itemPath>mcc_generated_files/eusart.h</itemPath>
         <itemPath>mcc_generated_files/pwm3.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="SourceFiles" displayName="SourceFiles" projectFiles="true">
+        <logicalFolder name="COS" displayName="COS" projectFiles="true">
+          <itemPath>SourceFiles/COS/COS_Defs.h</itemPath>
+          <itemPath>SourceFiles/COS/COS_Main.h</itemPath>
+          <itemPath>SourceFiles/COS/COS_UserSetup.h</itemPath>
+          <itemPath>SourceFiles/COS/COS_UserTskList.h</itemPath>
+          <itemPath>SourceFiles/COS/GlobalDef.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="SunSensor" displayName="SunSensor" projectFiles="true">
+          <itemPath>SourceFiles/SunSensor/I2C_Driver.h</itemPath>
+          <itemPath>SourceFiles/SunSensor/Led.h</itemPath>
+          <itemPath>SourceFiles/SunSensor/SHT25.h</itemPath>
+          <itemPath>SourceFiles/SunSensor/UART_Display.h</itemPath>
+        </logicalFolder>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -44,6 +59,18 @@
         <itemPath>mcc_generated_files/tmr2.c</itemPath>
         <itemPath>mcc_generated_files/adc.c</itemPath>
       </logicalFolder>
+      <logicalFolder name="SourceFiles" displayName="SourceFiles" projectFiles="true">
+        <logicalFolder name="COS" displayName="COS" projectFiles="true">
+          <itemPath>SourceFiles/COS/COS_Main.c</itemPath>
+          <itemPath>SourceFiles/COS/COS_UserTskList.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="SunSensor" displayName="SunSensor" projectFiles="true">
+          <itemPath>SourceFiles/SunSensor/I2C_Driver.c</itemPath>
+          <itemPath>SourceFiles/SunSensor/Led.c</itemPath>
+          <itemPath>SourceFiles/SunSensor/SHT25.c</itemPath>
+          <itemPath>SourceFiles/SunSensor/UART_Display.c</itemPath>
+        </logicalFolder>
+      </logicalFolder>
       <itemPath>main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -53,6 +80,9 @@
       <itemPath>MyConfig.mc3</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>SourceFiles</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="default" type="2">
@@ -181,6 +211,7 @@
         <property key="ToolFirmwareFilePath"
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
+        <property key="firmware.download.all" value="false"/>
         <property key="memories.configurationmemory" value="true"/>
         <property key="memories.dataflash" value="true"/>
         <property key="memories.eeprom" value="true"/>

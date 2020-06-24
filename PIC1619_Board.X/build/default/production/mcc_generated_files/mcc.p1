@@ -2,7 +2,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v F12108 `(v ~T0 @X0 0 tf ]
 "89 mcc_generated_files/i2c_master.h
 [v _I2C_Initialize `(v ~T0 @X0 0 ef ]
-"176 mcc_generated_files/pin_manager.h
+"196 mcc_generated_files/pin_manager.h
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
 "88 mcc_generated_files/mcc.h
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
@@ -12,7 +12,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PWM3_Initialize `(v ~T0 @X0 0 ef ]
 "327 mcc_generated_files/tmr2.h
 [v _TMR2_Initialize `(v ~T0 @X0 0 ef ]
-"110 mcc_generated_files/eusart.h
+"118 mcc_generated_files/eusart.h
 [v _EUSART_Initialize `(v ~T0 @X0 0 ef ]
 "2254 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1619.h
 [v _OSCCON `Vuc ~T0 @X0 0 e@153 ]
@@ -10782,8 +10782,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 193: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 194: extern __bank0 __bit __powerdown;
 [; ;pic.h: 195: extern __bank0 __bit __timeout;
-[; ;pin_manager.h: 176: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 188: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 196: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 208: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef signed short long int int24_t;
@@ -10962,25 +10962,34 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;adc.h: 259: adc_result_t ADC_GetConversionResult(void);
 [; ;adc.h: 289: adc_result_t ADC_GetConversion(adc_channel_t channel);
 [; ;adc.h: 317: void ADC_TemperatureAcquisitionDelay(void);
-[; ;eusart.h: 75: typedef union {
-[; ;eusart.h: 76: struct {
-[; ;eusart.h: 77: unsigned perr : 1;
-[; ;eusart.h: 78: unsigned ferr : 1;
-[; ;eusart.h: 79: unsigned oerr : 1;
-[; ;eusart.h: 80: unsigned reserved : 5;
-[; ;eusart.h: 81: };
-[; ;eusart.h: 82: uint8_t status;
-[; ;eusart.h: 83: }eusart_status_t;
-[; ;eusart.h: 110: void EUSART_Initialize(void);
-[; ;eusart.h: 158: bool EUSART_is_tx_ready(void);
-[; ;eusart.h: 206: bool EUSART_is_rx_ready(void);
-[; ;eusart.h: 253: bool EUSART_is_tx_done(void);
-[; ;eusart.h: 301: eusart_status_t EUSART_get_last_status(void);
-[; ;eusart.h: 321: uint8_t EUSART_Read(void);
-[; ;eusart.h: 341: void EUSART_Write(uint8_t txData);
-[; ;eusart.h: 361: void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
-[; ;eusart.h: 379: void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
-[; ;eusart.h: 397: void EUSART_SetErrorHandler(void (* interruptHandler)(void));
+[; ;eusart.h: 76: typedef union {
+[; ;eusart.h: 77: struct {
+[; ;eusart.h: 78: unsigned perr : 1;
+[; ;eusart.h: 79: unsigned ferr : 1;
+[; ;eusart.h: 80: unsigned oerr : 1;
+[; ;eusart.h: 81: unsigned reserved : 5;
+[; ;eusart.h: 82: };
+[; ;eusart.h: 83: uint8_t status;
+[; ;eusart.h: 84: }eusart_status_t;
+[; ;eusart.h: 89: extern volatile uint8_t eusartTxBufferRemaining;
+[; ;eusart.h: 90: extern volatile uint8_t eusartRxCount;
+[; ;eusart.h: 95: extern void (*EUSART_TxDefaultInterruptHandler)(void);
+[; ;eusart.h: 96: extern void (*EUSART_RxDefaultInterruptHandler)(void);
+[; ;eusart.h: 118: void EUSART_Initialize(void);
+[; ;eusart.h: 166: bool EUSART_is_tx_ready(void);
+[; ;eusart.h: 214: bool EUSART_is_rx_ready(void);
+[; ;eusart.h: 261: bool EUSART_is_tx_done(void);
+[; ;eusart.h: 309: eusart_status_t EUSART_get_last_status(void);
+[; ;eusart.h: 329: uint8_t EUSART_Read(void);
+[; ;eusart.h: 349: void EUSART_Write(uint8_t txData);
+[; ;eusart.h: 370: void EUSART_Transmit_ISR(void);
+[; ;eusart.h: 391: void EUSART_Receive_ISR(void);
+[; ;eusart.h: 412: void EUSART_RxDataHandler(void);
+[; ;eusart.h: 430: void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
+[; ;eusart.h: 448: void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
+[; ;eusart.h: 466: void EUSART_SetErrorHandler(void (* interruptHandler)(void));
+[; ;eusart.h: 486: void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void));
+[; ;eusart.h: 506: void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
 [; ;mcc.h: 75: void SYSTEM_Initialize(void);
 [; ;mcc.h: 88: void OSCILLATOR_Initialize(void);
 "50 mcc_generated_files/mcc.c

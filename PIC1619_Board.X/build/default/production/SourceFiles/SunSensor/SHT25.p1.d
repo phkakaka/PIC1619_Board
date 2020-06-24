@@ -1,0 +1,22 @@
+ build/default/production/SourceFiles/SunSensor/SHT25.d  \
+ build/default/production/SourceFiles/SunSensor/SHT25.p1:  \
+ SourceFiles/SunSensor/SHT25.c  \
+SourceFiles/SunSensor/../COS/COS_Main.h  \
+SourceFiles/SunSensor/../../mcc_generated_files/mcc.h  \
+SourceFiles/SunSensor/../../mcc_generated_files/pwm3.h  \
+SourceFiles/SunSensor/UART_Display.h  \
+SourceFiles/SunSensor/../../mcc_generated_files/adc.h  \
+SourceFiles/SunSensor/../../mcc_generated_files/device_config.h  \
+SourceFiles/SunSensor/I2C_Driver.h  \
+SourceFiles/SunSensor/../../mcc_generated_files/i2c_master.h  \
+SourceFiles/SunSensor/../../mcc_generated_files/interrupt_manager.h  \
+SourceFiles/SunSensor/../COS/GlobalDef.h  \
+SourceFiles/SunSensor/../../mcc_generated_files/tmr2.h  \
+SourceFiles/SunSensor/../../mcc_generated_files/examples/i2c_master_example.h  \
+SourceFiles/SunSensor/../../mcc_generated_files/eusart.h  \
+SourceFiles/SunSensor/../../mcc_generated_files/pin_manager.h  \
+SourceFiles/SunSensor/../COS/COS_UserSetup.h  \
+SourceFiles/SunSensor/../COS/COS_UserTskList.h  \
+SourceFiles/SunSensor/SHT25.h  \
+SourceFiles/SunSensor/../COS/COS_Defs.h  \
+SourceFiles/SunSensor/../../mcc_generated_files/examples/../i2c_master.h 

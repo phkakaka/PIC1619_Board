@@ -14611,10 +14611,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 176 "mcc_generated_files/pin_manager.h"
+# 196 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 188
+# 208
 void PIN_MANAGER_IOC(void);
 
 # 13 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdint.h"
@@ -15067,7 +15067,7 @@ adc_result_t ADC_GetConversion(adc_channel_t channel);
 # 317
 void ADC_TemperatureAcquisitionDelay(void);
 
-# 75 "mcc_generated_files/eusart.h"
+# 76 "mcc_generated_files/eusart.h"
 typedef union {
 struct {
 unsigned perr : 1;
@@ -15078,35 +15078,58 @@ unsigned reserved : 5;
 uint8_t status;
 }eusart_status_t;
 
-# 110
+# 89
+extern volatile uint8_t eusartTxBufferRemaining;
+extern volatile uint8_t eusartRxCount;
+
+# 95
+extern void (*EUSART_TxDefaultInterruptHandler)(void);
+extern void (*EUSART_RxDefaultInterruptHandler)(void);
+
+# 118
 void EUSART_Initialize(void);
 
-# 158
+# 166
 bool EUSART_is_tx_ready(void);
 
-# 206
+# 214
 bool EUSART_is_rx_ready(void);
 
-# 253
+# 261
 bool EUSART_is_tx_done(void);
 
-# 301
+# 309
 eusart_status_t EUSART_get_last_status(void);
 
-# 321
+# 329
 uint8_t EUSART_Read(void);
 
-# 341
+# 349
 void EUSART_Write(uint8_t txData);
 
-# 361
+# 370
+void EUSART_Transmit_ISR(void);
+
+# 391
+void EUSART_Receive_ISR(void);
+
+# 412
+void EUSART_RxDataHandler(void);
+
+# 430
 void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
 
-# 379
+# 448
 void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
 
-# 397
+# 466
 void EUSART_SetErrorHandler(void (* interruptHandler)(void));
+
+# 486
+void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void));
+
+# 506
+void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
 
 # 75 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);

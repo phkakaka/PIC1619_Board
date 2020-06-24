@@ -3,6 +3,20 @@
 [d edition pro ]
 [d chip 16F1619 ]
 [d frameptr 6 ]
+"67 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/examples/i2c_master_example.c
+[e E92 . `uc
+I2C_NOERR 0
+I2C_BUSY 1
+I2C_FAIL 2
+]
+"68
+[e E97 . `uc
+I2C_STOP 1
+I2C_RESTART_READ 2
+I2C_RESTART_WRITE 3
+I2C_CONTINUE 4
+I2C_RESET_LINK 5
+]
 "146 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/i2c_master.c
 [e E12110 . `uc
 I2C_IDLE 0
@@ -43,20 +57,6 @@ I2C_ADDR_NACK 2
 I2C_DATA_NACK 3
 I2C_TIMEOUT 4
 I2C_NULL 5
-]
-"67 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/examples/i2c_master_example.c
-[e E92 . `uc
-I2C_NOERR 0
-I2C_BUSY 1
-I2C_FAIL 2
-]
-"68
-[e E97 . `uc
-I2C_STOP 1
-I2C_RESTART_READ 2
-I2C_RESTART_WRITE 3
-I2C_CONTINUE 4
-I2C_RESET_LINK 5
 ]
 "97 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/tmr2.c
 [e E11985 . `uc
@@ -108,29 +108,62 @@ channel_Temp 29
 channel_DAC 30
 channel_FVR 31
 ]
+"35 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/SHT25.c
+[e E12293 . `uc
+SHT25_MEASURE_INIT 0
+SHT25_MEASURE_TEMP_0 1
+SHT25_MEASURE_TEMP_1 2
+SHT25_MEASURE_TEMP_WAIT 3
+SHT25_MEASURE_RH_0 4
+SHT25_MEASURE_RH_1 5
+SHT25_CALC_TEMP_0 6
+SHT25_CALC_RH_0 7
+]
 "62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 "86 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 3 0 ]
-"49 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\main.c
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"51 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\main.c
 [v _main main `(v  1 e 1 0 ]
 "67 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
-"66 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/eusart.c
+"88 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
-"144
+"151
+[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
+"173
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+"206
+[v _EUSART_Transmit_ISR EUSART_Transmit_ISR `(v  1 e 1 0 ]
+"225
+[v _EUSART_Receive_ISR EUSART_Receive_ISR `(v  1 e 1 0 ]
+"249
+[v _EUSART_RxDataHandler EUSART_RxDataHandler `(v  1 e 1 0 ]
+"259
 [v _EUSART_DefaultFramingErrorHandler EUSART_DefaultFramingErrorHandler `(v  1 e 1 0 ]
-"146
+"261
 [v _EUSART_DefaultOverrunErrorHandler EUSART_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
-"154
+"269
 [v _EUSART_DefaultErrorHandler EUSART_DefaultErrorHandler `(v  1 e 1 0 ]
-"157
+"273
 [v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
-"161
+"277
 [v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
-"165
+"281
 [v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
-"142 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/examples/i2c_master_example.c
+"285
+[v _EUSART_SetTxInterruptHandler EUSART_SetTxInterruptHandler `(v  1 e 1 0 ]
+"289
+[v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
+"111 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/examples/i2c_master_example.c
+[v _I2C_WriteNBytes I2C_WriteNBytes `(v  1 e 1 0 ]
+"120
+[v _I2C_ReadNBytes I2C_ReadNBytes `(v  1 e 1 0 ]
+"142
 [v _rd1RegCompleteHandler rd1RegCompleteHandler `(E97  1 s 1 rd1RegCompleteHandler ]
 "149
 [v _rd2RegCompleteHandler rd2RegCompleteHandler `(E97  1 s 1 rd2RegCompleteHandler ]
@@ -154,6 +187,7 @@ channel_FVR 31
 [v _I2C_MasterWrite I2C_MasterWrite `(E92  1 e 1 0 ]
 "264
 [v _I2C_SetBuffer I2C_SetBuffer `(v  1 e 1 0 ]
+[v i1_I2C_SetBuffer I2C_SetBuffer `(v  1 e 1 0 ]
 "274
 [v _I2C_SetDataCompleteCallback I2C_SetDataCompleteCallback `(v  1 e 1 0 ]
 "284
@@ -162,6 +196,7 @@ channel_FVR 31
 [v _I2C_SetInterruptHandler I2C_SetInterruptHandler `(v  1 e 1 0 ]
 "304
 [v _I2C_SetCallback I2C_SetCallback `(v  1 s 1 I2C_SetCallback ]
+[v i1_I2C_SetCallback I2C_SetCallback `(v  1 s 1 i1_I2C_SetCallback ]
 "318
 [v _I2C_MasterIsr I2C_MasterIsr `(v  1 s 1 I2C_MasterIsr ]
 "323
@@ -223,9 +258,9 @@ channel_FVR 31
 "599
 [v _I2C_MasterIsNack I2C_MasterIsNack `T(uc  1 s 1 I2C_MasterIsNack ]
 "604
-[v _I2C_MasterSendAck I2C_MasterSendAck `T(v  1 s 1 I2C_MasterSendAck ]
+[v i2c_master@I2C_MasterSendAck I2C_MasterSendAck `T(v  1 s 1 I2C_MasterSendAck ]
 "610
-[v _I2C_MasterSendNack I2C_MasterSendNack `T(v  1 s 1 I2C_MasterSendNack ]
+[v i2c_master@I2C_MasterSendNack I2C_MasterSendNack `T(v  1 s 1 I2C_MasterSendNack ]
 "616
 [v _I2C_MasterClearBusCollision I2C_MasterClearBusCollision `T(v  1 s 1 I2C_MasterClearBusCollision ]
 "627
@@ -234,6 +269,7 @@ channel_FVR 31
 [v _I2C_MasterDisableIrq I2C_MasterDisableIrq `T(v  1 s 1 I2C_MasterDisableIrq ]
 "642
 [v _I2C_MasterClearIrq I2C_MasterClearIrq `T(v  1 s 1 I2C_MasterClearIrq ]
+[v i1_I2C_MasterClearIrq I2C_MasterClearIrq `T(v  1 s 1 i1_I2C_MasterClearIrq ]
 "647
 [v _I2C_MasterSetIrq I2C_MasterSetIrq `T(v  1 s 1 I2C_MasterSetIrq ]
 "52 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/interrupt_manager.c
@@ -246,6 +282,8 @@ channel_FVR 31
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 "58 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/pwm3.c
 [v _PWM3_Initialize PWM3_Initialize `(v  1 e 1 0 ]
+"74
+[v _PWM3_LoadDutyValue PWM3_LoadDutyValue `(v  1 e 1 0 ]
 "64 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 "108
@@ -266,7 +304,23 @@ channel_FVR 31
 [v _TMR2_SetInterruptHandler TMR2_SetInterruptHandler `(v  1 e 1 0 ]
 "197
 [v _TMR2_DefaultInterruptHandler TMR2_DefaultInterruptHandler `(v  1 e 1 0 ]
-[s S592 . 1 `uc 1 IOCIF 1 0 :1:0 
+"32 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\SourceFiles/COS/COS_Main.c
+[v _COS_Init COS_Init `(v  1 e 1 0 ]
+"68
+[v _COS_TimerSetup COS_TimerSetup `(v  1 e 1 0 ]
+"92
+[v _COS_TmrHandler COS_TmrHandler `(v  1 e 1 0 ]
+"133
+[v _COS_TskMan COS_TskMan `(v  1 e 1 0 ]
+"30 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/Led.c
+[v _Led2_PWM Led2_PWM `(v  1 e 1 0 ]
+"41 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/SHT25.c
+[v _SHT25_StateMachine SHT25_StateMachine `(v  1 e 1 0 ]
+"112
+[v _SHT3x_CalcTemperatureC SHT3x_CalcTemperatureC `(us  1 e 2 0 ]
+"124
+[v _SHT3x_CalcRelativeHumidity SHT3x_CalcRelativeHumidity `(us  1 e 2 0 ]
+[s S701 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 IOCIE 1 0 :1:3 
@@ -276,14 +330,14 @@ channel_FVR 31
 `uc 1 GIE 1 0 :1:7 
 ]
 "372 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f1619.h
-[s S601 . 1 `uc 1 . 1 0 :2:0 
+[s S710 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 T0IE 1 0 :1:5 
 ]
-[u S606 . 1 `S592 1 . 1 0 `S601 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES606  1 e 1 @11 ]
-[s S385 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S715 . 1 `S701 1 . 1 0 `S710 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES715  1 e 1 @11 ]
+[s S500 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSP1IF 1 0 :1:3 
@@ -293,9 +347,9 @@ channel_FVR 31
 `uc 1 TMR1GIF 1 0 :1:7 
 ]
 "595
-[u S394 . 1 `S385 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES394  1 e 1 @16 ]
-[s S322 . 1 `uc 1 CCP2IF 1 0 :1:0 
+[u S509 . 1 `S500 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES509  1 e 1 @16 ]
+[s S437 . 1 `uc 1 CCP2IF 1 0 :1:0 
 `uc 1 TMR4IF 1 0 :1:1 
 `uc 1 TMR6IF 1 0 :1:2 
 `uc 1 BCL1IF 1 0 :1:3 
@@ -305,8 +359,14 @@ channel_FVR 31
 `uc 1 OSFIF 1 0 :1:7 
 ]
 "657
-[u S331 . 1 `S322 1 . 1 0 ]
-[v _PIR2bits PIR2bits `VES331  1 e 1 @17 ]
+[u S446 . 1 `S437 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES446  1 e 1 @17 ]
+"893
+[v _TMR1L TMR1L `VEuc  1 e 1 @22 ]
+"913
+[v _TMR1H TMR1H `VEuc  1 e 1 @23 ]
+"933
+[v _T1CON T1CON `VEuc  1 e 1 @24 ]
 "1070
 [v _T2TMR T2TMR `VEuc  1 e 1 @26 ]
 "1075
@@ -317,12 +377,12 @@ channel_FVR 31
 [v _PR2 PR2 `VEuc  1 e 1 @27 ]
 "1178
 [v _T2CON T2CON `VEuc  1 e 1 @28 ]
-[s S1263 . 1 `uc 1 OUTPS 1 0 :4:0 
+[s S1337 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 CKPS 1 0 :3:4 
 `uc 1 ON 1 0 :1:7 
 ]
 "1214
-[s S1267 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S1341 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
@@ -330,11 +390,11 @@ channel_FVR 31
 `uc 1 CKPS1 1 0 :1:5 
 `uc 1 CKPS2 1 0 :1:6 
 ]
-[s S1275 . 1 `uc 1 T2OUTPS 1 0 :4:0 
+[s S1349 . 1 `uc 1 T2OUTPS 1 0 :4:0 
 `uc 1 T2CKPS 1 0 :3:4 
 `uc 1 T2ON 1 0 :1:7 
 ]
-[s S1279 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
+[s S1353 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
 `uc 1 T2OUTPS1 1 0 :1:1 
 `uc 1 T2OUTPS2 1 0 :1:2 
 `uc 1 T2OUTPS3 1 0 :1:3 
@@ -343,63 +403,63 @@ channel_FVR 31
 `uc 1 T2CKPS2 1 0 :1:6 
 `uc 1 TMR2ON 1 0 :1:7 
 ]
-[u S1288 . 1 `S1263 1 . 1 0 `S1267 1 . 1 0 `S1275 1 . 1 0 `S1279 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES1288  1 e 1 @28 ]
+[u S1362 . 1 `S1337 1 . 1 0 `S1341 1 . 1 0 `S1349 1 . 1 0 `S1353 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES1362  1 e 1 @28 ]
 "1324
 [v _T2HLT T2HLT `VEuc  1 e 1 @29 ]
-[s S1163 . 1 `uc 1 MODE 1 0 :5:0 
+[s S1237 . 1 `uc 1 MODE 1 0 :5:0 
 `uc 1 CKSYNC 1 0 :1:5 
 `uc 1 CKPOL 1 0 :1:6 
 `uc 1 PSYNC 1 0 :1:7 
 ]
 "1357
-[s S1168 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S1242 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 MODE3 1 0 :1:3 
 `uc 1 MODE4 1 0 :1:4 
 ]
-[s S1174 . 1 `uc 1 T2MODE 1 0 :5:0 
+[s S1248 . 1 `uc 1 T2MODE 1 0 :5:0 
 `uc 1 T2CKSYNC 1 0 :1:5 
 `uc 1 T2CKPOL 1 0 :1:6 
 `uc 1 T2PSYNC 1 0 :1:7 
 ]
-[s S1179 . 1 `uc 1 T2MODE0 1 0 :1:0 
+[s S1253 . 1 `uc 1 T2MODE0 1 0 :1:0 
 `uc 1 T2MODE1 1 0 :1:1 
 `uc 1 T2MODE2 1 0 :1:2 
 `uc 1 T2MODE3 1 0 :1:3 
 `uc 1 T2MODE4 1 0 :1:4 
 ]
-[u S1185 . 1 `S1163 1 . 1 0 `S1168 1 . 1 0 `S1174 1 . 1 0 `S1179 1 . 1 0 ]
-[v _T2HLTbits T2HLTbits `VES1185  1 e 1 @29 ]
+[u S1259 . 1 `S1237 1 . 1 0 `S1242 1 . 1 0 `S1248 1 . 1 0 `S1253 1 . 1 0 ]
+[v _T2HLTbits T2HLTbits `VES1259  1 e 1 @29 ]
 "1452
 [v _T2CLKCON T2CLKCON `VEuc  1 e 1 @30 ]
 "1532
 [v _T2RST T2RST `VEuc  1 e 1 @31 ]
-[s S1229 . 1 `uc 1 RSEL 1 0 :4:0 
+[s S1303 . 1 `uc 1 RSEL 1 0 :4:0 
 ]
 "1557
-[s S1231 . 1 `uc 1 RSEL0 1 0 :1:0 
+[s S1305 . 1 `uc 1 RSEL0 1 0 :1:0 
 `uc 1 RSEL1 1 0 :1:1 
 `uc 1 RSEL2 1 0 :1:2 
 `uc 1 RSEL3 1 0 :1:3 
 ]
-[s S1236 . 1 `uc 1 T2RSEL 1 0 :4:0 
+[s S1310 . 1 `uc 1 T2RSEL 1 0 :4:0 
 ]
-[s S1238 . 1 `uc 1 T2RSEL0 1 0 :1:0 
+[s S1312 . 1 `uc 1 T2RSEL0 1 0 :1:0 
 `uc 1 T2RSEL1 1 0 :1:1 
 `uc 1 T2RSEL2 1 0 :1:2 
 `uc 1 T2RSEL3 1 0 :1:3 
 ]
-[u S1243 . 1 `S1229 1 . 1 0 `S1231 1 . 1 0 `S1236 1 . 1 0 `S1238 1 . 1 0 ]
-[v _T2RSTbits T2RSTbits `VES1243  1 e 1 @31 ]
+[u S1317 . 1 `S1303 1 . 1 0 `S1305 1 . 1 0 `S1310 1 . 1 0 `S1312 1 . 1 0 ]
+[v _T2RSTbits T2RSTbits `VES1317  1 e 1 @31 ]
 "1612
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1662
 [v _TRISB TRISB `VEuc  1 e 1 @141 ]
 "1701
 [v _TRISC TRISC `VEuc  1 e 1 @142 ]
-[s S364 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S479 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSP1IE 1 0 :1:3 
@@ -409,9 +469,9 @@ channel_FVR 31
 `uc 1 TMR1GIE 1 0 :1:7 
 ]
 "1780
-[u S373 . 1 `S364 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES373  1 e 1 @144 ]
-[s S624 . 1 `uc 1 CCP2IE 1 0 :1:0 
+[u S488 . 1 `S479 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES488  1 e 1 @144 ]
+[s S761 . 1 `uc 1 CCP2IE 1 0 :1:0 
 `uc 1 TMR4IE 1 0 :1:1 
 `uc 1 TMR6IE 1 0 :1:2 
 `uc 1 BCL1IE 1 0 :1:3 
@@ -421,9 +481,9 @@ channel_FVR 31
 `uc 1 OSCFIE 1 0 :1:7 
 ]
 "1842
-[u S633 . 1 `S624 1 . 1 0 ]
-[v _PIE2bits PIE2bits `VES633  1 e 1 @145 ]
-[s S853 . 1 `uc 1 PS 1 0 :3:0 
+[u S770 . 1 `S761 1 . 1 0 ]
+[v _PIE2bits PIE2bits `VES770  1 e 1 @145 ]
+[s S869 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 TMR0SE 1 0 :1:4 
 `uc 1 TMR0CS 1 0 :1:5 
@@ -431,15 +491,15 @@ channel_FVR 31
 `uc 1 nWPUEN 1 0 :1:7 
 ]
 "2074
-[s S860 . 1 `uc 1 PS0 1 0 :1:0 
+[s S876 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
 ]
-[u S867 . 1 `S853 1 . 1 0 `S860 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES867  1 e 1 @149 ]
+[u S883 . 1 `S869 1 . 1 0 `S876 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES883  1 e 1 @149 ]
 "2196
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @152 ]
 "2254
@@ -450,12 +510,12 @@ channel_FVR 31
 [v _ADRESH ADRESH `VEuc  1 e 1 @156 ]
 "2429
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @157 ]
-[s S1384 . 1 `uc 1 ADON 1 0 :1:0 
+[s S1458 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :5:2 
 ]
 "2454
-[s S1388 . 1 `uc 1 . 1 0 :1:0 
+[s S1462 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADGO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -463,19 +523,38 @@ channel_FVR 31
 `uc 1 CHS3 1 0 :1:5 
 `uc 1 CHS4 1 0 :1:6 
 ]
-[s S1396 . 1 `uc 1 . 1 0 :1:0 
+[s S1470 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 ]
-[u S1399 . 1 `S1384 1 . 1 0 `S1388 1 . 1 0 `S1396 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES1399  1 e 1 @157 ]
+[u S1473 . 1 `S1458 1 . 1 0 `S1462 1 . 1 0 `S1470 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES1473  1 e 1 @157 ]
 "2509
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
 "2575
 [v _ADCON2 ADCON2 `VEuc  1 e 1 @159 ]
 "2623
 [v _LATA LATA `VEuc  1 e 1 @268 ]
+[s S1661 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+]
+"2638
+[u S1668 . 1 `S1661 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1668  1 e 1 @268 ]
 "2673
 [v _LATB LATB `VEuc  1 e 1 @269 ]
+[s S1607 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 LATB4 1 0 :1:4 
+`uc 1 LATB5 1 0 :1:5 
+`uc 1 LATB6 1 0 :1:6 
+`uc 1 LATB7 1 0 :1:7 
+]
+"2687
+[u S1613 . 1 `S1607 1 . 1 0 ]
+[v _LATBbits LATBbits `VES1613  1 e 1 @269 ]
 "2712
 [v _LATC LATC `VEuc  1 e 1 @270 ]
 "3048
@@ -496,7 +575,7 @@ channel_FVR 31
 [v _SPBRGH SPBRGH `VEuc  1 e 1 @412 ]
 "3911
 [v _RC1STA RC1STA `VEuc  1 e 1 @413 ]
-[s S1030 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S1069 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -506,11 +585,11 @@ channel_FVR 31
 `uc 1 SPEN 1 0 :1:7 
 ]
 "3937
-[u S1039 . 1 `S1030 1 . 1 0 ]
-[v _RC1STAbits RC1STAbits `VES1039  1 e 1 @413 ]
+[u S1078 . 1 `S1069 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES1078  1 e 1 @413 ]
 "4091
 [v _TX1STA TX1STA `VEuc  1 e 1 @414 ]
-[s S1009 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S1047 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -520,8 +599,8 @@ channel_FVR 31
 `uc 1 CSRC 1 0 :1:7 
 ]
 "4117
-[u S1018 . 1 `S1009 1 . 1 0 ]
-[v _TX1STAbits TX1STAbits `VES1018  1 e 1 @414 ]
+[u S1056 . 1 `S1047 1 . 1 0 ]
+[v _TX1STAbits TX1STAbits `VES1056  1 e 1 @414 ]
 "4271
 [v _BAUD1CON BAUD1CON `VEuc  1 e 1 @415 ]
 "4517
@@ -536,7 +615,7 @@ channel_FVR 31
 [v _SSP1ADD SSP1ADD `VEuc  1 e 1 @530 ]
 "5446
 [v _SSP1STAT SSP1STAT `VEuc  1 e 1 @532 ]
-[s S343 . 1 `uc 1 BF 1 0 :1:0 
+[s S458 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -546,27 +625,27 @@ channel_FVR 31
 `uc 1 SMP 1 0 :1:7 
 ]
 "5468
-[u S352 . 1 `S343 1 . 1 0 ]
-[v _SSP1STATbits SSP1STATbits `VES352  1 e 1 @532 ]
+[u S467 . 1 `S458 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES467  1 e 1 @532 ]
 "5568
 [v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @533 ]
-[s S149 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S264 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "5601
-[s S155 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S270 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[u S160 . 1 `S149 1 . 1 0 `S155 1 . 1 0 ]
-[v _SSP1CON1bits SSP1CON1bits `VES160  1 e 1 @533 ]
+[u S275 . 1 `S264 1 . 1 0 `S270 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES275  1 e 1 @533 ]
 "5838
 [v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @534 ]
-[s S301 . 1 `uc 1 SEN 1 0 :1:0 
+[s S416 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -576,21 +655,21 @@ channel_FVR 31
 `uc 1 GCEN 1 0 :1:7 
 ]
 "5860
-[u S310 . 1 `S301 1 . 1 0 ]
-[v _SSP1CON2bits SSP1CON2bits `VES310  1 e 1 @534 ]
+[u S425 . 1 `S416 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES425  1 e 1 @534 ]
 "6082
 [v _ODCONA ODCONA `VEuc  1 e 1 @652 ]
 "6127
 [v _ODCONB ODCONB `VEuc  1 e 1 @653 ]
 "6166
 [v _ODCONC ODCONC `VEuc  1 e 1 @654 ]
-[s S912 . 1 `uc 1 CCP1TSEL 1 0 :2:0 
+[s S928 . 1 `uc 1 CCP1TSEL 1 0 :2:0 
 `uc 1 CCP2TSEL 1 0 :2:2 
 `uc 1 P3TSEL 1 0 :2:4 
 `uc 1 P4TSEL 1 0 :2:6 
 ]
 "6735
-[s S917 . 1 `uc 1 CCP1TSEL0 1 0 :1:0 
+[s S933 . 1 `uc 1 CCP1TSEL0 1 0 :1:0 
 `uc 1 CCP1TSEL1 1 0 :1:1 
 `uc 1 CCP2TSEL0 1 0 :1:2 
 `uc 1 CCP2TSEL1 1 0 :1:3 
@@ -599,8 +678,8 @@ channel_FVR 31
 `uc 1 P4TSEL0 1 0 :1:6 
 `uc 1 P4TSEL1 1 0 :1:7 
 ]
-[u S926 . 1 `S912 1 . 1 0 `S917 1 . 1 0 ]
-[v _CCPTMRSbits CCPTMRSbits `VES926  1 e 1 @670 ]
+[u S942 . 1 `S928 1 . 1 0 `S933 1 . 1 0 ]
+[v _CCPTMRSbits CCPTMRSbits `VES942  1 e 1 @670 ]
 "6800
 [v _SLRCONA SLRCONA `VEuc  1 e 1 @780 ]
 "6845
@@ -635,37 +714,120 @@ channel_FVR 31
 [v _RC5PPS RC5PPS `VEuc  1 e 1 @3749 ]
 "30878
 [v _PLLR PLLR `VEb  1 e 0 @1238 ]
-[s S951 . 1 `uc 1 perr 1 0 :1:0 
+"32046
+[v _SSP1IE SSP1IE `VEb  1 e 0 @1155 ]
+"32048
+[v _SSP1IF SSP1IF `VEb  1 e 0 @131 ]
+"32086
+[v _SSPEN SSPEN `VEb  1 e 0 @4269 ]
+"62 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/eusart.c
+[v _eusartTxHead eusartTxHead `VEuc  1 e 1 0 ]
+"63
+[v _eusartTxTail eusartTxTail `VEuc  1 e 1 0 ]
+"64
+[v _eusartTxBuffer eusartTxBuffer `VE[8]uc  1 e 8 0 ]
+"65
+[v _eusartTxBufferRemaining eusartTxBufferRemaining `VEuc  1 e 1 0 ]
+"67
+[v _eusartRxHead eusartRxHead `VEuc  1 e 1 0 ]
+"68
+[v _eusartRxTail eusartRxTail `VEuc  1 e 1 0 ]
+"69
+[v _eusartRxBuffer eusartRxBuffer `VE[8]uc  1 e 8 0 ]
+[s S967 . 1 `uc 1 perr 1 0 :1:0 
 `uc 1 ferr 1 0 :1:1 
 `uc 1 oerr 1 0 :1:2 
 `uc 1 reserved 1 0 :5:3 
 ]
-"52 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/eusart.c
-[u S956 . 1 `S951 1 . 1 0 `uc 1 status 1 0 ]
-[v _eusartRxLastError eusartRxLastError `VES956  1 e 1 0 ]
-"58
+"70
+[u S972 . 1 `S967 1 . 1 0 `uc 1 status 1 0 ]
+[v _eusartRxStatusBuffer eusartRxStatusBuffer `VE[8]S972  1 e 8 0 ]
+"71
+[v _eusartRxCount eusartRxCount `VEuc  1 e 1 0 ]
+"72
+[v _eusartRxLastError eusartRxLastError `VES972  1 e 1 0 ]
+"77
+[v _EUSART_TxDefaultInterruptHandler EUSART_TxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
+"78
+[v _EUSART_RxDefaultInterruptHandler EUSART_RxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
+"80
 [v _EUSART_FramingErrorHandler EUSART_FramingErrorHandler `*.37(v  1 e 2 0 ]
-"59
+"81
 [v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 e 2 0 ]
-"60
+"82
 [v _EUSART_ErrorHandler EUSART_ErrorHandler `*.37(v  1 e 2 0 ]
 "146 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/i2c_master.c
 [v _fsmStateTable fsmStateTable `DC[16]*.37(E12110  1 e 32 0 ]
-[s S124 . 29 `[6]*.37(E97 1 callbackTable 12 0 `[6]*.1v 1 callbackPayload 6 12 `ui 1 time_out 2 18 `ui 1 time_out_value 2 20 `uc 1 address 1 22 `*.1uc 1 data_ptr 1 23 `ui 1 data_length 2 24 `E12110 1 state 1 26 `E92 1 error 1 27 `uc 1 addressNackCheck 1 28 :1:0 
+[s S239 . 29 `[6]*.37(E97 1 callbackTable 12 0 `[6]*.1v 1 callbackPayload 6 12 `ui 1 time_out 2 18 `ui 1 time_out_value 2 20 `uc 1 address 1 22 `*.4uc 1 data_ptr 1 23 `ui 1 data_length 2 24 `E12110 1 state 1 26 `E92 1 error 1 27 `uc 1 addressNackCheck 1 28 :1:0 
 `uc 1 busy 1 28 :1:1 
 `uc 1 inUse 1 28 :1:2 
 `uc 1 bufferFree 1 28 :1:3 
 ]
 "165
-[v _I2C_Status I2C_Status `S124  1 e 29 0 ]
-"213 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/i2c_master.h
-[v _MSSP_InterruptHandler MSSP_InterruptHandler `*.37(v  1 e 2 0 ]
+[v _I2C_Status I2C_Status `S239  1 e 29 0 ]
 "58 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/tmr2.c
 [v _TMR2_InterruptHandler TMR2_InterruptHandler `*.37(v  1 e 2 0 ]
-"49 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\main.c
+"13 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\SourceFiles/COS/COS_Main.c
+[v _COS_tsk_ind COS_tsk_ind `uc  1 e 1 0 ]
+"14
+[v _COS_tsk_msk COS_tsk_msk `uc  1 e 1 0 ]
+"15
+[v _COS_tsk_ena COS_tsk_ena `uc  1 e 1 0 ]
+"18
+[v _COS_ms_tmr COS_ms_tmr `us  1 e 2 0 ]
+"19
+[v _COS_sec_tmr COS_sec_tmr `VEus  1 e 2 0 ]
+"20
+[v _COS_tsk_tmr COS_tsk_tmr `us  1 e 2 0 ]
+"21
+[v _COS_tcnt_val COS_tcnt_val `us  1 e 2 0 ]
+"22
+[v _COS_tcnt_lst COS_tcnt_lst `us  1 e 2 0 ]
+[s S1566 . 3 `*.37(v 1 tptr 2 0 `uc 1 sched 1 2 ]
+"35 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\SourceFiles/COS/COS_UserTskList.c
+[v _COS_tsk COS_tsk `DC[5]S1566  1 e 15 0 ]
+"213 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X/mcc_generated_files/i2c_master.h
+[v _MSSP_InterruptHandler MSSP_InterruptHandler `*.37(v  1 e 2 0 ]
+"24 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/Led.c
+[v _counter counter `ui  1 s 2 counter ]
+"25
+[v _BreathState BreathState `uc  1 s 1 BreathState ]
+"27
+[v _dutyValue dutyValue `ui  1 s 2 dutyValue ]
+"21 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/SHT25.c
+[v _SensirionTemperature_UBP8 SensirionTemperature_UBP8 `us  1 e 2 0 ]
+"22
+[v _SensirionRH_UBP8 SensirionRH_UBP8 `us  1 e 2 0 ]
+"23
+[v _SHT25_Fault SHT25_Fault `uc  1 e 1 0 ]
+"29
+[v _TemperatureRaw_H TemperatureRaw_H `uc  1 e 1 0 ]
+"30
+[v _TemperatureRaw_L TemperatureRaw_L `uc  1 e 1 0 ]
+"31
+[v _TemperatureRaw TemperatureRaw `us  1 e 2 0 ]
+"32
+[v _RelativeHumidityRaw_H RelativeHumidityRaw_H `uc  1 e 1 0 ]
+"33
+[v _RelativeHumidityRaw_L RelativeHumidityRaw_L `uc  1 e 1 0 ]
+"34
+[v _RelativeHumidityRaw RelativeHumidityRaw `us  1 e 2 0 ]
+"35
+[v _SHT25_State SHT25_State `E12293  1 e 1 0 ]
+"36
+[v _Command Command `[2]uc  1 e 2 0 ]
+"37
+[v _RxBuff RxBuff `[8]uc  1 e 8 0 ]
+"39
+[v _TimerCounter TimerCounter `us  1 e 2 0 ]
+"13 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/UART_Display.c
+[v _U8Message U8Message `uc  1 s 1 U8Message ]
+"14
+[v _NewMessageFlag NewMessageFlag `uc  1 s 1 NewMessageFlag ]
+"51 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"73
+"83
 } 0
 "50 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -680,7 +842,7 @@ channel_FVR 31
 "193
 [v _TMR2_SetInterruptHandler TMR2_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v TMR2_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+[v TMR2_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 3 ]
 "195
 } 0
 "58 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/pwm3.c
@@ -703,38 +865,252 @@ channel_FVR 31
 {
 "174
 } 0
-"66 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/eusart.c
+"88 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
 {
-"92
+"130
 } 0
-"161
+"285
+[v _EUSART_SetTxInterruptHandler EUSART_SetTxInterruptHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetTxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 3 ]
+"287
+} 0
+"289
+[v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetRxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 3 ]
+"291
+} 0
+"277
 [v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
 {
-[v EUSART_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
-"163
+[v EUSART_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 3 ]
+"279
 } 0
-"157
+"273
 [v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
 {
-[v EUSART_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
-"159
+[v EUSART_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 3 ]
+"275
 } 0
-"165
+"281
 [v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
 {
-[v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
-"167
+[v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 3 ]
+"283
 } 0
 "67 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
 {
 "86
 } 0
+"133 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\SourceFiles/COS/COS_Main.c
+[v _COS_TskMan COS_TskMan `(v  1 e 1 0 ]
+{
+"180
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 7 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 3 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 5 ]
+"53
+} 0
+"41 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/SHT25.c
+[v _SHT25_StateMachine SHT25_StateMachine `(v  1 e 1 0 ]
+{
+"100
+} 0
+"112
+[v _SHT3x_CalcTemperatureC SHT3x_CalcTemperatureC `(us  1 e 2 0 ]
+{
+"114
+[v SHT3x_CalcTemperatureC@TemperatureTemp TemperatureTemp `ul  1 a 4 19 ]
+"115
+[v SHT3x_CalcTemperatureC@Temperature_UBP8 Temperature_UBP8 `us  1 a 2 17 ]
+"122
+} 0
+"124
+[v _SHT3x_CalcRelativeHumidity SHT3x_CalcRelativeHumidity `(us  1 e 2 0 ]
+{
+"126
+[v SHT3x_CalcRelativeHumidity@RelativeHumidityTemp RelativeHumidityTemp `l  1 a 4 20 ]
+"127
+[v SHT3x_CalcRelativeHumidity@RelativeHumidity_UBP8 RelativeHumidity_UBP8 `us  1 a 2 18 ]
+"134
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+{
+"17
+[v ___lmul@product product `ul  1 a 4 11 ]
+"15
+[v ___lmul@multiplier multiplier `ul  1 p 4 3 ]
+[v ___lmul@multiplicand multiplicand `ul  1 p 4 7 ]
+"129
+} 0
+"111 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/examples/i2c_master_example.c
+[v _I2C_WriteNBytes I2C_WriteNBytes `(v  1 e 1 0 ]
+{
+[v I2C_WriteNBytes@address address `uc  1 a 1 wreg ]
+[v I2C_WriteNBytes@address address `uc  1 a 1 wreg ]
+[v I2C_WriteNBytes@data data `*.4uc  1 p 1 12 ]
+[v I2C_WriteNBytes@len len `ui  1 p 2 13 ]
+[v I2C_WriteNBytes@address address `uc  1 a 1 15 ]
+"118
+} 0
+"284 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/i2c_master.c
+[v _I2C_SetAddressNackCallback I2C_SetAddressNackCallback `(v  1 e 1 0 ]
+{
+[v I2C_SetAddressNackCallback@cb cb `*.37(E97  1 p 2 8 ]
+[v I2C_SetAddressNackCallback@ptr ptr `*.1v  1 p 1 10 ]
+"287
+} 0
+"304
+[v _I2C_SetCallback I2C_SetCallback `(v  1 s 1 I2C_SetCallback ]
+{
+[v I2C_SetCallback@idx idx `E12128  1 a 1 wreg ]
+[v I2C_SetCallback@idx idx `E12128  1 a 1 wreg ]
+[v I2C_SetCallback@cb cb `*.37(E97  1 p 2 3 ]
+[v I2C_SetCallback@ptr ptr `*.1v  1 p 1 5 ]
+"306
+[v I2C_SetCallback@idx idx `E12128  1 a 1 7 ]
+"316
+} 0
+"252
+[v _I2C_MasterWrite I2C_MasterWrite `(E92  1 e 1 0 ]
+{
+"255
+} 0
+"120 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/examples/i2c_master_example.c
+[v _I2C_ReadNBytes I2C_ReadNBytes `(v  1 e 1 0 ]
+{
+[v I2C_ReadNBytes@address address `uc  1 a 1 wreg ]
+[v I2C_ReadNBytes@address address `uc  1 a 1 wreg ]
+[v I2C_ReadNBytes@data data `*.4uc  1 p 1 8 ]
+[v I2C_ReadNBytes@len len `ui  1 p 2 9 ]
+[v I2C_ReadNBytes@address address `uc  1 a 1 11 ]
+"126
+} 0
+"264 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/i2c_master.c
+[v _I2C_SetBuffer I2C_SetBuffer `(v  1 e 1 0 ]
+{
+[v I2C_SetBuffer@buffer buffer `*.4v  1 a 1 wreg ]
+[v I2C_SetBuffer@buffer buffer `*.4v  1 a 1 wreg ]
+[v I2C_SetBuffer@bufferSize bufferSize `ui  1 p 2 3 ]
+"266
+[v I2C_SetBuffer@buffer buffer `*.4v  1 a 1 6 ]
+"272
+} 0
+"176
+[v _I2C_Open I2C_Open `(E92  1 e 1 0 ]
+{
+[v I2C_Open@address address `uc  1 a 1 wreg ]
+"178
+[v I2C_Open@returnValue returnValue `E92  1 a 1 7 ]
+"176
+[v I2C_Open@address address `uc  1 a 1 wreg ]
+"178
+[v I2C_Open@address address `uc  1 a 1 6 ]
+"209
+} 0
+"299
+[v _I2C_SetInterruptHandler I2C_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v I2C_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 3 ]
+"302
+} 0
+"544
+[v _I2C_MasterOpen I2C_MasterOpen `T(uc  1 s 1 I2C_MasterOpen ]
+{
+"556
+} 0
+"627
+[v _I2C_MasterEnableIrq I2C_MasterEnableIrq `T(v  1 s 1 I2C_MasterEnableIrq ]
+{
+"630
+} 0
+"247
+[v _I2C_MasterRead I2C_MasterRead `(E92  1 e 1 0 ]
+{
+"250
+} 0
+"226
+[v _I2C_MasterOperation I2C_MasterOperation `(E92  1 e 1 0 ]
+{
+[v I2C_MasterOperation@read read `uc  1 a 1 wreg ]
+"228
+[v I2C_MasterOperation@returnValue returnValue `E92  1 a 1 5 ]
+"226
+[v I2C_MasterOperation@read read `uc  1 a 1 wreg ]
+"228
+[v I2C_MasterOperation@read read `uc  1 a 1 4 ]
+"245
+} 0
+"589
+[v _I2C_MasterStart I2C_MasterStart `T(v  1 s 1 I2C_MasterStart ]
+{
+"592
+} 0
+"211
+[v _I2C_Close I2C_Close `(E92  1 e 1 0 ]
+{
+"213
+[v I2C_Close@returnValue returnValue `E92  1 a 1 4 ]
+"224
+} 0
+"637
+[v _I2C_MasterDisableIrq I2C_MasterDisableIrq `T(v  1 s 1 I2C_MasterDisableIrq ]
+{
+"640
+} 0
+"558
+[v _I2C_MasterClose I2C_MasterClose `T(v  1 s 1 I2C_MasterClose ]
+{
+"562
+} 0
+"642
+[v _I2C_MasterClearIrq I2C_MasterClearIrq `T(v  1 s 1 I2C_MasterClearIrq ]
+{
+"645
+} 0
+"173 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/eusart.c
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+{
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 4 ]
+"194
+} 0
+"92 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\SourceFiles/COS/COS_Main.c
+[v _COS_TmrHandler COS_TmrHandler `(v  1 e 1 0 ]
+{
+"94
+[v COS_TmrHandler@tempbyte2 tempbyte2 `uc  1 a 1 8 ]
+[v COS_TmrHandler@tempbyte1 tempbyte1 `uc  1 a 1 7 ]
+"122
+} 0
+"32
+[v _COS_Init COS_Init `(v  1 e 1 0 ]
+{
+"34
+[v COS_Init@tempbyte2 tempbyte2 `uc  1 a 1 7 ]
+[v COS_Init@tempbyte1 tempbyte1 `uc  1 a 1 6 ]
+"58
+} 0
+"68
+[v _COS_TimerSetup COS_TimerSetup `(v  1 e 1 0 ]
+{
+"79
+} 0
 "52 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 {
-"78
+"86
 } 0
 "165 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/tmr2.c
 [v _TMR2_ISR TMR2_ISR `(v  1 e 1 0 ]
@@ -748,10 +1124,21 @@ channel_FVR 31
 {
 "191
 } 0
-"197
+"30 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/Led.c
+[v _Led2_PWM Led2_PWM `(v  1 e 1 0 ]
+{
+"84
+} 0
+"197 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/tmr2.c
 [v _TMR2_DefaultInterruptHandler TMR2_DefaultInterruptHandler `(v  1 e 1 0 ]
 {
 "200
+} 0
+"74 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/pwm3.c
+[v _PWM3_LoadDutyValue PWM3_LoadDutyValue `(v  1 e 1 0 ]
+{
+[v PWM3_LoadDutyValue@dutyValue dutyValue `ui  1 p 2 0 ]
+"81
 } 0
 "318 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/i2c_master.c
 [v _I2C_MasterIsr I2C_MasterIsr `(v  1 s 1 I2C_MasterIsr ]
@@ -764,7 +1151,7 @@ channel_FVR 31
 "332
 } 0
 "642
-[v _I2C_MasterClearIrq I2C_MasterClearIrq `T(v  1 s 1 I2C_MasterClearIrq ]
+[v i1_I2C_MasterClearIrq I2C_MasterClearIrq `T(v  1 s 1 i1_I2C_MasterClearIrq ]
 {
 "645
 } 0
@@ -868,7 +1255,7 @@ channel_FVR 31
 "572
 } 0
 "604
-[v _I2C_MasterSendAck I2C_MasterSendAck `T(v  1 s 1 I2C_MasterSendAck ]
+[v i2c_master@I2C_MasterSendAck I2C_MasterSendAck `T(v  1 s 1 I2C_MasterSendAck ]
 {
 "608
 } 0
@@ -878,7 +1265,7 @@ channel_FVR 31
 "567
 } 0
 "610
-[v _I2C_MasterSendNack I2C_MasterSendNack `T(v  1 s 1 I2C_MasterSendNack ]
+[v i2c_master@I2C_MasterSendNack I2C_MasterSendNack `T(v  1 s 1 I2C_MasterSendNack ]
 {
 "614
 } 0
@@ -887,33 +1274,10 @@ channel_FVR 31
 {
 "587
 } 0
-"170 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/examples/i2c_master_example.c
-[v _rdBlkRegCompleteHandler rdBlkRegCompleteHandler `(E97  1 s 1 rdBlkRegCompleteHandler ]
-{
-[v rdBlkRegCompleteHandler@ptr ptr `*.1v  1 p 1 1 ]
-"175
-} 0
-"156
-[v _wr1RegCompleteHandler wr1RegCompleteHandler `(E97  1 s 1 wr1RegCompleteHandler ]
-{
-[v wr1RegCompleteHandler@ptr ptr `*.1v  1 p 1 1 ]
-"161
-} 0
-"149
-[v _rd2RegCompleteHandler rd2RegCompleteHandler `(E97  1 s 1 rd2RegCompleteHandler ]
-{
-[v rd2RegCompleteHandler@ptr ptr `*.1v  1 p 1 1 ]
-"154
-} 0
-"142
-[v _rd1RegCompleteHandler rd1RegCompleteHandler `(E97  1 s 1 rd1RegCompleteHandler ]
-{
-[v rd1RegCompleteHandler@ptr ptr `*.1v  1 p 1 1 ]
-"147
-} 0
-"526 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/i2c_master.c
+"526
 [v _I2C_CallbackReturnReset I2C_CallbackReturnReset `(E97  1 e 1 0 ]
 {
+[v I2C_CallbackReturnReset@funPtr funPtr `*.1v  1 p 1 9 ]
 "529
 } 0
 "521
@@ -921,13 +1285,47 @@ channel_FVR 31
 {
 "524
 } 0
-"163 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/examples/i2c_master_example.c
+"170 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/examples/i2c_master_example.c
+[v _rdBlkRegCompleteHandler rdBlkRegCompleteHandler `(E97  1 s 1 rdBlkRegCompleteHandler ]
+{
+[v rdBlkRegCompleteHandler@ptr ptr `*.1v  1 p 1 9 ]
+"175
+} 0
+"156
+[v _wr1RegCompleteHandler wr1RegCompleteHandler `(E97  1 s 1 wr1RegCompleteHandler ]
+{
+[v wr1RegCompleteHandler@ptr ptr `*.1v  1 p 1 9 ]
+"161
+} 0
+"149
+[v _rd2RegCompleteHandler rd2RegCompleteHandler `(E97  1 s 1 rd2RegCompleteHandler ]
+{
+[v rd2RegCompleteHandler@ptr ptr `*.1v  1 p 1 9 ]
+"154
+} 0
+"142
+[v _rd1RegCompleteHandler rd1RegCompleteHandler `(E97  1 s 1 rd1RegCompleteHandler ]
+{
+[v rd1RegCompleteHandler@ptr ptr `*.1v  1 p 1 9 ]
+"147
+} 0
+"163
 [v _wr2RegCompleteHandler wr2RegCompleteHandler `(E97  1 s 1 wr2RegCompleteHandler ]
 {
-[v wr2RegCompleteHandler@ptr ptr `*.1v  1 p 1 1 ]
+[v wr2RegCompleteHandler@ptr ptr `*.1v  1 p 1 9 ]
 "168
 } 0
-"274 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/i2c_master.c
+"264 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/i2c_master.c
+[v i1_I2C_SetBuffer I2C_SetBuffer `(v  1 e 1 0 ]
+{
+[v i1I2C_SetBuffer@buffer buffer `*.4v  1 a 1 wreg ]
+[v i1I2C_SetBuffer@buffer buffer `*.4v  1 a 1 wreg ]
+[v i1I2C_SetBuffer@bufferSize bufferSize `ui  1 p 2 0 ]
+"266
+[v i1I2C_SetBuffer@buffer buffer `*.4v  1 a 1 3 ]
+"272
+} 0
+"274
 [v _I2C_SetDataCompleteCallback I2C_SetDataCompleteCallback `(v  1 e 1 0 ]
 {
 [v I2C_SetDataCompleteCallback@cb cb `*.37(E97  1 p 2 5 ]
@@ -935,25 +1333,15 @@ channel_FVR 31
 "277
 } 0
 "304
-[v _I2C_SetCallback I2C_SetCallback `(v  1 s 1 I2C_SetCallback ]
+[v i1_I2C_SetCallback I2C_SetCallback `(v  1 s 1 i1_I2C_SetCallback ]
 {
-[v I2C_SetCallback@idx idx `E12128  1 a 1 wreg ]
-[v I2C_SetCallback@idx idx `E12128  1 a 1 wreg ]
-[v I2C_SetCallback@cb cb `*.37(E97  1 p 2 0 ]
-[v I2C_SetCallback@ptr ptr `*.1v  1 p 1 2 ]
+[v i1I2C_SetCallback@idx idx `E12128  1 a 1 wreg ]
+[v i1I2C_SetCallback@idx idx `E12128  1 a 1 wreg ]
+[v i1I2C_SetCallback@cb cb `*.37(E97  1 p 2 0 ]
+[v i1I2C_SetCallback@ptr ptr `*.1v  1 p 1 2 ]
 "306
-[v I2C_SetCallback@idx idx `E12128  1 a 1 4 ]
+[v i1I2C_SetCallback@idx idx `E12128  1 a 1 4 ]
 "316
-} 0
-"264
-[v _I2C_SetBuffer I2C_SetBuffer `(v  1 e 1 0 ]
-{
-[v I2C_SetBuffer@buffer buffer `*.1v  1 a 1 wreg ]
-[v I2C_SetBuffer@buffer buffer `*.1v  1 a 1 wreg ]
-[v I2C_SetBuffer@bufferSize bufferSize `ui  1 p 2 0 ]
-"266
-[v I2C_SetBuffer@buffer buffer `*.1v  1 a 1 3 ]
-"272
 } 0
 "594
 [v _I2C_MasterStop I2C_MasterStop `T(v  1 s 1 I2C_MasterStop ]
@@ -964,4 +1352,33 @@ channel_FVR 31
 [v _I2C_MasterEnableRestart I2C_MasterEnableRestart `T(v  1 s 1 I2C_MasterEnableRestart ]
 {
 "577
+} 0
+"206 D:\Github\Microchip\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/eusart.c
+[v _EUSART_Transmit_ISR EUSART_Transmit_ISR `(v  1 e 1 0 ]
+{
+"223
+} 0
+"225
+[v _EUSART_Receive_ISR EUSART_Receive_ISR `(v  1 e 1 0 ]
+{
+"247
+} 0
+"261
+[v _EUSART_DefaultOverrunErrorHandler EUSART_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
+{
+"267
+} 0
+"259
+[v _EUSART_DefaultFramingErrorHandler EUSART_DefaultFramingErrorHandler `(v  1 e 1 0 ]
+{
+} 0
+"269
+[v _EUSART_DefaultErrorHandler EUSART_DefaultErrorHandler `(v  1 e 1 0 ]
+{
+"271
+} 0
+"249
+[v _EUSART_RxDataHandler EUSART_RxDataHandler `(v  1 e 1 0 ]
+{
+"257
 } 0

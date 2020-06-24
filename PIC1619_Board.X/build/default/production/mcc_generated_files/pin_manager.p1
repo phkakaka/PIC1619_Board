@@ -10826,8 +10826,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 193: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 194: extern __bank0 __bit __powerdown;
 [; ;pic.h: 195: extern __bank0 __bit __timeout;
-[; ;pin_manager.h: 176: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 188: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 196: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 208: void PIN_MANAGER_IOC(void);
 "55 mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 1 ef ]
 "56
@@ -10845,9 +10845,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pin_manager.c: 62: LATC = 0x00;
 "62
 [e = _LATC -> -> 0 `i `uc ]
-[; ;pin_manager.c: 67: TRISA = 0x37;
+[; ;pin_manager.c: 67: TRISA = 0x33;
 "67
-[e = _TRISA -> -> 55 `i `uc ]
+[e = _TRISA -> -> 51 `i `uc ]
 [; ;pin_manager.c: 68: TRISB = 0x70;
 "68
 [e = _TRISB -> -> 112 `i `uc ]
@@ -10860,9 +10860,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pin_manager.c: 75: ANSELB = 0x80;
 "75
 [e = _ANSELB -> -> 128 `i `uc ]
-[; ;pin_manager.c: 76: ANSELA = 0x17;
+[; ;pin_manager.c: 76: ANSELA = 0x13;
 "76
-[e = _ANSELA -> -> 23 `i `uc ]
+[e = _ANSELA -> -> 19 `i `uc ]
 [; ;pin_manager.c: 81: WPUB = 0x00;
 "81
 [e = _WPUB -> -> 0 `i `uc ]
