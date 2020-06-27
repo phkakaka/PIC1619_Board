@@ -10817,9 +10817,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pwm3.c: 62: PWM3CON = 0x80;
 "62
 [e = _PWM3CON -> -> 128 `i `uc ]
-[; ;pwm3.c: 65: PWM3DCH = 0x3E;
+[; ;pwm3.c: 65: PWM3DCH = 0x1F;
 "65
-[e = _PWM3DCH -> -> 62 `i `uc ]
+[e = _PWM3DCH -> -> 31 `i `uc ]
 [; ;pwm3.c: 68: PWM3DCL = 0x40;
 "68
 [e = _PWM3DCL -> -> 64 `i `uc ]

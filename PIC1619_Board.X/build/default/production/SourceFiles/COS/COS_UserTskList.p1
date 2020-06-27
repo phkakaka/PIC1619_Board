@@ -11037,5 +11037,5 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [; ;COS_UserTskList.c: 35: const task COS_tsk[(3+2)] =
 [; ;COS_UserTskList.c: 36: {
-[; ;COS_UserTskList.c: 42: {SHT25_StateMachine, 0x40 }
+[; ;COS_UserTskList.c: 42: {SHT25_StateMachine, 0x40}
 [; ;COS_UserTskList.c: 60: };

@@ -14715,7 +14715,7 @@ void PWM3_Initialize(void)
 PWM3CON = 0x80;
 
 
-PWM3DCH = 0x3E;
+PWM3DCH = 0x1F;
 
 
 PWM3DCL = 0x40;

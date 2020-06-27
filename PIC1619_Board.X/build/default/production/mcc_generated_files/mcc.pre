@@ -15157,9 +15157,5 @@ OSCCON = 0x78;
 OSCTUNE = 0x00;
 
 BORCON = 0x00;
-
-while(PLLR == 0)
-{
-}
 }
 

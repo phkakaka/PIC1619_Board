@@ -15212,7 +15212,7 @@ const task COS_tsk[(3+2)] =
 {
 
 # 42
-{SHT25_StateMachine, 0x40 }
+{SHT25_StateMachine, 0x40}
 
 # 60
 };

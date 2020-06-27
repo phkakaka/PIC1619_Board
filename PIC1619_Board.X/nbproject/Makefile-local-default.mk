@@ -26,13 +26,13 @@ MP_CC="C:\Program Files (x86)\Microchip\xc8\v1.45\bin\xc8.exe"
 # MP_BC is not defined
 MP_AS="C:\Program Files (x86)\Microchip\xc8\v1.45\bin\xc8.exe"
 MP_LD="C:\Program Files (x86)\Microchip\xc8\v1.45\bin\xc8.exe"
-# MP_AR is not defined
+MP_AR="C:\Program Files (x86)\Microchip\xc8\v1.45\bin\xc8.exe"
 DEP_GEN=${MP_JAVA_PATH}java -jar "C:/Program Files (x86)/Microchip/MPLABX/v5.40/mplab_platform/platform/../mplab_ide/modules/../../bin/extractobjectdependencies.jar"
 MP_CC_DIR="C:\Program Files (x86)\Microchip\xc8\v1.45\bin"
 # MP_CPPC_DIR is not defined
 # MP_BC_DIR is not defined
 MP_AS_DIR="C:\Program Files (x86)\Microchip\xc8\v1.45\bin"
 MP_LD_DIR="C:\Program Files (x86)\Microchip\xc8\v1.45\bin"
-# MP_AR_DIR is not defined
+MP_AR_DIR="C:\Program Files (x86)\Microchip\xc8\v1.45\bin"
 # MP_BC_DIR is not defined
 DFP_DIR=C:/Program Files (x86)/Microchip/MPLABX/v5.40/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63

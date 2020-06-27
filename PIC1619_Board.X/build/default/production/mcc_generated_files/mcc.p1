@@ -20,8 +20,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _OSCTUNE `Vuc ~T0 @X0 0 e@152 ]
 "3048
 [v _BORCON `Vuc ~T0 @X0 0 e@278 ]
-"30878
-[v _PLLR `Vb ~T0 @X0 0 e@1238 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -11042,21 +11040,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.c: 68: BORCON = 0x00;
 "68
 [e = _BORCON -> -> 0 `i `uc ]
-[; ;mcc.c: 70: while(PLLR == 0)
-"70
-[e $U 1217  ]
-[e :U 1218 ]
-[; ;mcc.c: 71: {
-"71
-{
-"72
-}
-[e :U 1217 ]
-"70
-[e $ == -> _PLLR `i -> 0 `i 1218  ]
-[e :U 1219 ]
-[; ;mcc.c: 72: }
-[; ;mcc.c: 73: }
-"73
+[; ;mcc.c: 69: }
+"69
 [e :UE 1216 ]
 }

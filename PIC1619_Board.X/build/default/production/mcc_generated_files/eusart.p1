@@ -11011,12 +11011,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart.c: 104: TX1STA = 0x24;
 "104
 [e = _TX1STA -> -> 36 `i `uc ]
-[; ;eusart.c: 107: SPBRGL = 0xA0;
+[; ;eusart.c: 107: SPBRGL = 0xCF;
 "107
-[e = _SPBRGL -> -> 160 `i `uc ]
-[; ;eusart.c: 110: SPBRGH = 0x01;
+[e = _SPBRGL -> -> 207 `i `uc ]
+[; ;eusart.c: 110: SPBRGH = 0x00;
 "110
-[e = _SPBRGH -> -> 1 `i `uc ]
+[e = _SPBRGH -> -> 0 `i `uc ]
 [; ;eusart.c: 113: EUSART_SetFramingErrorHandler(EUSART_DefaultFramingErrorHandler);
 "113
 [e ( _EUSART_SetFramingErrorHandler (1 &U _EUSART_DefaultFramingErrorHandler ]

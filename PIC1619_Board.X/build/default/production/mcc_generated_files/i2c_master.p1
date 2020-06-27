@@ -11197,9 +11197,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;i2c_master.c: 171: SSP1CON2 = 0x00;
 "171
 [e = _SSP1CON2 -> -> 0 `i `uc ]
-[; ;i2c_master.c: 172: SSP1ADD = 0x4F;
+[; ;i2c_master.c: 172: SSP1ADD = 0x27;
 "172
-[e = _SSP1ADD -> -> 79 `i `uc ]
+[e = _SSP1ADD -> -> 39 `i `uc ]
 [; ;i2c_master.c: 173: SSP1CON1bits.SSPEN = 0;
 "173
 [e = . . _SSP1CON1bits 0 2 -> -> 0 `i `uc ]
@@ -12457,9 +12457,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;i2c_master.c: 550: SSP1CON2 = 0x00;
 "550
 [e = _SSP1CON2 -> -> 0 `i `uc ]
-[; ;i2c_master.c: 551: SSP1ADD = 0x4F;
+[; ;i2c_master.c: 551: SSP1ADD = 0x27;
 "551
-[e = _SSP1ADD -> -> 79 `i `uc ]
+[e = _SSP1ADD -> -> 39 `i `uc ]
 [; ;i2c_master.c: 552: SSP1CON1bits.SSPEN = 1;
 "552
 [e = . . _SSP1CON1bits 0 2 -> -> 1 `i `uc ]

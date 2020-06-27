@@ -22,7 +22,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "62
 [p x ZCD=OFF ]
 "63
-[p x PLLEN=ON ]
+[p x PLLEN=OFF ]
 "64
 [p x STVREN=ON ]
 "65

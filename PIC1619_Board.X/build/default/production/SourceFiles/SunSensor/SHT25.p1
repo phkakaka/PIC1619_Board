@@ -1,6 +1,6 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [v F12108 `(v ~T0 @X0 0 tf ]
-"35 SourceFiles/SunSensor/SHT25.c
+"36 SourceFiles/SunSensor/SHT25.c
 [c E12293 0 1 2 3 4 5 6 7 .. ]
 [n E12293 . SHT25_MEASURE_INIT SHT25_MEASURE_TEMP_0 SHT25_MEASURE_TEMP_1 SHT25_MEASURE_TEMP_WAIT SHT25_MEASURE_RH_0 SHT25_MEASURE_RH_1 SHT25_CALC_TEMP_0 SHT25_CALC_RH_0  ]
 "58 SourceFiles/SunSensor/../../mcc_generated_files/examples/i2c_master_example.h
@@ -11,8 +11,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _SHT3x_CalcTemperatureC `(us ~T0 @X0 0 ef ]
 "68
 [v _SHT3x_CalcRelativeHumidity `(us ~T0 @X0 0 ef ]
+"92 C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdlib.h
+[v _abs `(i ~T0 @X0 0 ef1`i ]
 "349 SourceFiles/SunSensor/../../mcc_generated_files/eusart.h
 [v _EUSART_Write `(v ~T0 @X0 0 ef1`uc ]
+"194 C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -11046,98 +11050,148 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;i2c_master_example.h: 58: void I2C_WriteNBytes(i2c_address_t address, uint8_t *data, size_t len);
 [; ;i2c_master_example.h: 59: void I2C_ReadNBytes(i2c_address_t address, uint8_t *data, size_t len);
 [; ;i2c_master_example.h: 60: void I2C_ReadDataBlock(i2c_address_t address, uint8_t reg, uint8_t *data, size_t len);
-"21 SourceFiles/SunSensor/SHT25.c
+[; ;stdlib.h: 7: typedef unsigned short wchar_t;
+[; ;stdlib.h: 15: typedef struct {
+[; ;stdlib.h: 16: int rem;
+[; ;stdlib.h: 17: int quot;
+[; ;stdlib.h: 18: } div_t;
+[; ;stdlib.h: 19: typedef struct {
+[; ;stdlib.h: 20: unsigned rem;
+[; ;stdlib.h: 21: unsigned quot;
+[; ;stdlib.h: 22: } udiv_t;
+[; ;stdlib.h: 23: typedef struct {
+[; ;stdlib.h: 24: long quot;
+[; ;stdlib.h: 25: long rem;
+[; ;stdlib.h: 26: } ldiv_t;
+[; ;stdlib.h: 27: typedef struct {
+[; ;stdlib.h: 28: unsigned long quot;
+[; ;stdlib.h: 29: unsigned long rem;
+[; ;stdlib.h: 30: } uldiv_t;
+[; ;stdlib.h: 53: extern double atof(const char *);
+[; ;stdlib.h: 54: extern double strtod(const char *, const char **);
+[; ;stdlib.h: 55: extern int atoi(const char *);
+[; ;stdlib.h: 56: extern unsigned xtoi(const char *);
+[; ;stdlib.h: 57: extern long atol(const char *);
+[; ;stdlib.h: 58: extern long strtol(const char *, char **, int);
+[; ;stdlib.h: 60: extern int rand(void);
+[; ;stdlib.h: 61: extern void srand(unsigned int);
+[; ;stdlib.h: 62: extern void * calloc(size_t, size_t);
+[; ;stdlib.h: 63: extern div_t div(int numer, int denom);
+[; ;stdlib.h: 64: extern udiv_t udiv(unsigned numer, unsigned denom);
+[; ;stdlib.h: 65: extern ldiv_t ldiv(long numer, long denom);
+[; ;stdlib.h: 66: extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+[; ;stdlib.h: 67: extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+[; ;stdlib.h: 68: extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+[; ;stdlib.h: 69: extern unsigned int _rotl(unsigned int value, unsigned int shift);
+[; ;stdlib.h: 70: extern unsigned int _rotr(unsigned int value, unsigned int shift);
+[; ;stdlib.h: 75: extern void * malloc(size_t);
+[; ;stdlib.h: 76: extern void free(void *);
+[; ;stdlib.h: 77: extern void * realloc(void *, size_t);
+[; ;stdlib.h: 86: extern int atexit(void (*)(void));
+[; ;stdlib.h: 87: extern char * getenv(const char *);
+[; ;stdlib.h: 88: extern char ** environ;
+[; ;stdlib.h: 89: extern int system(char *);
+[; ;stdlib.h: 90: extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+[; ;stdlib.h: 91: extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+[; ;stdlib.h: 92: extern int abs(int);
+[; ;stdlib.h: 93: extern long labs(long);
+[; ;stdlib.h: 95: extern char * itoa(char * buf, int val, int base);
+[; ;stdlib.h: 96: extern char * utoa(char * buf, unsigned val, int base);
+[; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
+[; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
+[; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
+"22 SourceFiles/SunSensor/SHT25.c
 [v _SensirionTemperature_UBP8 `us ~T0 @X0 1 e ]
-[; ;SHT25.c: 21: UINT_16 SensirionTemperature_UBP8;
-"22
-[v _SensirionRH_UBP8 `us ~T0 @X0 1 e ]
-[; ;SHT25.c: 22: UINT_16 SensirionRH_UBP8;
+[; ;SHT25.c: 22: UINT_16 SensirionTemperature_UBP8;
 "23
-[v _SHT25_Fault `uc ~T0 @X0 1 e ]
-[; ;SHT25.c: 23: UINT_1 SHT25_Fault;
+[v _SensirionRH_UBP8 `us ~T0 @X0 1 e ]
+[; ;SHT25.c: 23: UINT_16 SensirionRH_UBP8;
 "24
-[v _ErrorStat `uc ~T0 @X0 1 e ]
-[; ;SHT25.c: 24: UINT_8 ErrorStat;
+[v _SHT25_Fault `uc ~T0 @X0 1 e ]
+[; ;SHT25.c: 24: UINT_1 SHT25_Fault;
 "25
+[v _ErrorStat `uc ~T0 @X0 1 e ]
+[; ;SHT25.c: 25: UINT_8 ErrorStat;
+"26
 [v _I2C_Timer `us ~T0 @X0 1 e ]
-[; ;SHT25.c: 25: UINT_16 I2C_Timer;
-"28
-[v _checksum `uc ~T0 @X0 1 e ]
-[; ;SHT25.c: 28: UINT_8 checksum;
+[; ;SHT25.c: 26: UINT_16 I2C_Timer;
 "29
-[v _TemperatureRaw_H `uc ~T0 @X0 1 e ]
-[; ;SHT25.c: 29: UINT_8 TemperatureRaw_H;
+[v _checksum `uc ~T0 @X0 1 e ]
+[; ;SHT25.c: 29: UINT_8 checksum;
 "30
-[v _TemperatureRaw_L `uc ~T0 @X0 1 e ]
-[; ;SHT25.c: 30: UINT_8 TemperatureRaw_L;
+[v _TemperatureRaw_H `uc ~T0 @X0 1 e ]
+[; ;SHT25.c: 30: UINT_8 TemperatureRaw_H;
 "31
-[v _TemperatureRaw `us ~T0 @X0 1 e ]
-[; ;SHT25.c: 31: UINT_16 TemperatureRaw;
+[v _TemperatureRaw_L `uc ~T0 @X0 1 e ]
+[; ;SHT25.c: 31: UINT_8 TemperatureRaw_L;
 "32
-[v _RelativeHumidityRaw_H `uc ~T0 @X0 1 e ]
-[; ;SHT25.c: 32: UINT_8 RelativeHumidityRaw_H;
+[v _TemperatureRaw `us ~T0 @X0 1 e ]
+[; ;SHT25.c: 32: UINT_16 TemperatureRaw;
 "33
-[v _RelativeHumidityRaw_L `uc ~T0 @X0 1 e ]
-[; ;SHT25.c: 33: UINT_8 RelativeHumidityRaw_L;
+[v _RelativeHumidityRaw_H `uc ~T0 @X0 1 e ]
+[; ;SHT25.c: 33: UINT_8 RelativeHumidityRaw_H;
 "34
-[v _RelativeHumidityRaw `us ~T0 @X0 1 e ]
-[; ;SHT25.c: 34: UINT_16 RelativeHumidityRaw;
+[v _RelativeHumidityRaw_L `uc ~T0 @X0 1 e ]
+[; ;SHT25.c: 34: UINT_8 RelativeHumidityRaw_L;
 "35
+[v _RelativeHumidityRaw `us ~T0 @X0 1 e ]
+[; ;SHT25.c: 35: UINT_16 RelativeHumidityRaw;
+"36
 [v _SHT25_State `E12293 ~T0 @X0 1 e ]
 [i _SHT25_State
 . `E12293 0
 ]
-[; ;SHT25.c: 35: SHT25_State_tt SHT25_State = SHT25_MEASURE_INIT;
-"36
+[; ;SHT25.c: 36: SHT25_State_tt SHT25_State = SHT25_MEASURE_INIT;
+"37
 [v _Command `uc ~T0 @X0 -> 2 `i e ]
 [i _Command
 :U ..
--> -> 33 `i `uc
--> -> 38 `i `uc
+-> -> 34 `i `uc
+-> -> 32 `i `uc
 ..
 ]
-[; ;SHT25.c: 36: UINT_8 Command[2] = {0x21,0x26};
-"37
-[v _RxBuff `uc ~T0 @X0 -> 8 `i e ]
-[; ;SHT25.c: 37: UINT_8 RxBuff[8];
+[; ;SHT25.c: 37: UINT_8 Command[2] = {0x22,0x20};
 "38
+[v _RxBuff `uc ~T0 @X0 -> 8 `i e ]
+[; ;SHT25.c: 38: UINT_8 RxBuff[8];
+"39
 [v _AddressW `uc ~T0 @X0 1 e ]
 [i _AddressW
 -> -> 128 `i `uc
 ]
-[; ;SHT25.c: 38: UINT_8 AddressW = 128;
-"39
+[; ;SHT25.c: 39: UINT_8 AddressW = 128;
+"40
 [v _TimerCounter `us ~T0 @X0 1 e ]
 [i _TimerCounter
 -> -> 0 `i `us
 ]
-[; ;SHT25.c: 39: UINT_16 TimerCounter = 0;
-"41
-[v _SHT25_StateMachine `(v ~T0 @X0 1 ef ]
+[; ;SHT25.c: 40: UINT_16 TimerCounter = 0;
 "42
+[v _SHT25_StateMachine `(v ~T0 @X0 1 ef ]
+"43
 {
-[; ;SHT25.c: 41: void SHT25_StateMachine(void)
-[; ;SHT25.c: 42: {
+[; ;SHT25.c: 42: void SHT25_StateMachine(void)
+[; ;SHT25.c: 43: {
 [e :U _SHT25_StateMachine ]
 [f ]
-[; ;SHT25.c: 43: switch(SHT25_State)
-"43
-[e $U 1218  ]
-[; ;SHT25.c: 44: {
+[; ;SHT25.c: 44: switch(SHT25_State)
 "44
-{
-[; ;SHT25.c: 45: case SHT25_MEASURE_INIT:
+[e $U 1222  ]
+[; ;SHT25.c: 45: {
 "45
-[e :U 1219 ]
+{
+[; ;SHT25.c: 46: case SHT25_MEASURE_INIT:
+"46
+[e :U 1223 ]
 [; ;SHT25.c: 47: SHT25_State = SHT25_MEASURE_TEMP_0;
 "47
 [e = _SHT25_State . `E12293 1 ]
 [; ;SHT25.c: 48: break;
 "48
-[e $U 1217  ]
+[e $U 1221  ]
 [; ;SHT25.c: 49: case SHT25_MEASURE_TEMP_0:
 "49
-[e :U 1220 ]
+[e :U 1224 ]
 [; ;SHT25.c: 50: I2C_WriteNBytes(0x44,Command,2);
 "50
 [e ( _I2C_WriteNBytes (3 , , -> -> 68 `i `uc &U _Command -> -> 2 `i `ui ]
@@ -11147,46 +11201,46 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SHT25.c: 52: TimerCounter = 0;
 "52
 [e = _TimerCounter -> -> 0 `i `us ]
-[; ;SHT25.c: 54: Command[0] = 0xE0;
-"54
-[e = *U + &U _Command * -> -> -> 0 `i `ui `ux -> -> # *U &U _Command `ui `ux -> -> 224 `i `uc ]
-[; ;SHT25.c: 55: Command[1] = 0x00;
+[; ;SHT25.c: 55: break;
 "55
-[e = *U + &U _Command * -> -> -> 1 `i `ui `ux -> -> # *U &U _Command `ui `ux -> -> 0 `i `uc ]
-[; ;SHT25.c: 56: I2C_WriteNBytes(0x44,Command,2);
+[e $U 1221  ]
+[; ;SHT25.c: 56: case SHT25_MEASURE_TEMP_WAIT:
 "56
-[e ( _I2C_WriteNBytes (3 , , -> -> 68 `i `uc &U _Command -> -> 2 `i `ui ]
-[; ;SHT25.c: 57: break;
+[e :U 1225 ]
+[; ;SHT25.c: 57: TimerCounter++;
 "57
-[e $U 1217  ]
-[; ;SHT25.c: 58: case SHT25_MEASURE_TEMP_WAIT:
-"58
-[e :U 1221 ]
-[; ;SHT25.c: 59: TimerCounter++;
-"59
 [e ++ _TimerCounter -> -> 1 `i `us ]
-[; ;SHT25.c: 60: if (TimerCounter > 200)
-"60
-[e $ ! > -> _TimerCounter `ui -> -> 200 `i `ui 1222  ]
-[; ;SHT25.c: 61: {
-"61
+[; ;SHT25.c: 58: if (TimerCounter > 50)
+"58
+[e $ ! > -> _TimerCounter `ui -> -> 50 `i `ui 1226  ]
+[; ;SHT25.c: 59: {
+"59
 {
-[; ;SHT25.c: 62: TimerCounter = 0;
+[; ;SHT25.c: 60: Command[0] = 0xE0;
+"60
+[e = *U + &U _Command * -> -> -> 0 `i `ui `ux -> -> # *U &U _Command `ui `ux -> -> 224 `i `uc ]
+[; ;SHT25.c: 61: Command[1] = 0x00;
+"61
+[e = *U + &U _Command * -> -> -> 1 `i `ui `ux -> -> # *U &U _Command `ui `ux -> -> 0 `i `uc ]
+[; ;SHT25.c: 62: I2C_WriteNBytes(0x44,Command,2);
 "62
-[e = _TimerCounter -> -> 0 `i `us ]
-[; ;SHT25.c: 63: SHT25_State = SHT25_MEASURE_TEMP_1;
+[e ( _I2C_WriteNBytes (3 , , -> -> 68 `i `uc &U _Command -> -> 2 `i `ui ]
+[; ;SHT25.c: 63: TimerCounter = 0;
 "63
-[e = _SHT25_State . `E12293 2 ]
+[e = _TimerCounter -> -> 0 `i `us ]
+[; ;SHT25.c: 64: SHT25_State = SHT25_MEASURE_TEMP_1;
 "64
-}
-[e :U 1222 ]
-[; ;SHT25.c: 64: }
-[; ;SHT25.c: 65: break;
+[e = _SHT25_State . `E12293 2 ]
 "65
-[e $U 1217  ]
-[; ;SHT25.c: 66: case SHT25_MEASURE_TEMP_1:
+}
+[e :U 1226 ]
+[; ;SHT25.c: 65: }
+[; ;SHT25.c: 66: break;
 "66
-[e :U 1223 ]
+[e $U 1221  ]
+[; ;SHT25.c: 67: case SHT25_MEASURE_TEMP_1:
+"67
+[e :U 1227 ]
 [; ;SHT25.c: 68: I2C_ReadNBytes(0x44,RxBuff,6);
 "68
 [e ( _I2C_ReadNBytes (3 , , -> -> 68 `i `uc &U _RxBuff -> -> 6 `i `ui ]
@@ -11213,10 +11267,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SHT25_State . `E12293 6 ]
 [; ;SHT25.c: 79: break;
 "79
-[e $U 1217  ]
+[e $U 1221  ]
 [; ;SHT25.c: 80: case SHT25_CALC_TEMP_0:
 "80
-[e :U 1224 ]
+[e :U 1228 ]
 [; ;SHT25.c: 81: SensirionTemperature_UBP8 = SHT3x_CalcTemperatureC();
 "81
 [e = _SensirionTemperature_UBP8 ( _SHT3x_CalcTemperatureC ..  ]
@@ -11228,236 +11282,333 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SHT25_State . `E12293 7 ]
 [; ;SHT25.c: 84: break;
 "84
-[e $U 1217  ]
+[e $U 1221  ]
 [; ;SHT25.c: 85: case SHT25_CALC_RH_0:
 "85
-[e :U 1225 ]
-[; ;SHT25.c: 86: SHT25_State = SHT25_MEASURE_TEMP_0;
+[e :U 1229 ]
+[; ;SHT25.c: 86: SHT25_State = SHT25_MEASURE_TEMP_WAIT;
 "86
-[e = _SHT25_State . `E12293 1 ]
-[; ;SHT25.c: 87: EUSART_Write((UINT_8)SensirionTemperature_UBP8 >> 8);
+[e = _SHT25_State . `E12293 3 ]
+[; ;SHT25.c: 87: break;
 "87
-[e ( _EUSART_Write (1 -> >> -> -> _SensirionTemperature_UBP8 `uc `i -> 8 `i `uc ]
-[; ;SHT25.c: 88: EUSART_Write((UINT_8)SensirionTemperature_UBP8);
+[e $U 1221  ]
+[; ;SHT25.c: 88: default:
 "88
-[e ( _EUSART_Write (1 -> _SensirionTemperature_UBP8 `uc ]
-[; ;SHT25.c: 89: EUSART_Write((UINT_8)SensirionRH_UBP8 >> 8);
+[e :U 1230 ]
+[; ;SHT25.c: 89: break;
 "89
-[e ( _EUSART_Write (1 -> >> -> -> _SensirionRH_UBP8 `uc `i -> 8 `i `uc ]
-[; ;SHT25.c: 90: EUSART_Write((UINT_8)SensirionRH_UBP8);
+[e $U 1221  ]
 "90
-[e ( _EUSART_Write (1 -> _SensirionRH_UBP8 `uc ]
-[; ;SHT25.c: 91: EUSART_Write('|');
+}
+[; ;SHT25.c: 90: }
+[e $U 1221  ]
+"44
+[e :U 1222 ]
+[e [\ _SHT25_State , $ . `E12293 0 1223
+ , $ . `E12293 1 1224
+ , $ . `E12293 3 1225
+ , $ . `E12293 2 1227
+ , $ . `E12293 6 1228
+ , $ . `E12293 7 1229
+ 1230 ]
+"90
+[e :U 1221 ]
+[; ;SHT25.c: 91: }
 "91
-[e ( _EUSART_Write (1 -> -> 124 `ui `uc ]
-[; ;SHT25.c: 94: break;
+[e :UE 1220 ]
+}
 "94
-[e $U 1217  ]
-[; ;SHT25.c: 95: default:
-"95
-[e :U 1226 ]
-[; ;SHT25.c: 96: break;
-"96
-[e $U 1217  ]
-"97
-}
-[; ;SHT25.c: 97: }
-[e $U 1217  ]
-"43
-[e :U 1218 ]
-[e [\ _SHT25_State , $ . `E12293 0 1219
- , $ . `E12293 1 1220
- , $ . `E12293 3 1221
- , $ . `E12293 2 1223
- , $ . `E12293 6 1224
- , $ . `E12293 7 1225
- 1226 ]
-"97
-[e :U 1217 ]
-[; ;SHT25.c: 100: }
-"100
-[e :UE 1216 ]
-}
-"103
 [v _SHT25_FaultHand `(v ~T0 @X0 1 ef ]
-"104
+"95
 {
-[; ;SHT25.c: 103: void SHT25_FaultHand(void)
-[; ;SHT25.c: 104: {
+[; ;SHT25.c: 94: void SHT25_FaultHand(void)
+[; ;SHT25.c: 95: {
 [e :U _SHT25_FaultHand ]
 [f ]
-[; ;SHT25.c: 105: TemperatureRaw = 0;
-"105
+[; ;SHT25.c: 96: TemperatureRaw = 0;
+"96
 [e = _TemperatureRaw -> -> 0 `i `us ]
-[; ;SHT25.c: 106: RelativeHumidityRaw = 0;
-"106
+[; ;SHT25.c: 97: RelativeHumidityRaw = 0;
+"97
 [e = _RelativeHumidityRaw -> -> 0 `i `us ]
-[; ;SHT25.c: 107: SHT25_Fault = 1;
-"107
+[; ;SHT25.c: 98: SHT25_Fault = 1;
+"98
 [e = _SHT25_Fault -> -> 1 `i `uc ]
-[; ;SHT25.c: 108: SHT25_State = SHT25_CALC_TEMP_0;
-"108
+[; ;SHT25.c: 99: SHT25_State = SHT25_CALC_TEMP_0;
+"99
 [e = _SHT25_State . `E12293 6 ]
-[; ;SHT25.c: 109: }
-"109
-[e :UE 1227 ]
+[; ;SHT25.c: 100: }
+"100
+[e :UE 1231 ]
 }
-"112
+"103
 [v _SHT3x_CalcTemperatureC `(us ~T0 @X0 1 ef ]
-"113
+"104
 {
-[; ;SHT25.c: 112: UINT_16 SHT3x_CalcTemperatureC(void)
-[; ;SHT25.c: 113: {
+[; ;SHT25.c: 103: UINT_16 SHT3x_CalcTemperatureC(void)
+[; ;SHT25.c: 104: {
 [e :U _SHT3x_CalcTemperatureC ]
 [f ]
-"114
-[v _TemperatureTemp `ul ~T0 @X0 1 a ]
-"115
+"105
+[v _TemperatureTemp `l ~T0 @X0 1 a ]
+"106
 [v _Temperature_UBP8 `us ~T0 @X0 1 a ]
-[; ;SHT25.c: 114: UINT_32 TemperatureTemp;
-[; ;SHT25.c: 115: UINT_16 Temperature_UBP8;
-[; ;SHT25.c: 117: TemperatureTemp = (UINT_32)TemperatureRaw * 175;
+"107
+[v _Temperature_U8 `uc ~T0 @X0 1 a ]
+"108
+[v _Temperature_L8 `uc ~T0 @X0 1 a ]
+"110
+[v _TemperatureFloat `f ~T0 @X0 1 a ]
+"111
+[v _TemperatureInt `us ~T0 @X0 1 a ]
+"112
+[v _str `uc ~T0 @X0 -> 8 `i a ]
+[; ;SHT25.c: 105: SINT_32 TemperatureTemp;
+[; ;SHT25.c: 106: UINT_16 Temperature_UBP8;
+[; ;SHT25.c: 107: UINT_8 Temperature_U8;
+[; ;SHT25.c: 108: UINT_8 Temperature_L8;
+[; ;SHT25.c: 110: FLOAT_24 TemperatureFloat;
+[; ;SHT25.c: 111: UINT_16 TemperatureInt;
+[; ;SHT25.c: 112: UINT_8 str[8];
+[; ;SHT25.c: 114: TemperatureTemp = (UINT_32)TemperatureRaw * 175;
+"114
+[e = _TemperatureTemp -> * -> _TemperatureRaw `ul -> -> -> 175 `i `l `ul `l ]
+[; ;SHT25.c: 115: Temperature_U8 = (UINT_8)(TemperatureTemp >> 16);
+"115
+[e = _Temperature_U8 -> >> _TemperatureTemp -> 16 `i `uc ]
+[; ;SHT25.c: 116: Temperature_L8 = (UINT_8)(TemperatureTemp >> 8);
+"116
+[e = _Temperature_L8 -> >> _TemperatureTemp -> 8 `i `uc ]
+[; ;SHT25.c: 117: Temperature_UBP8 = (UINT_16)Temperature_U8 << 8 + Temperature_L8;
 "117
-[e = _TemperatureTemp * -> _TemperatureRaw `ul -> -> -> 175 `i `l `ul ]
-[; ;SHT25.c: 118: TemperatureTemp >>= 16;
-"118
-[e =>> _TemperatureTemp -> 16 `i ]
-[; ;SHT25.c: 119: Temperature_UBP8 = (UINT_16)TemperatureTemp;
-"119
-[e = _Temperature_UBP8 -> _TemperatureTemp `us ]
-[; ;SHT25.c: 121: return Temperature_UBP8 ;
-"121
-[e ) _Temperature_UBP8 ]
-[e $UE 1228  ]
-[; ;SHT25.c: 122: }
-"122
-[e :UE 1228 ]
-}
+[e = _Temperature_UBP8 -> << -> -> _Temperature_U8 `us `ui + -> 8 `i -> _Temperature_L8 `i `us ]
+[; ;SHT25.c: 123: TemperatureFloat = 100 *((float)TemperatureRaw * 175 / 65535 - 45);
+"123
+[e = _TemperatureFloat * -> -> 100 `i `f - / * -> _TemperatureRaw `f -> -> 175 `i `f -> -> 65535 `l `f -> -> 45 `i `f ]
+[; ;SHT25.c: 124: if (TemperatureFloat < 0)
 "124
-[v _SHT3x_CalcRelativeHumidity `(us ~T0 @X0 1 ef ]
+[e $ ! < _TemperatureFloat -> -> 0 `i `f 1233  ]
+[; ;SHT25.c: 125: {
 "125
 {
-[; ;SHT25.c: 124: UINT_16 SHT3x_CalcRelativeHumidity(void)
-[; ;SHT25.c: 125: {
-[e :U _SHT3x_CalcRelativeHumidity ]
-[f ]
+[; ;SHT25.c: 126: TemperatureFloat = abs(TemperatureFloat);
 "126
-[v _RelativeHumidityTemp `l ~T0 @X0 1 a ]
+[e = _TemperatureFloat -> ( _abs (1 -> _TemperatureFloat `i `f ]
+[; ;SHT25.c: 127: EUSART_Write('-');
 "127
-[v _RelativeHumidity_UBP8 `us ~T0 @X0 1 a ]
-[; ;SHT25.c: 126: SINT_32 RelativeHumidityTemp;
-[; ;SHT25.c: 127: UINT_16 RelativeHumidity_UBP8;
-[; ;SHT25.c: 129: RelativeHumidityTemp = (UINT_32)RelativeHumidityRaw * 100;
-"129
-[e = _RelativeHumidityTemp -> * -> _RelativeHumidityRaw `ul -> -> -> 100 `i `l `ul `l ]
-[; ;SHT25.c: 130: RelativeHumidityTemp >>= 16;
-"130
-[e =>> _RelativeHumidityTemp -> 16 `i ]
-[; ;SHT25.c: 131: RelativeHumidity_UBP8 = (UINT_16)RelativeHumidityTemp;
-"131
-[e = _RelativeHumidity_UBP8 -> _RelativeHumidityTemp `us ]
-[; ;SHT25.c: 133: return RelativeHumidity_UBP8 ;
-"133
-[e ) _RelativeHumidity_UBP8 ]
-[e $UE 1229  ]
-[; ;SHT25.c: 134: }
-"134
-[e :UE 1229 ]
+[e ( _EUSART_Write (1 -> -> 45 `ui `uc ]
+"128
 }
-"136
-[v _SHT2x_CalcTemperatureC `(us ~T0 @X0 1 ef ]
-"137
-{
-[; ;SHT25.c: 136: UINT_16 SHT2x_CalcTemperatureC(void)
-[; ;SHT25.c: 137: {
-[e :U _SHT2x_CalcTemperatureC ]
-[f ]
-"138
-[v _TemperatureTemp `l ~T0 @X0 1 a ]
-"139
-[v _Temperature_UBP8 `us ~T0 @X0 1 a ]
-[; ;SHT25.c: 138: SINT_32 TemperatureTemp;
-[; ;SHT25.c: 139: UINT_16 Temperature_UBP8;
-[; ;SHT25.c: 143: TemperatureTemp = (SINT_32)TemperatureRaw * (SINT_32)(175 * 256);
-"143
-[e = _TemperatureTemp * -> _TemperatureRaw `l -> * -> 175 `i -> 256 `i `l ]
-[; ;SHT25.c: 144: TemperatureTemp -= (SINT_32)(46.85 * 65536 * 256);
-"144
-[e =- _TemperatureTemp -> * * .46.85 -> -> 65536 `l `d -> -> 256 `i `d `l ]
-[; ;SHT25.c: 145: if(TemperatureTemp < 0)TemperatureTemp = 0;
-"145
-[e $ ! < _TemperatureTemp -> -> 0 `i `l 1231  ]
-[e = _TemperatureTemp -> -> 0 `i `l ]
-[e :U 1231 ]
-[; ;SHT25.c: 146: TemperatureTemp >>= 8;
-"146
-[e =>> _TemperatureTemp -> 8 `i ]
-[; ;SHT25.c: 147: TemperatureTemp >>= 8;
-"147
-[e =>> _TemperatureTemp -> 8 `i ]
-[; ;SHT25.c: 148: Temperature_UBP8 = (UINT_16)TemperatureTemp;
-"148
-[e = _Temperature_UBP8 -> _TemperatureTemp `us ]
-[; ;SHT25.c: 149: return(Temperature_UBP8);
-"149
-[e ) _Temperature_UBP8 ]
-[e $UE 1230  ]
-[; ;SHT25.c: 150: }
-"150
-[e :UE 1230 ]
-}
-"152
-[v _SHT2x_CalcRelativeHumidity `(us ~T0 @X0 1 ef ]
-"153
-{
-[; ;SHT25.c: 152: UINT_16 SHT2x_CalcRelativeHumidity(void)
-[; ;SHT25.c: 153: {
-[e :U _SHT2x_CalcRelativeHumidity ]
-[f ]
-"154
-[v _RelativeHumidityTemp `l ~T0 @X0 1 a ]
-"155
-[v _RelativeHumidity_UBP8 `us ~T0 @X0 1 a ]
-[; ;SHT25.c: 154: SINT_32 RelativeHumidityTemp;
-[; ;SHT25.c: 155: UINT_16 RelativeHumidity_UBP8;
-[; ;SHT25.c: 159: RelativeHumidityTemp = (SINT_32)RelativeHumidityRaw * (SINT_32)(125 * 256);
-"159
-[e = _RelativeHumidityTemp * -> _RelativeHumidityRaw `l -> * -> 125 `i -> 256 `i `l ]
-[; ;SHT25.c: 160: RelativeHumidityTemp -= (SINT_32)(6 * 65536 * 256);
-"160
-[e =- _RelativeHumidityTemp * * -> -> 6 `i `l -> 65536 `l -> -> 256 `i `l ]
-[; ;SHT25.c: 161: if(RelativeHumidityTemp < 0)RelativeHumidityTemp = 0;
-"161
-[e $ ! < _RelativeHumidityTemp -> -> 0 `i `l 1233  ]
-[e = _RelativeHumidityTemp -> -> 0 `i `l ]
 [e :U 1233 ]
-[; ;SHT25.c: 162: RelativeHumidityTemp >>= 8;
-"162
-[e =>> _RelativeHumidityTemp -> 8 `i ]
-[; ;SHT25.c: 163: RelativeHumidityTemp >>= 8;
-"163
-[e =>> _RelativeHumidityTemp -> 8 `i ]
-[; ;SHT25.c: 164: RelativeHumidity_UBP8 = (UINT_16)RelativeHumidityTemp;
-"164
-[e = _RelativeHumidity_UBP8 -> _RelativeHumidityTemp `us ]
-[; ;SHT25.c: 165: if(RelativeHumidity_UBP8 >(UINT_16)(100.0 * 256))
-"165
-[e $ ! > -> _RelativeHumidity_UBP8 `ui -> -> * .100.0 -> -> 256 `i `d `us `ui 1234  ]
-[; ;SHT25.c: 166: {
-"166
-{
-[; ;SHT25.c: 167: RelativeHumidity_UBP8 = (UINT_16)(100.0 * 256);
-"167
-[e = _RelativeHumidity_UBP8 -> * .100.0 -> -> 256 `i `d `us ]
-"168
-}
-[e :U 1234 ]
-[; ;SHT25.c: 168: }
-[; ;SHT25.c: 169: return(RelativeHumidity_UBP8);
-"169
-[e ) _RelativeHumidity_UBP8 ]
+[; ;SHT25.c: 128: }
+[; ;SHT25.c: 129: TemperatureInt = (UINT_16)(TemperatureFloat);
+"129
+[e = _TemperatureInt -> _TemperatureFloat `us ]
+[; ;SHT25.c: 130: sprintf(str, "%d" , TemperatureInt);
+"130
+[e ( _sprintf (1 , (. , &U _str :s 1C -> _TemperatureInt `i ]
+[; ;SHT25.c: 132: EUSART_Write('T');
+"132
+[e ( _EUSART_Write (1 -> -> 84 `ui `uc ]
+[; ;SHT25.c: 133: EUSART_Write(str[0]);
+"133
+[e ( _EUSART_Write (1 *U + &U _str * -> -> -> 0 `i `ui `ux -> -> # *U &U _str `ui `ux ]
+[; ;SHT25.c: 134: EUSART_Write(str[1]);
+"134
+[e ( _EUSART_Write (1 *U + &U _str * -> -> -> 1 `i `ui `ux -> -> # *U &U _str `ui `ux ]
+[; ;SHT25.c: 135: EUSART_Write('.');
+"135
+[e ( _EUSART_Write (1 -> -> 46 `ui `uc ]
+[; ;SHT25.c: 136: EUSART_Write(str[2]);
+"136
+[e ( _EUSART_Write (1 *U + &U _str * -> -> -> 2 `i `ui `ux -> -> # *U &U _str `ui `ux ]
+[; ;SHT25.c: 137: EUSART_Write(str[3]);
+"137
+[e ( _EUSART_Write (1 *U + &U _str * -> -> -> 3 `i `ui `ux -> -> # *U &U _str `ui `ux ]
+[; ;SHT25.c: 140: return Temperature_UBP8 ;
+"140
+[e ) _Temperature_UBP8 ]
 [e $UE 1232  ]
-[; ;SHT25.c: 170: }
-"170
+[; ;SHT25.c: 141: }
+"141
 [e :UE 1232 ]
 }
+"143
+[v _SHT3x_CalcRelativeHumidity `(us ~T0 @X0 1 ef ]
+"144
+{
+[; ;SHT25.c: 143: UINT_16 SHT3x_CalcRelativeHumidity(void)
+[; ;SHT25.c: 144: {
+[e :U _SHT3x_CalcRelativeHumidity ]
+[f ]
+"145
+[v _RelativeHumidityTemp `l ~T0 @X0 1 a ]
+"146
+[v _RelativeHumidity_UBP8 `us ~T0 @X0 1 a ]
+"147
+[v _RelativeHumidity_U8 `uc ~T0 @X0 1 a ]
+"148
+[v _RelativeHumidity_L8 `uc ~T0 @X0 1 a ]
+"150
+[v _RelativeHumidityFloat `f ~T0 @X0 1 a ]
+"151
+[v _RelativeHumidityInt `us ~T0 @X0 1 a ]
+"152
+[v _str `uc ~T0 @X0 -> 8 `i a ]
+[; ;SHT25.c: 145: SINT_32 RelativeHumidityTemp;
+[; ;SHT25.c: 146: UINT_16 RelativeHumidity_UBP8;
+[; ;SHT25.c: 147: UINT_8 RelativeHumidity_U8;
+[; ;SHT25.c: 148: UINT_8 RelativeHumidity_L8;
+[; ;SHT25.c: 150: FLOAT_24 RelativeHumidityFloat;
+[; ;SHT25.c: 151: UINT_16 RelativeHumidityInt;
+[; ;SHT25.c: 152: UINT_8 str[8];
+[; ;SHT25.c: 154: RelativeHumidityFloat = 100 * ((float)RelativeHumidityRaw * 100 / 65535);
+"154
+[e = _RelativeHumidityFloat * -> -> 100 `i `f / * -> _RelativeHumidityRaw `f -> -> 100 `i `f -> -> 65535 `l `f ]
+[; ;SHT25.c: 155: RelativeHumidityInt = (UINT_16)(RelativeHumidityFloat);
+"155
+[e = _RelativeHumidityInt -> _RelativeHumidityFloat `us ]
+[; ;SHT25.c: 157: sprintf(str, "%d" , RelativeHumidityInt);
+"157
+[e ( _sprintf (1 , (. , &U _str :s 2C -> _RelativeHumidityInt `i ]
+[; ;SHT25.c: 159: EUSART_Write(' ');
+"159
+[e ( _EUSART_Write (1 -> -> 32 `ui `uc ]
+[; ;SHT25.c: 160: EUSART_Write('H');
+"160
+[e ( _EUSART_Write (1 -> -> 72 `ui `uc ]
+[; ;SHT25.c: 161: EUSART_Write(str[0]);
+"161
+[e ( _EUSART_Write (1 *U + &U _str * -> -> -> 0 `i `ui `ux -> -> # *U &U _str `ui `ux ]
+[; ;SHT25.c: 162: EUSART_Write(str[1]);
+"162
+[e ( _EUSART_Write (1 *U + &U _str * -> -> -> 1 `i `ui `ux -> -> # *U &U _str `ui `ux ]
+[; ;SHT25.c: 163: EUSART_Write('.');
+"163
+[e ( _EUSART_Write (1 -> -> 46 `ui `uc ]
+[; ;SHT25.c: 164: EUSART_Write(str[2]);
+"164
+[e ( _EUSART_Write (1 *U + &U _str * -> -> -> 2 `i `ui `ux -> -> # *U &U _str `ui `ux ]
+[; ;SHT25.c: 165: EUSART_Write(str[3]);
+"165
+[e ( _EUSART_Write (1 *U + &U _str * -> -> -> 3 `i `ui `ux -> -> # *U &U _str `ui `ux ]
+[; ;SHT25.c: 167: RelativeHumidityTemp = (UINT_32)RelativeHumidityRaw * 100;
+"167
+[e = _RelativeHumidityTemp -> * -> _RelativeHumidityRaw `ul -> -> -> 100 `i `l `ul `l ]
+[; ;SHT25.c: 168: RelativeHumidity_U8 = (UINT_8)(RelativeHumidityTemp >> 16);
+"168
+[e = _RelativeHumidity_U8 -> >> _RelativeHumidityTemp -> 16 `i `uc ]
+[; ;SHT25.c: 169: RelativeHumidity_L8 = (UINT_8)(RelativeHumidityTemp >> 8);
+"169
+[e = _RelativeHumidity_L8 -> >> _RelativeHumidityTemp -> 8 `i `uc ]
+[; ;SHT25.c: 170: RelativeHumidity_UBP8 = (UINT_16)RelativeHumidity_U8 << 8 + RelativeHumidity_L8;
+"170
+[e = _RelativeHumidity_UBP8 -> << -> -> _RelativeHumidity_U8 `us `ui + -> 8 `i -> _RelativeHumidity_L8 `i `us ]
+[; ;SHT25.c: 176: return RelativeHumidity_UBP8 ;
+"176
+[e ) _RelativeHumidity_UBP8 ]
+[e $UE 1234  ]
+[; ;SHT25.c: 177: }
+"177
+[e :UE 1234 ]
+}
+"179
+[v _SHT2x_CalcTemperatureC `(us ~T0 @X0 1 ef ]
+"180
+{
+[; ;SHT25.c: 179: UINT_16 SHT2x_CalcTemperatureC(void)
+[; ;SHT25.c: 180: {
+[e :U _SHT2x_CalcTemperatureC ]
+[f ]
+"181
+[v _TemperatureTemp `l ~T0 @X0 1 a ]
+"182
+[v _Temperature_UBP8 `us ~T0 @X0 1 a ]
+[; ;SHT25.c: 181: SINT_32 TemperatureTemp;
+[; ;SHT25.c: 182: UINT_16 Temperature_UBP8;
+[; ;SHT25.c: 186: TemperatureTemp = (SINT_32)TemperatureRaw * (SINT_32)(175 * 256);
+"186
+[e = _TemperatureTemp * -> _TemperatureRaw `l -> * -> 175 `i -> 256 `i `l ]
+[; ;SHT25.c: 187: TemperatureTemp -= (SINT_32)(45 * 65536 * 256);
+"187
+[e =- _TemperatureTemp * * -> -> 45 `i `l -> 65536 `l -> -> 256 `i `l ]
+[; ;SHT25.c: 188: if(TemperatureTemp < 0)TemperatureTemp = 0;
+"188
+[e $ ! < _TemperatureTemp -> -> 0 `i `l 1236  ]
+[e = _TemperatureTemp -> -> 0 `i `l ]
+[e :U 1236 ]
+[; ;SHT25.c: 189: TemperatureTemp >>= 8;
+"189
+[e =>> _TemperatureTemp -> 8 `i ]
+[; ;SHT25.c: 190: TemperatureTemp >>= 8;
+"190
+[e =>> _TemperatureTemp -> 8 `i ]
+[; ;SHT25.c: 191: Temperature_UBP8 = (UINT_16)TemperatureTemp;
+"191
+[e = _Temperature_UBP8 -> _TemperatureTemp `us ]
+[; ;SHT25.c: 192: return(Temperature_UBP8);
+"192
+[e ) _Temperature_UBP8 ]
+[e $UE 1235  ]
+[; ;SHT25.c: 193: }
+"193
+[e :UE 1235 ]
+}
+"195
+[v _SHT2x_CalcRelativeHumidity `(us ~T0 @X0 1 ef ]
+"196
+{
+[; ;SHT25.c: 195: UINT_16 SHT2x_CalcRelativeHumidity(void)
+[; ;SHT25.c: 196: {
+[e :U _SHT2x_CalcRelativeHumidity ]
+[f ]
+"197
+[v _RelativeHumidityTemp `l ~T0 @X0 1 a ]
+"198
+[v _RelativeHumidity_UBP8 `us ~T0 @X0 1 a ]
+[; ;SHT25.c: 197: SINT_32 RelativeHumidityTemp;
+[; ;SHT25.c: 198: UINT_16 RelativeHumidity_UBP8;
+[; ;SHT25.c: 202: RelativeHumidityTemp = (SINT_32)RelativeHumidityRaw * (SINT_32)(125 * 256);
+"202
+[e = _RelativeHumidityTemp * -> _RelativeHumidityRaw `l -> * -> 125 `i -> 256 `i `l ]
+[; ;SHT25.c: 203: RelativeHumidityTemp -= (SINT_32)(6 * 65536 * 256);
+"203
+[e =- _RelativeHumidityTemp * * -> -> 6 `i `l -> 65536 `l -> -> 256 `i `l ]
+[; ;SHT25.c: 204: if(RelativeHumidityTemp < 0)RelativeHumidityTemp = 0;
+"204
+[e $ ! < _RelativeHumidityTemp -> -> 0 `i `l 1238  ]
+[e = _RelativeHumidityTemp -> -> 0 `i `l ]
+[e :U 1238 ]
+[; ;SHT25.c: 205: RelativeHumidityTemp >>= 8;
+"205
+[e =>> _RelativeHumidityTemp -> 8 `i ]
+[; ;SHT25.c: 206: RelativeHumidityTemp >>= 8;
+"206
+[e =>> _RelativeHumidityTemp -> 8 `i ]
+[; ;SHT25.c: 207: RelativeHumidity_UBP8 = (UINT_16)RelativeHumidityTemp;
+"207
+[e = _RelativeHumidity_UBP8 -> _RelativeHumidityTemp `us ]
+[; ;SHT25.c: 208: if(RelativeHumidity_UBP8 >(UINT_16)(100.0 * 256))
+"208
+[e $ ! > -> _RelativeHumidity_UBP8 `ui -> -> * .100.0 -> -> 256 `i `d `us `ui 1239  ]
+[; ;SHT25.c: 209: {
+"209
+{
+[; ;SHT25.c: 210: RelativeHumidity_UBP8 = (UINT_16)(100.0 * 256);
+"210
+[e = _RelativeHumidity_UBP8 -> * .100.0 -> -> 256 `i `d `us ]
+"211
+}
+[e :U 1239 ]
+[; ;SHT25.c: 211: }
+[; ;SHT25.c: 212: return(RelativeHumidity_UBP8);
+"212
+[e ) _RelativeHumidity_UBP8 ]
+[e $UE 1237  ]
+[; ;SHT25.c: 213: }
+"213
+[e :UE 1237 ]
+}
+[p f _sprintf 8388736 ]
+[a 1C 37 100 0 ]
+[a 2C 37 100 0 ]

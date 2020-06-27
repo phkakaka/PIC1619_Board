@@ -10956,9 +10956,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;adc.c: 121: ADCON0bits.ADON = 1;
 "121
 [e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
-[; ;adc.c: 124: _delay((unsigned long)((5)*(32000000/4000000.0)));
+[; ;adc.c: 124: _delay((unsigned long)((5)*(16000000/4000000.0)));
 "124
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
 [; ;adc.c: 127: ADCON0bits.GO_nDONE = 1;
 "127
 [e = . . _ADCON0bits 0 1 -> -> 1 `i `uc ]
@@ -10992,9 +10992,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;adc.c: 139: {
 [e :U _ADC_TemperatureAcquisitionDelay ]
 [f ]
-[; ;adc.c: 140: _delay((unsigned long)((200)*(32000000/4000000.0)));
+[; ;adc.c: 140: _delay((unsigned long)((200)*(16000000/4000000.0)));
 "140
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
 [; ;adc.c: 141: }
 "141
 [e :UE 1221 ]
