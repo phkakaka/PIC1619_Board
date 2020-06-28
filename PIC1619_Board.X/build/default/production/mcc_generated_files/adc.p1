@@ -10855,9 +10855,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;adc.c: 72: ADCON0 = 0x01;
 "72
 [e = _ADCON0 -> -> 1 `i `uc ]
-[; ;adc.c: 75: ADCON1 = 0x60;
+[; ;adc.c: 75: ADCON1 = 0x40;
 "75
-[e = _ADCON1 -> -> 96 `i `uc ]
+[e = _ADCON1 -> -> 64 `i `uc ]
 [; ;adc.c: 78: ADCON2 = 0x00;
 "78
 [e = _ADCON2 -> -> 0 `i `uc ]

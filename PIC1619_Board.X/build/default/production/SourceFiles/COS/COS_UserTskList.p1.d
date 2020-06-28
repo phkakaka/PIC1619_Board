@@ -16,6 +16,7 @@ SourceFiles/COS/../SunSensor/../../mcc_generated_files/tmr2.h  \
 SourceFiles/COS/../SunSensor/../../mcc_generated_files/eusart.h  \
 SourceFiles/COS/../SunSensor/../../mcc_generated_files/pin_manager.h  \
 SourceFiles/COS/COS_UserSetup.h  \
+SourceFiles/COS/../SunSensor/AD.h  \
 SourceFiles/COS/COS_UserTskList.h  \
 SourceFiles/COS/../SunSensor/SHT25.h  \
 SourceFiles/COS/../SunSensor/../COS/COS_Defs.h 

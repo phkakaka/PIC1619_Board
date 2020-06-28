@@ -14757,7 +14757,7 @@ void ADC_Initialize(void)
 ADCON0 = 0x01;
 
 
-ADCON1 = 0x60;
+ADCON1 = 0x40;
 
 
 ADCON2 = 0x00;

@@ -66,5 +66,10 @@ extern UINT_16 SHT2x_CalcTemperatureC(void);
 extern UINT_16 SHT2x_CalcRelativeHumidity(void);
 extern UINT_16 SHT3x_CalcTemperatureC(void);
 extern UINT_16 SHT3x_CalcRelativeHumidity(void);
+extern float SHT3x_CalcTemperatureC_F(void);
+extern float SHT3x_CalcRelativeHumidity_F(void);
+extern float GetTemperatureC_F(void);
+extern float GetRelativeHumidity_F(void);
+extern UINT_8 IsSHT31MeasureDone(void);
 
 #endif

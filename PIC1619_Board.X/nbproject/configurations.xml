@@ -33,6 +33,7 @@
           <itemPath>SourceFiles/SunSensor/Led.h</itemPath>
           <itemPath>SourceFiles/SunSensor/SHT25.h</itemPath>
           <itemPath>SourceFiles/SunSensor/UART_Display.h</itemPath>
+          <itemPath>SourceFiles/SunSensor/AD.h</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
@@ -69,6 +70,7 @@
           <itemPath>SourceFiles/SunSensor/Led.c</itemPath>
           <itemPath>SourceFiles/SunSensor/SHT25.c</itemPath>
           <itemPath>SourceFiles/SunSensor/UART_Display.c</itemPath>
+          <itemPath>SourceFiles/SunSensor/AD.c</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>main.c</itemPath>

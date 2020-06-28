@@ -1,5 +1,5 @@
 
-# 1 "SourceFiles/COS/COS_UserTskList.c"
+# 1 "SourceFiles/SunSensor/AD.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -14611,48 +14611,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 60 "SourceFiles/COS/COS_Defs.h"
-typedef unsigned char UINT_1;
-typedef unsigned char UINT_8;
-typedef signed char SINT_8;
-typedef unsigned short UINT_16;
-typedef signed short SINT_16;
-typedef unsigned long UINT_32;
-typedef signed long SINT_32;
-typedef float FLOAT_24;
-typedef double FLOAT_32;
-
-# 35 "SourceFiles/COS/COS_UserTskList.h"
-typedef struct
-{
-void (*tptr) (void);
-UINT_8 sched;
-} task;
-
-extern const task COS_tsk[];
-
-# 65 "SourceFiles/COS/COS_Main.h"
-extern UINT_8 COS_tsk_msk;
-extern UINT_8 COS_tsk_ind;
-extern UINT_8 COS_tsk_ena;
-extern UINT_16 COS_tsk_tmr;
-extern UINT_16 COS_tcnt_val;
-extern UINT_16 COS_tcnt_lst;
-
-extern UINT_16 COS_ms_tmr;
-extern volatile UINT_16 COS_sec_tmr;
-
-
-void COS_Init(void);
-void COS_TimerSetup(void);
-void COS_TmrHandler(void);
-void COS_TskMan(void);
-
-# 14 "SourceFiles/COS/../SunSensor/Led.h"
-extern void Led2_PWM(void);
-extern void LedBreathControl(void);
-
-# 196 "SourceFiles/COS/../SunSensor/../../mcc_generated_files/pin_manager.h"
+# 196 "SourceFiles/SunSensor/../../mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
 # 208
@@ -14814,7 +14773,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 58 "SourceFiles/COS/../SunSensor/../../mcc_generated_files/i2c_master.h"
+# 58 "SourceFiles/SunSensor/../../mcc_generated_files/i2c_master.h"
 typedef enum {
 I2C_NOERR,
 I2C_BUSY,
@@ -14886,13 +14845,13 @@ void (*MSSP_InterruptHandler)(void);
 # 222
 void I2C_SetInterruptHandler(void (* InterruptHandler)(void));
 
-# 102 "SourceFiles/COS/../SunSensor/../../mcc_generated_files/pwm3.h"
+# 102 "SourceFiles/SunSensor/../../mcc_generated_files/pwm3.h"
 void PWM3_Initialize(void);
 
 # 129
 void PWM3_LoadDutyValue(uint16_t dutyValue);
 
-# 79 "SourceFiles/COS/../SunSensor/../../mcc_generated_files/tmr2.h"
+# 79 "SourceFiles/SunSensor/../../mcc_generated_files/tmr2.h"
 typedef enum
 {
 
@@ -15067,7 +15026,7 @@ extern void (*TMR2_InterruptHandler)(void);
 # 861
 void TMR2_DefaultInterruptHandler(void);
 
-# 72 "SourceFiles/COS/../SunSensor/../../mcc_generated_files/adc.h"
+# 72 "SourceFiles/SunSensor/../../mcc_generated_files/adc.h"
 typedef uint16_t adc_result_t;
 
 # 77
@@ -15108,7 +15067,7 @@ adc_result_t ADC_GetConversion(adc_channel_t channel);
 # 317
 void ADC_TemperatureAcquisitionDelay(void);
 
-# 76 "SourceFiles/COS/../SunSensor/../../mcc_generated_files/eusart.h"
+# 76 "SourceFiles/SunSensor/../../mcc_generated_files/eusart.h"
 typedef union {
 struct {
 unsigned perr : 1;
@@ -15172,55 +15131,24 @@ void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void));
 # 506
 void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
 
-# 75 "SourceFiles/COS/../SunSensor/../../mcc_generated_files/mcc.h"
+# 75 "SourceFiles/SunSensor/../../mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
 # 88
 void OSCILLATOR_Initialize(void);
 
-# 15 "SourceFiles/COS/../SunSensor/UART_Display.h"
-typedef enum
-{
-UART_TEMP,
-UATR_HUMI,
-UART_NTC,
-UART_Refresh_Interval,
-}UART_tt;
+# 60 "SourceFiles/SunSensor/../COS/COS_Defs.h"
+typedef unsigned char UINT_1;
+typedef unsigned char UINT_8;
+typedef signed char SINT_8;
+typedef unsigned short UINT_16;
+typedef signed short SINT_16;
+typedef unsigned long UINT_32;
+typedef signed long SINT_32;
+typedef float FLOAT_24;
+typedef double FLOAT_32;
 
-extern void SendByUart(uint8_t Txt);
-extern void UartDisplay(void);
-
-# 15 "SourceFiles/COS/../SunSensor/SHT25.h"
-typedef enum
-{
-SHT25_MEASURE_INIT,
-
-SHT25_MEASURE_TEMP_0,
-SHT25_MEASURE_TEMP_1,
-
-SHT25_MEASURE_TEMP_WAIT,
-
-SHT25_MEASURE_RH_0,
-SHT25_MEASURE_RH_1,
-
-SHT25_CALC_TEMP_0,
-SHT25_CALC_RH_0,
-} SHT25_State_tt;
-
-# 63
-extern void SHT25_StateMachine(void);
-extern void SHT25_FaultHand(void);
-extern UINT_16 SHT2x_CalcTemperatureC(void);
-extern UINT_16 SHT2x_CalcRelativeHumidity(void);
-extern UINT_16 SHT3x_CalcTemperatureC(void);
-extern UINT_16 SHT3x_CalcRelativeHumidity(void);
-extern float SHT3x_CalcTemperatureC_F(void);
-extern float SHT3x_CalcRelativeHumidity_F(void);
-extern float GetTemperatureC_F(void);
-extern float GetRelativeHumidity_F(void);
-extern UINT_8 IsSHT31MeasureDone(void);
-
-# 15 "SourceFiles/COS/../SunSensor/AD.h"
+# 15 "SourceFiles/SunSensor/AD.h"
 typedef enum
 {
 AD_MEASURE_START,
@@ -15233,17 +15161,63 @@ extern void AD_Task(void);
 extern float GetNtcTemp(void);
 extern UINT_8 IsADMeasureDone(void);
 
-# 36 "SourceFiles/COS/COS_UserTskList.c"
-const task COS_tsk[(3+2)] =
+# 14 "SourceFiles/SunSensor/AD.c"
+AD_tt AD_State = AD_MEASURE_START;
+UINT_16 AD_Result;
+static UINT_8 TimerCounter;
+static UINT_8 IsMeasureDone;
+
+void AD_Task(void)
 {
+UINT_8 str[8];
 
+switch(AD_State)
+{
+case AD_MEASURE_START:
+ADC_SelectChannel(4);
+ADC_StartConversion();
+AD_State = AD_MEASURE_GetResult;
+break;
+case AD_MEASURE_GetResult:
+if (ADC_IsConversionDone)
+{
+AD_Result = ADC_GetConversionResult();
+IsMeasureDone = 1;
 
+# 43
+AD_State = AD_MEASURE_WAIT;
+}
+break;
+case AD_MEASURE_WAIT:
+TimerCounter++;
+if (TimerCounter > 50)
+{
+TimerCounter = 0;
+AD_State = AD_MEASURE_START;
+}
+break;
+default:
+break;
+}
+}
 
+float GetNtcTemp(void)
+{
+float NtcTemp;
 
-{SHT25_StateMachine, 0x80},
-{AD_Task, 0x40},
-{UartDisplay, 0x01}
+if (AD_State > 100)
+{
+NtcTemp = 25.53;
+}
+else
+{
+NtcTemp = -20.96;
+}
 
-# 62
-};
+return NtcTemp;
+}
 
+UINT_8 IsADMeasureDone(void)
+{
+return IsMeasureDone;
+}

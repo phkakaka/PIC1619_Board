@@ -281,7 +281,11 @@ va_list ap;
 
 signed char c;
 
-# 506
+int width;
+
+
+
+
 signed char prec;
 
 unsigned char flag;
@@ -309,8 +313,21 @@ if(c != '%')
 continue;
 }
 
-# 548
+
+width = 0;
+
 flag = 0;
+
+# 597
+if(isdigit((unsigned)*f)) {
+width = 0;
+do {
+width *= 10;
+width += *f++ - '0';
+} while(isdigit((unsigned)*f));
+
+# 608
+}
 
 # 635
 switch(c = *f++) {
@@ -350,8 +367,26 @@ for(c = 1 ; c != sizeof dpowers/sizeof dpowers[0] ; c++)
 if(val < dpowers[c])
 break;
 
+# 1345
+if(width && flag & 0x03)
+width--;
+
+# 1381
+if(width > c)
+width -= c;
+else
+width = 0;
+
 # 1422
 {
+
+if(width
+
+# 1428
+)
+do
+((*sp++ = (' ')));
+while(--width);
 
 # 1438
 if(flag & 0x03)

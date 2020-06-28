@@ -1,16 +1,19 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [v F12108 `(v ~T0 @X0 0 tf ]
-"38 SourceFiles/SunSensor/SHT25.c
-[c E12293 0 1 2 3 4 5 6 7 .. ]
-[n E12293 . SHT25_MEASURE_INIT SHT25_MEASURE_TEMP_0 SHT25_MEASURE_TEMP_1 SHT25_MEASURE_TEMP_WAIT SHT25_MEASURE_RH_0 SHT25_MEASURE_RH_1 SHT25_CALC_TEMP_0 SHT25_CALC_RH_0  ]
-"58 SourceFiles/SunSensor/../../mcc_generated_files/examples/i2c_master_example.h
-[v _I2C_WriteNBytes `(v ~T0 @X0 0 ef3`uc`*uc`ui ]
-"59
-[v _I2C_ReadNBytes `(v ~T0 @X0 0 ef3`uc`*uc`ui ]
-"69 SourceFiles/SunSensor/SHT25.h
-[v _SHT3x_CalcTemperatureC_F `(f ~T0 @X0 0 ef ]
-"70
-[v _SHT3x_CalcRelativeHumidity_F `(f ~T0 @X0 0 ef ]
+"14 SourceFiles/SunSensor/AD.c
+[c E12293 0 1 2 .. ]
+[n E12293 . AD_MEASURE_START AD_MEASURE_GetResult AD_MEASURE_WAIT  ]
+"26
+[c E12202 0 4 29 30 31 .. ]
+[n E12202 . channel_AN0 channel_AN4 channel_Temp channel_DAC channel_FVR  ]
+"167 SourceFiles/SunSensor/../../mcc_generated_files/adc.h
+[v _ADC_SelectChannel `(v ~T0 @X0 0 ef1`E12202 ]
+"194
+[v _ADC_StartConversion `(v ~T0 @X0 0 ef ]
+"226
+[v _ADC_IsConversionDone `(uc ~T0 @X0 0 ef ]
+"259
+[v _ADC_GetConversionResult `(ui ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -10990,541 +10993,193 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;COS_Defs.h: 66: typedef signed long SINT_32;
 [; ;COS_Defs.h: 67: typedef float FLOAT_24;
 [; ;COS_Defs.h: 68: typedef double FLOAT_32;
-[; ;SHT25.h: 15: typedef enum
-[; ;SHT25.h: 16: {
-[; ;SHT25.h: 17: SHT25_MEASURE_INIT,
-[; ;SHT25.h: 19: SHT25_MEASURE_TEMP_0,
-[; ;SHT25.h: 20: SHT25_MEASURE_TEMP_1,
-[; ;SHT25.h: 22: SHT25_MEASURE_TEMP_WAIT,
-[; ;SHT25.h: 24: SHT25_MEASURE_RH_0,
-[; ;SHT25.h: 25: SHT25_MEASURE_RH_1,
-[; ;SHT25.h: 27: SHT25_CALC_TEMP_0,
-[; ;SHT25.h: 28: SHT25_CALC_RH_0,
-[; ;SHT25.h: 29: } SHT25_State_tt;
-[; ;SHT25.h: 63: extern void SHT25_StateMachine(void);
-[; ;SHT25.h: 64: extern void SHT25_FaultHand(void);
-[; ;SHT25.h: 65: extern UINT_16 SHT2x_CalcTemperatureC(void);
-[; ;SHT25.h: 66: extern UINT_16 SHT2x_CalcRelativeHumidity(void);
-[; ;SHT25.h: 67: extern UINT_16 SHT3x_CalcTemperatureC(void);
-[; ;SHT25.h: 68: extern UINT_16 SHT3x_CalcRelativeHumidity(void);
-[; ;SHT25.h: 69: extern float SHT3x_CalcTemperatureC_F(void);
-[; ;SHT25.h: 70: extern float SHT3x_CalcRelativeHumidity_F(void);
-[; ;SHT25.h: 71: extern float GetTemperatureC_F(void);
-[; ;SHT25.h: 72: extern float GetRelativeHumidity_F(void);
-[; ;SHT25.h: 73: extern UINT_8 IsSHT31MeasureDone(void);
-[; ;UART_Display.h: 15: typedef enum
-[; ;UART_Display.h: 16: {
-[; ;UART_Display.h: 17: UART_TEMP,
-[; ;UART_Display.h: 18: UATR_HUMI,
-[; ;UART_Display.h: 19: UART_NTC,
-[; ;UART_Display.h: 20: UART_Refresh_Interval,
-[; ;UART_Display.h: 21: }UART_tt;
-[; ;UART_Display.h: 23: extern void SendByUart(uint8_t Txt);
-[; ;UART_Display.h: 24: extern void UartDisplay(void);
-[; ;COS_UserTskList.h: 35: typedef struct
-[; ;COS_UserTskList.h: 36: {
-[; ;COS_UserTskList.h: 37: void (*tptr) (void);
-[; ;COS_UserTskList.h: 38: UINT_8 sched;
-[; ;COS_UserTskList.h: 39: } task;
-[; ;COS_UserTskList.h: 41: extern const task COS_tsk[];
-[; ;COS_Main.h: 65: extern UINT_8 COS_tsk_msk;
-[; ;COS_Main.h: 66: extern UINT_8 COS_tsk_ind;
-[; ;COS_Main.h: 67: extern UINT_8 COS_tsk_ena;
-[; ;COS_Main.h: 68: extern UINT_16 COS_tsk_tmr;
-[; ;COS_Main.h: 69: extern UINT_16 COS_tcnt_val;
-[; ;COS_Main.h: 70: extern UINT_16 COS_tcnt_lst;
-[; ;COS_Main.h: 72: extern UINT_16 COS_ms_tmr;
-[; ;COS_Main.h: 73: extern volatile UINT_16 COS_sec_tmr;
-[; ;COS_Main.h: 76: void COS_Init(void);
-[; ;COS_Main.h: 77: void COS_TimerSetup(void);
-[; ;COS_Main.h: 78: void COS_TmrHandler(void);
-[; ;COS_Main.h: 79: void COS_TskMan(void);
-[; ;I2C_Driver.h: 13: extern void I2C_Init(void);
-[; ;I2C_Driver.h: 14: extern void I2C_StartCondition(void);
-[; ;I2C_Driver.h: 15: extern void I2C_StopCondition(void);
-[; ;I2C_Driver.h: 16: extern void I2C_MasterSendAck(void);
-[; ;I2C_Driver.h: 17: extern void I2C_MasterSendNack(void);
-[; ;I2C_Driver.h: 18: extern UINT_8 I2C_WriteByte (UINT_8 txByte);
-[; ;I2C_Driver.h: 19: extern UINT_8 I2C_ReadByte (UINT_8 ack);
-[; ;I2C_Driver.h: 21: extern void I2C_Init_IO(void);
-[; ;I2C_Driver.h: 22: extern void I2C_StartCondition_IO(void);
-[; ;I2C_Driver.h: 23: extern UINT_8 I2C_WriteByte_IO (UINT_8 txByte);
-[; ;i2c_master_example.h: 54: uint8_t I2C_Read1ByteRegister(i2c_address_t address, uint8_t reg);
-[; ;i2c_master_example.h: 55: uint16_t I2C_Read2ByteRegister(i2c_address_t address, uint8_t reg);
-[; ;i2c_master_example.h: 56: void I2C_Write1ByteRegister(i2c_address_t address, uint8_t reg, uint8_t data);
-[; ;i2c_master_example.h: 57: void I2C_Write2ByteRegister(i2c_address_t address, uint8_t reg, uint16_t data);
-[; ;i2c_master_example.h: 58: void I2C_WriteNBytes(i2c_address_t address, uint8_t *data, size_t len);
-[; ;i2c_master_example.h: 59: void I2C_ReadNBytes(i2c_address_t address, uint8_t *data, size_t len);
-[; ;i2c_master_example.h: 60: void I2C_ReadDataBlock(i2c_address_t address, uint8_t reg, uint8_t *data, size_t len);
-[; ;stdlib.h: 7: typedef unsigned short wchar_t;
-[; ;stdlib.h: 15: typedef struct {
-[; ;stdlib.h: 16: int rem;
-[; ;stdlib.h: 17: int quot;
-[; ;stdlib.h: 18: } div_t;
-[; ;stdlib.h: 19: typedef struct {
-[; ;stdlib.h: 20: unsigned rem;
-[; ;stdlib.h: 21: unsigned quot;
-[; ;stdlib.h: 22: } udiv_t;
-[; ;stdlib.h: 23: typedef struct {
-[; ;stdlib.h: 24: long quot;
-[; ;stdlib.h: 25: long rem;
-[; ;stdlib.h: 26: } ldiv_t;
-[; ;stdlib.h: 27: typedef struct {
-[; ;stdlib.h: 28: unsigned long quot;
-[; ;stdlib.h: 29: unsigned long rem;
-[; ;stdlib.h: 30: } uldiv_t;
-[; ;stdlib.h: 53: extern double atof(const char *);
-[; ;stdlib.h: 54: extern double strtod(const char *, const char **);
-[; ;stdlib.h: 55: extern int atoi(const char *);
-[; ;stdlib.h: 56: extern unsigned xtoi(const char *);
-[; ;stdlib.h: 57: extern long atol(const char *);
-[; ;stdlib.h: 58: extern long strtol(const char *, char **, int);
-[; ;stdlib.h: 60: extern int rand(void);
-[; ;stdlib.h: 61: extern void srand(unsigned int);
-[; ;stdlib.h: 62: extern void * calloc(size_t, size_t);
-[; ;stdlib.h: 63: extern div_t div(int numer, int denom);
-[; ;stdlib.h: 64: extern udiv_t udiv(unsigned numer, unsigned denom);
-[; ;stdlib.h: 65: extern ldiv_t ldiv(long numer, long denom);
-[; ;stdlib.h: 66: extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
-[; ;stdlib.h: 67: extern unsigned long _lrotl(unsigned long value, unsigned int shift);
-[; ;stdlib.h: 68: extern unsigned long _lrotr(unsigned long value, unsigned int shift);
-[; ;stdlib.h: 69: extern unsigned int _rotl(unsigned int value, unsigned int shift);
-[; ;stdlib.h: 70: extern unsigned int _rotr(unsigned int value, unsigned int shift);
-[; ;stdlib.h: 75: extern void * malloc(size_t);
-[; ;stdlib.h: 76: extern void free(void *);
-[; ;stdlib.h: 77: extern void * realloc(void *, size_t);
-[; ;stdlib.h: 86: extern int atexit(void (*)(void));
-[; ;stdlib.h: 87: extern char * getenv(const char *);
-[; ;stdlib.h: 88: extern char ** environ;
-[; ;stdlib.h: 89: extern int system(char *);
-[; ;stdlib.h: 90: extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
-[; ;stdlib.h: 91: extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
-[; ;stdlib.h: 92: extern int abs(int);
-[; ;stdlib.h: 93: extern long labs(long);
-[; ;stdlib.h: 95: extern char * itoa(char * buf, int val, int base);
-[; ;stdlib.h: 96: extern char * utoa(char * buf, unsigned val, int base);
-[; ;stdlib.h: 101: extern char * ltoa(char * buf, long val, int base);
-[; ;stdlib.h: 102: extern char * ultoa(char * buf, unsigned long val, int base);
-[; ;stdlib.h: 104: extern char * ftoa(float f, int * status);
-"22 SourceFiles/SunSensor/SHT25.c
-[v _SensirionTemperature_UBP8 `us ~T0 @X0 1 e ]
-[; ;SHT25.c: 22: UINT_16 SensirionTemperature_UBP8;
-"23
-[v _SensirionRH_UBP8 `us ~T0 @X0 1 e ]
-[; ;SHT25.c: 23: UINT_16 SensirionRH_UBP8;
-"24
-[v _SensirionTemperature_float `f ~T0 @X0 1 e ]
-[; ;SHT25.c: 24: float SensirionTemperature_float;
-"25
-[v _SensirionRH_float `f ~T0 @X0 1 e ]
-[; ;SHT25.c: 25: float SensirionRH_float;
-"26
-[v _SHT25_Fault `uc ~T0 @X0 1 e ]
-[; ;SHT25.c: 26: UINT_1 SHT25_Fault;
-"27
-[v _ErrorStat `uc ~T0 @X0 1 e ]
-[; ;SHT25.c: 27: UINT_8 ErrorStat;
-"28
-[v _I2C_Timer `us ~T0 @X0 1 e ]
-[; ;SHT25.c: 28: UINT_16 I2C_Timer;
-"31
-[v _checksum `uc ~T0 @X0 1 e ]
-[; ;SHT25.c: 31: UINT_8 checksum;
-"32
-[v _TemperatureRaw_H `uc ~T0 @X0 1 e ]
-[; ;SHT25.c: 32: UINT_8 TemperatureRaw_H;
-"33
-[v _TemperatureRaw_L `uc ~T0 @X0 1 e ]
-[; ;SHT25.c: 33: UINT_8 TemperatureRaw_L;
-"34
-[v _TemperatureRaw `us ~T0 @X0 1 e ]
-[; ;SHT25.c: 34: UINT_16 TemperatureRaw;
-"35
-[v _RelativeHumidityRaw_H `uc ~T0 @X0 1 e ]
-[; ;SHT25.c: 35: UINT_8 RelativeHumidityRaw_H;
-"36
-[v _RelativeHumidityRaw_L `uc ~T0 @X0 1 e ]
-[; ;SHT25.c: 36: UINT_8 RelativeHumidityRaw_L;
-"37
-[v _RelativeHumidityRaw `us ~T0 @X0 1 e ]
-[; ;SHT25.c: 37: UINT_16 RelativeHumidityRaw;
-"38
-[v _SHT25_State `E12293 ~T0 @X0 1 e ]
-[i _SHT25_State
+[; ;AD.h: 15: typedef enum
+[; ;AD.h: 16: {
+[; ;AD.h: 17: AD_MEASURE_START,
+[; ;AD.h: 18: AD_MEASURE_GetResult,
+[; ;AD.h: 19: AD_MEASURE_WAIT,
+[; ;AD.h: 20: }AD_tt;
+[; ;AD.h: 23: extern void AD_Task(void);
+[; ;AD.h: 24: extern float GetNtcTemp(void);
+[; ;AD.h: 25: extern UINT_8 IsADMeasureDone(void);
+"14 SourceFiles/SunSensor/AD.c
+[v _AD_State `E12293 ~T0 @X0 1 e ]
+[i _AD_State
 . `E12293 0
 ]
-[; ;SHT25.c: 38: SHT25_State_tt SHT25_State = SHT25_MEASURE_INIT;
-"39
-[v _Command `uc ~T0 @X0 -> 2 `i e ]
-[i _Command
-:U ..
--> -> 34 `i `uc
--> -> 32 `i `uc
-..
-]
-[; ;SHT25.c: 39: UINT_8 Command[2] = {0x22,0x20};
-"40
-[v _RxBuff `uc ~T0 @X0 -> 8 `i e ]
-[; ;SHT25.c: 40: UINT_8 RxBuff[8];
-"41
-[v _AddressW `uc ~T0 @X0 1 e ]
-[i _AddressW
--> -> 128 `i `uc
-]
-[; ;SHT25.c: 41: UINT_8 AddressW = 128;
-"42
-[v _TimerCounter `us ~T0 @X0 1 e ]
-[i _TimerCounter
--> -> 0 `i `us
-]
-[; ;SHT25.c: 42: UINT_16 TimerCounter = 0;
-"43
+[; ;AD.c: 14: AD_tt AD_State = AD_MEASURE_START;
+"15
+[v _AD_Result `us ~T0 @X0 1 e ]
+[; ;AD.c: 15: UINT_16 AD_Result;
+"16
+[v _TimerCounter `uc ~T0 @X0 1 s ]
+[; ;AD.c: 16: static UINT_8 TimerCounter;
+"17
 [v _IsMeasureDone `uc ~T0 @X0 1 s ]
-[i _IsMeasureDone
--> -> 0 `i `uc
-]
-[; ;SHT25.c: 43: static UINT_8 IsMeasureDone = 0;
-"46
-[v _SHT25_StateMachine `(v ~T0 @X0 1 ef ]
-"47
+[; ;AD.c: 17: static UINT_8 IsMeasureDone;
+"19
+[v _AD_Task `(v ~T0 @X0 1 ef ]
+"20
 {
-[; ;SHT25.c: 46: void SHT25_StateMachine(void)
-[; ;SHT25.c: 47: {
-[e :U _SHT25_StateMachine ]
+[; ;AD.c: 19: void AD_Task(void)
+[; ;AD.c: 20: {
+[e :U _AD_Task ]
 [f ]
-[; ;SHT25.c: 48: switch(SHT25_State)
+"21
+[v _str `uc ~T0 @X0 -> 8 `i a ]
+[; ;AD.c: 21: UINT_8 str[8];
+[; ;AD.c: 23: switch(AD_State)
+"23
+[e $U 1217  ]
+[; ;AD.c: 24: {
+"24
+{
+[; ;AD.c: 25: case AD_MEASURE_START:
+"25
+[e :U 1218 ]
+[; ;AD.c: 26: ADC_SelectChannel(4);
+"26
+[e ( _ADC_SelectChannel (1 -> -> 4 `i `E12202 ]
+[; ;AD.c: 27: ADC_StartConversion();
+"27
+[e ( _ADC_StartConversion ..  ]
+[; ;AD.c: 28: AD_State = AD_MEASURE_GetResult;
+"28
+[e = _AD_State . `E12293 1 ]
+[; ;AD.c: 29: break;
+"29
+[e $U 1216  ]
+[; ;AD.c: 30: case AD_MEASURE_GetResult:
+"30
+[e :U 1219 ]
+[; ;AD.c: 31: if (ADC_IsConversionDone)
+[v F12310 `(uc ~T0 @X0 1 tf ]
+"31
+[e $ ! != &U _ADC_IsConversionDone -> -> 0 `i `*F12310 1220  ]
+[; ;AD.c: 32: {
+"32
+{
+[; ;AD.c: 33: AD_Result = ADC_GetConversionResult();
+"33
+[e = _AD_Result -> ( _ADC_GetConversionResult ..  `us ]
+[; ;AD.c: 34: IsMeasureDone = 1;
+"34
+[e = _IsMeasureDone -> -> 1 `i `uc ]
+[; ;AD.c: 43: AD_State = AD_MEASURE_WAIT;
+"43
+[e = _AD_State . `E12293 2 ]
+"44
+}
+[e :U 1220 ]
+[; ;AD.c: 44: }
+[; ;AD.c: 45: break;
+"45
+[e $U 1216  ]
+[; ;AD.c: 46: case AD_MEASURE_WAIT:
+"46
+[e :U 1221 ]
+[; ;AD.c: 47: TimerCounter++;
+"47
+[e ++ _TimerCounter -> -> 1 `i `uc ]
+[; ;AD.c: 48: if (TimerCounter > 50)
 "48
-[e $U 1222  ]
-[; ;SHT25.c: 49: {
+[e $ ! > -> _TimerCounter `i -> 50 `i 1222  ]
+[; ;AD.c: 49: {
 "49
 {
-[; ;SHT25.c: 50: case SHT25_MEASURE_INIT:
+[; ;AD.c: 50: TimerCounter = 0;
 "50
-[e :U 1223 ]
-[; ;SHT25.c: 51: SHT25_State = SHT25_MEASURE_TEMP_0;
+[e = _TimerCounter -> -> 0 `i `uc ]
+[; ;AD.c: 51: AD_State = AD_MEASURE_START;
 "51
-[e = _SHT25_State . `E12293 1 ]
-[; ;SHT25.c: 52: break;
+[e = _AD_State . `E12293 0 ]
 "52
-[e $U 1221  ]
-[; ;SHT25.c: 53: case SHT25_MEASURE_TEMP_0:
+}
+[e :U 1222 ]
+[; ;AD.c: 52: }
+[; ;AD.c: 53: break;
 "53
-[e :U 1224 ]
-[; ;SHT25.c: 54: I2C_WriteNBytes(0x44,Command,2);
+[e $U 1216  ]
+[; ;AD.c: 54: default:
 "54
-[e ( _I2C_WriteNBytes (3 , , -> -> 68 `i `uc &U _Command -> -> 2 `i `ui ]
-[; ;SHT25.c: 55: SHT25_State = SHT25_MEASURE_TEMP_WAIT;
+[e :U 1223 ]
+[; ;AD.c: 55: break;
 "55
-[e = _SHT25_State . `E12293 3 ]
-[; ;SHT25.c: 56: TimerCounter = 0;
+[e $U 1216  ]
 "56
-[e = _TimerCounter -> -> 0 `i `us ]
-[; ;SHT25.c: 59: break;
+}
+[; ;AD.c: 56: }
+[e $U 1216  ]
+"23
+[e :U 1217 ]
+[e [\ _AD_State , $ . `E12293 0 1218
+ , $ . `E12293 1 1219
+ , $ . `E12293 2 1221
+ 1223 ]
+"56
+[e :U 1216 ]
+[; ;AD.c: 57: }
+"57
+[e :UE 1215 ]
+}
 "59
-[e $U 1221  ]
-[; ;SHT25.c: 60: case SHT25_MEASURE_TEMP_WAIT:
+[v _GetNtcTemp `(f ~T0 @X0 1 ef ]
 "60
-[e :U 1225 ]
-[; ;SHT25.c: 61: TimerCounter++;
-"61
-[e ++ _TimerCounter -> -> 1 `i `us ]
-[; ;SHT25.c: 62: if (TimerCounter > 50)
-"62
-[e $ ! > -> _TimerCounter `ui -> -> 50 `i `ui 1226  ]
-[; ;SHT25.c: 63: {
-"63
 {
-[; ;SHT25.c: 64: Command[0] = 0xE0;
+[; ;AD.c: 59: float GetNtcTemp(void)
+[; ;AD.c: 60: {
+[e :U _GetNtcTemp ]
+[f ]
+"61
+[v _NtcTemp `f ~T0 @X0 1 a ]
+[; ;AD.c: 61: float NtcTemp;
+[; ;AD.c: 63: if (AD_State > 100)
+"63
+[e $ ! > -> _AD_State `i -> 100 `i 1225  ]
+[; ;AD.c: 64: {
 "64
-[e = *U + &U _Command * -> -> -> 0 `i `ui `ux -> -> # *U &U _Command `ui `ux -> -> 224 `i `uc ]
-[; ;SHT25.c: 65: Command[1] = 0x00;
+{
+[; ;AD.c: 65: NtcTemp = 25.53;
 "65
-[e = *U + &U _Command * -> -> -> 1 `i `ui `ux -> -> # *U &U _Command `ui `ux -> -> 0 `i `uc ]
-[; ;SHT25.c: 66: I2C_WriteNBytes(0x44,Command,2);
+[e = _NtcTemp -> .25.53 `f ]
 "66
-[e ( _I2C_WriteNBytes (3 , , -> -> 68 `i `uc &U _Command -> -> 2 `i `ui ]
-[; ;SHT25.c: 67: TimerCounter = 0;
+}
+[; ;AD.c: 66: }
+[e $U 1226  ]
 "67
-[e = _TimerCounter -> -> 0 `i `us ]
-[; ;SHT25.c: 68: SHT25_State = SHT25_MEASURE_TEMP_1;
+[e :U 1225 ]
+[; ;AD.c: 67: else
+[; ;AD.c: 68: {
 "68
-[e = _SHT25_State . `E12293 2 ]
+{
+[; ;AD.c: 69: NtcTemp = -20.96;
 "69
+[e = _NtcTemp -> -U .20.96 `f ]
+"70
 }
 [e :U 1226 ]
-[; ;SHT25.c: 69: }
-[; ;SHT25.c: 70: break;
-"70
-[e $U 1221  ]
-[; ;SHT25.c: 71: case SHT25_MEASURE_TEMP_1:
-"71
-[e :U 1227 ]
-[; ;SHT25.c: 72: I2C_ReadNBytes(0x44,RxBuff,6);
+[; ;AD.c: 70: }
+[; ;AD.c: 72: return NtcTemp;
 "72
-[e ( _I2C_ReadNBytes (3 , , -> -> 68 `i `uc &U _RxBuff -> -> 6 `i `ui ]
-[; ;SHT25.c: 74: TemperatureRaw_H = RxBuff[0];
-"74
-[e = _TemperatureRaw_H *U + &U _RxBuff * -> -> -> 0 `i `ui `ux -> -> # *U &U _RxBuff `ui `ux ]
-[; ;SHT25.c: 75: TemperatureRaw_L = RxBuff[1];
+[e ) _NtcTemp ]
+[e $UE 1224  ]
+[; ;AD.c: 73: }
+"73
+[e :UE 1224 ]
+}
 "75
-[e = _TemperatureRaw_L *U + &U _RxBuff * -> -> -> 1 `i `ui `ux -> -> # *U &U _RxBuff `ui `ux ]
-[; ;SHT25.c: 76: TemperatureRaw = ((UINT_16)(TemperatureRaw_H) << 8) + TemperatureRaw_L ;
+[v _IsADMeasureDone `(uc ~T0 @X0 1 ef ]
 "76
-[e = _TemperatureRaw -> + << -> -> _TemperatureRaw_H `us `ui -> 8 `i -> _TemperatureRaw_L `ui `us ]
-[; ;SHT25.c: 78: RelativeHumidityRaw_H = RxBuff[3];
-"78
-[e = _RelativeHumidityRaw_H *U + &U _RxBuff * -> -> -> 3 `i `ui `ux -> -> # *U &U _RxBuff `ui `ux ]
-[; ;SHT25.c: 79: RelativeHumidityRaw_L = RxBuff[4];
-"79
-[e = _RelativeHumidityRaw_L *U + &U _RxBuff * -> -> -> 4 `i `ui `ux -> -> # *U &U _RxBuff `ui `ux ]
-[; ;SHT25.c: 80: RelativeHumidityRaw = ((UINT_16)(RelativeHumidityRaw_H) << 8) + RelativeHumidityRaw_L ;
-"80
-[e = _RelativeHumidityRaw -> + << -> -> _RelativeHumidityRaw_H `us `ui -> 8 `i -> _RelativeHumidityRaw_L `ui `us ]
-[; ;SHT25.c: 82: SHT25_State = SHT25_CALC_TEMP_0;
-"82
-[e = _SHT25_State . `E12293 6 ]
-[; ;SHT25.c: 83: break;
-"83
-[e $U 1221  ]
-[; ;SHT25.c: 84: case SHT25_CALC_TEMP_0:
-"84
-[e :U 1228 ]
-[; ;SHT25.c: 85: SensirionTemperature_float = SHT3x_CalcTemperatureC_F();
-"85
-[e = _SensirionTemperature_float ( _SHT3x_CalcTemperatureC_F ..  ]
-[; ;SHT25.c: 86: SensirionRH_float = SHT3x_CalcRelativeHumidity_F();
-"86
-[e = _SensirionRH_float ( _SHT3x_CalcRelativeHumidity_F ..  ]
-[; ;SHT25.c: 89: SHT25_State = SHT25_CALC_RH_0;
-"89
-[e = _SHT25_State . `E12293 7 ]
-[; ;SHT25.c: 90: IsMeasureDone = 1;
-"90
-[e = _IsMeasureDone -> -> 1 `i `uc ]
-[; ;SHT25.c: 91: break;
-"91
-[e $U 1221  ]
-[; ;SHT25.c: 92: case SHT25_CALC_RH_0:
-"92
-[e :U 1229 ]
-[; ;SHT25.c: 93: SHT25_State = SHT25_MEASURE_TEMP_WAIT;
-"93
-[e = _SHT25_State . `E12293 3 ]
-[; ;SHT25.c: 94: break;
-"94
-[e $U 1221  ]
-[; ;SHT25.c: 95: default:
-"95
-[e :U 1230 ]
-[; ;SHT25.c: 96: break;
-"96
-[e $U 1221  ]
-"97
-}
-[; ;SHT25.c: 97: }
-[e $U 1221  ]
-"48
-[e :U 1222 ]
-[e [\ _SHT25_State , $ . `E12293 0 1223
- , $ . `E12293 1 1224
- , $ . `E12293 3 1225
- , $ . `E12293 2 1227
- , $ . `E12293 6 1228
- , $ . `E12293 7 1229
- 1230 ]
-"97
-[e :U 1221 ]
-[; ;SHT25.c: 98: }
-"98
-[e :UE 1220 ]
-}
-"101
-[v _SHT25_FaultHand `(v ~T0 @X0 1 ef ]
-"102
 {
-[; ;SHT25.c: 101: void SHT25_FaultHand(void)
-[; ;SHT25.c: 102: {
-[e :U _SHT25_FaultHand ]
+[; ;AD.c: 75: UINT_8 IsADMeasureDone(void)
+[; ;AD.c: 76: {
+[e :U _IsADMeasureDone ]
 [f ]
-[; ;SHT25.c: 103: TemperatureRaw = 0;
-"103
-[e = _TemperatureRaw -> -> 0 `i `us ]
-[; ;SHT25.c: 104: RelativeHumidityRaw = 0;
-"104
-[e = _RelativeHumidityRaw -> -> 0 `i `us ]
-[; ;SHT25.c: 105: SHT25_Fault = 1;
-"105
-[e = _SHT25_Fault -> -> 1 `i `uc ]
-[; ;SHT25.c: 106: SHT25_State = SHT25_CALC_TEMP_0;
-"106
-[e = _SHT25_State . `E12293 6 ]
-[; ;SHT25.c: 107: }
-"107
-[e :UE 1231 ]
-}
-"109
-[v _SHT3x_CalcTemperatureC_F `(f ~T0 @X0 1 ef ]
-"110
-{
-[; ;SHT25.c: 109: float SHT3x_CalcTemperatureC_F(void)
-[; ;SHT25.c: 110: {
-[e :U _SHT3x_CalcTemperatureC_F ]
-[f ]
-"111
-[v _TemperatureFloat `f ~T0 @X0 1 a ]
-[; ;SHT25.c: 111: float TemperatureFloat;
-[; ;SHT25.c: 113: TemperatureFloat = (float)TemperatureRaw * 175 / 65535 - 45;
-"113
-[e = _TemperatureFloat - / * -> _TemperatureRaw `f -> -> 175 `i `f -> -> 65535 `l `f -> -> 45 `i `f ]
-[; ;SHT25.c: 115: return TemperatureFloat ;
-"115
-[e ) _TemperatureFloat ]
-[e $UE 1232  ]
-[; ;SHT25.c: 116: }
-"116
-[e :UE 1232 ]
-}
-"119
-[v _SHT3x_CalcRelativeHumidity_F `(f ~T0 @X0 1 ef ]
-"120
-{
-[; ;SHT25.c: 119: float SHT3x_CalcRelativeHumidity_F(void)
-[; ;SHT25.c: 120: {
-[e :U _SHT3x_CalcRelativeHumidity_F ]
-[f ]
-"121
-[v _RelativeHumidityFloat `f ~T0 @X0 1 a ]
-[; ;SHT25.c: 121: float RelativeHumidityFloat;
-[; ;SHT25.c: 123: RelativeHumidityFloat = (float)RelativeHumidityRaw * 100 / 65535;
-"123
-[e = _RelativeHumidityFloat / * -> _RelativeHumidityRaw `f -> -> 100 `i `f -> -> 65535 `l `f ]
-[; ;SHT25.c: 125: return RelativeHumidityFloat ;
-"125
-[e ) _RelativeHumidityFloat ]
-[e $UE 1233  ]
-[; ;SHT25.c: 126: }
-"126
-[e :UE 1233 ]
-}
-"128
-[v _GetTemperatureC_F `(f ~T0 @X0 1 ef ]
-"129
-{
-[; ;SHT25.c: 128: float GetTemperatureC_F(void)
-[; ;SHT25.c: 129: {
-[e :U _GetTemperatureC_F ]
-[f ]
-[; ;SHT25.c: 130: return SensirionTemperature_float;
-"130
-[e ) _SensirionTemperature_float ]
-[e $UE 1234  ]
-[; ;SHT25.c: 131: }
-"131
-[e :UE 1234 ]
-}
-"133
-[v _GetRelativeHumidity_F `(f ~T0 @X0 1 ef ]
-"134
-{
-[; ;SHT25.c: 133: float GetRelativeHumidity_F(void)
-[; ;SHT25.c: 134: {
-[e :U _GetRelativeHumidity_F ]
-[f ]
-[; ;SHT25.c: 135: return SensirionRH_float;
-"135
-[e ) _SensirionRH_float ]
-[e $UE 1235  ]
-[; ;SHT25.c: 136: }
-"136
-[e :UE 1235 ]
-}
-"138
-[v _IsSHT31MeasureDone `(uc ~T0 @X0 1 ef ]
-"139
-{
-[; ;SHT25.c: 138: UINT_8 IsSHT31MeasureDone(void)
-[; ;SHT25.c: 139: {
-[e :U _IsSHT31MeasureDone ]
-[f ]
-[; ;SHT25.c: 140: return IsMeasureDone;
-"140
+[; ;AD.c: 77: return IsMeasureDone;
+"77
 [e ) _IsMeasureDone ]
-[e $UE 1236  ]
-[; ;SHT25.c: 141: }
-"141
-[e :UE 1236 ]
-}
-"143
-[v _SHT3x_CalcTemperatureC `(us ~T0 @X0 1 ef ]
-"144
-{
-[; ;SHT25.c: 143: UINT_16 SHT3x_CalcTemperatureC(void)
-[; ;SHT25.c: 144: {
-[e :U _SHT3x_CalcTemperatureC ]
-[f ]
-"145
-[v _TemperatureTemp `l ~T0 @X0 1 a ]
-"146
-[v _Temperature_UBP8 `us ~T0 @X0 1 a ]
-"147
-[v _Temperature_U16 `us ~T0 @X0 1 a ]
-"148
-[v _Temperature_L8 `uc ~T0 @X0 1 a ]
-[; ;SHT25.c: 145: SINT_32 TemperatureTemp;
-[; ;SHT25.c: 146: UINT_16 Temperature_UBP8;
-[; ;SHT25.c: 147: UINT_16 Temperature_U16;
-[; ;SHT25.c: 148: UINT_8 Temperature_L8;
-[; ;SHT25.c: 150: TemperatureTemp = (UINT_32)TemperatureRaw * 175;
-"150
-[e = _TemperatureTemp -> * -> _TemperatureRaw `ul -> -> -> 175 `i `l `ul `l ]
-[; ;SHT25.c: 151: Temperature_U16 = (UINT_16)(TemperatureTemp >> 16);
-"151
-[e = _Temperature_U16 -> >> _TemperatureTemp -> 16 `i `us ]
-[; ;SHT25.c: 152: Temperature_UBP8 = (UINT_16)Temperature_U16 - 45;
-"152
-[e = _Temperature_UBP8 -> - -> _Temperature_U16 `ui -> -> 45 `i `ui `us ]
-[; ;SHT25.c: 153: return Temperature_UBP8 ;
-"153
-[e ) _Temperature_UBP8 ]
-[e $UE 1237  ]
-[; ;SHT25.c: 154: }
-"154
-[e :UE 1237 ]
-}
-"156
-[v _SHT3x_CalcRelativeHumidity `(us ~T0 @X0 1 ef ]
-"157
-{
-[; ;SHT25.c: 156: UINT_16 SHT3x_CalcRelativeHumidity(void)
-[; ;SHT25.c: 157: {
-[e :U _SHT3x_CalcRelativeHumidity ]
-[f ]
-"158
-[v _RelativeHumidityTemp `l ~T0 @X0 1 a ]
-"159
-[v _RelativeHumidity_UBP8 `us ~T0 @X0 1 a ]
-"160
-[v _RelativeHumidity_U16 `uc ~T0 @X0 1 a ]
-"161
-[v _RelativeHumidity_L8 `uc ~T0 @X0 1 a ]
-[; ;SHT25.c: 158: SINT_32 RelativeHumidityTemp;
-[; ;SHT25.c: 159: UINT_16 RelativeHumidity_UBP8;
-[; ;SHT25.c: 160: UINT_8 RelativeHumidity_U16;
-[; ;SHT25.c: 161: UINT_8 RelativeHumidity_L8;
-[; ;SHT25.c: 163: RelativeHumidityTemp = (UINT_32)RelativeHumidityRaw * 100;
-"163
-[e = _RelativeHumidityTemp -> * -> _RelativeHumidityRaw `ul -> -> -> 100 `i `l `ul `l ]
-[; ;SHT25.c: 164: RelativeHumidity_U16 = (UINT_16)(RelativeHumidityTemp >> 16);
-"164
-[e = _RelativeHumidity_U16 -> -> >> _RelativeHumidityTemp -> 16 `i `us `uc ]
-[; ;SHT25.c: 165: RelativeHumidity_UBP8 = (UINT_16)RelativeHumidity_U16;
-"165
-[e = _RelativeHumidity_UBP8 -> _RelativeHumidity_U16 `us ]
-[; ;SHT25.c: 166: return RelativeHumidity_UBP8 ;
-"166
-[e ) _RelativeHumidity_UBP8 ]
-[e $UE 1238  ]
-[; ;SHT25.c: 167: }
-"167
-[e :UE 1238 ]
+[e $UE 1227  ]
+[; ;AD.c: 78: }
+"78
+[e :UE 1227 ]
 }

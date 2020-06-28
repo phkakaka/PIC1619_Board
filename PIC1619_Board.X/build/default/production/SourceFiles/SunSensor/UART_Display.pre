@@ -15138,13 +15138,146 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 
 # 15 "SourceFiles/SunSensor/UART_Display.h"
+typedef enum
+{
+UART_TEMP,
+UATR_HUMI,
+UART_NTC,
+UART_Refresh_Interval,
+}UART_tt;
+
 extern void SendByUart(uint8_t Txt);
 extern void UartDisplay(void);
 
-# 13 "SourceFiles/SunSensor/UART_Display.c"
+# 60 "SourceFiles/SunSensor/../COS/COS_Defs.h"
+typedef unsigned char UINT_1;
+typedef unsigned char UINT_8;
+typedef signed char SINT_8;
+typedef unsigned short UINT_16;
+typedef signed short SINT_16;
+typedef unsigned long UINT_32;
+typedef signed long SINT_32;
+typedef float FLOAT_24;
+typedef double FLOAT_32;
+
+# 15 "SourceFiles/SunSensor/AD.h"
+typedef enum
+{
+AD_MEASURE_START,
+AD_MEASURE_GetResult,
+AD_MEASURE_WAIT,
+}AD_tt;
+
+
+extern void AD_Task(void);
+extern float GetNtcTemp(void);
+extern UINT_8 IsADMeasureDone(void);
+
+# 15 "SourceFiles/SunSensor/SHT25.h"
+typedef enum
+{
+SHT25_MEASURE_INIT,
+
+SHT25_MEASURE_TEMP_0,
+SHT25_MEASURE_TEMP_1,
+
+SHT25_MEASURE_TEMP_WAIT,
+
+SHT25_MEASURE_RH_0,
+SHT25_MEASURE_RH_1,
+
+SHT25_CALC_TEMP_0,
+SHT25_CALC_RH_0,
+} SHT25_State_tt;
+
+# 63
+extern void SHT25_StateMachine(void);
+extern void SHT25_FaultHand(void);
+extern UINT_16 SHT2x_CalcTemperatureC(void);
+extern UINT_16 SHT2x_CalcRelativeHumidity(void);
+extern UINT_16 SHT3x_CalcTemperatureC(void);
+extern UINT_16 SHT3x_CalcRelativeHumidity(void);
+extern float SHT3x_CalcTemperatureC_F(void);
+extern float SHT3x_CalcRelativeHumidity_F(void);
+extern float GetTemperatureC_F(void);
+extern float GetRelativeHumidity_F(void);
+extern UINT_8 IsSHT31MeasureDone(void);
+
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdlib.h"
+typedef unsigned short wchar_t;
+
+# 15
+typedef struct {
+int rem;
+int quot;
+} div_t;
+typedef struct {
+unsigned rem;
+unsigned quot;
+} udiv_t;
+typedef struct {
+long quot;
+long rem;
+} ldiv_t;
+typedef struct {
+unsigned long quot;
+unsigned long rem;
+} uldiv_t;
+
+# 53
+extern double atof(const char *);
+extern double strtod(const char *, const char **);
+extern int atoi(const char *);
+extern unsigned xtoi(const char *);
+extern long atol(const char *);
+extern long strtol(const char *, char **, int);
+
+extern int rand(void);
+extern void srand(unsigned int);
+extern void * calloc(size_t, size_t);
+extern div_t div(int numer, int denom);
+extern udiv_t udiv(unsigned numer, unsigned denom);
+extern ldiv_t ldiv(long numer, long denom);
+extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+extern unsigned int _rotl(unsigned int value, unsigned int shift);
+extern unsigned int _rotr(unsigned int value, unsigned int shift);
+
+
+
+
+extern void * malloc(size_t);
+extern void free(void *);
+extern void * realloc(void *, size_t);
+
+# 86
+extern int atexit(void (*)(void));
+extern char * getenv(const char *);
+extern char ** environ;
+extern int system(char *);
+extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+extern int abs(int);
+extern long labs(long);
+
+extern char * itoa(char * buf, int val, int base);
+extern char * utoa(char * buf, unsigned val, int base);
+
+
+
+
+extern char * ltoa(char * buf, long val, int base);
+extern char * ultoa(char * buf, unsigned long val, int base);
+
+extern char * ftoa(float f, int * status);
+
+# 16 "SourceFiles/SunSensor/UART_Display.c"
 static uint8_t U8Message = 0x55;
 static uint8_t NewMessageFlag;
 static uint8_t counter;
+UART_tt UART_STATE = UART_TEMP;
+static uint8_t TimerCounter;
 
 void SendByUart(uint8_t Txt)
 {
@@ -15154,12 +15287,89 @@ NewMessageFlag = 1;
 
 void UartDisplay(void)
 {
-if (NewMessageFlag == 1)
+float TempF;
+float HumiF;
+float NtcTempF;
+UINT_16 Temp;
+UINT_16 Humi;
+UINT_16 NtcTemp;
+UINT_8 str[8];
+
+switch (UART_STATE)
 {
-EUSART_Write(U8Message);
-NewMessageFlag = 0;
+case UART_TEMP:
+if (IsSHT31MeasureDone())
+{
+EUSART_Write('T');
+TempF = GetTemperatureC_F();
+Temp = (UINT_16)(TempF * 100);
+if (TempF < 0)
+{
+EUSART_Write('-');
+TempF = abs(TempF);
 }
 
-# 42
+sprintf(str, "%4d" , Temp);
+
+EUSART_Write(str[0]);
+EUSART_Write(str[1]);
+EUSART_Write('.');
+EUSART_Write(str[2]);
+EUSART_Write(str[3]);
+EUSART_Write(' ');
+}
+UART_STATE = UATR_HUMI;
+break;
+case UATR_HUMI:
+if (IsSHT31MeasureDone())
+{
+EUSART_Write('H');
+HumiF = GetRelativeHumidity_F();
+Humi = (UINT_16)(HumiF * 100);
+
+sprintf(str, "%4d" , Humi);
+
+EUSART_Write(str[0]);
+EUSART_Write(str[1]);
+EUSART_Write('.');
+EUSART_Write(str[2]);
+EUSART_Write(str[3]);
+EUSART_Write(' ');
+}
+UART_STATE = UART_NTC;
+break;
+case UART_NTC:
+if (IsADMeasureDone())
+{
+EUSART_Write('N');
+NtcTempF = GetNtcTemp();
+NtcTemp = (UINT_16)(NtcTempF * 100);
+if (NtcTempF < 0)
+{
+EUSART_Write('-');
+NtcTemp = abs(NtcTemp);
 }
 
+sprintf(str, "%4d" , NtcTemp);
+
+EUSART_Write(str[0]);
+EUSART_Write(str[1]);
+EUSART_Write('.');
+EUSART_Write(str[2]);
+EUSART_Write(str[3]);
+EUSART_Write(' ');
+}
+UART_STATE = UART_Refresh_Interval;
+break;
+case UART_Refresh_Interval:
+TimerCounter++;
+if (TimerCounter > 50)
+{
+TimerCounter = 0;
+UART_STATE = UART_TEMP;
+}
+break;
+default:
+break;
+}
+}

@@ -108,7 +108,7 @@ channel_Temp 29
 channel_DAC 30
 channel_FVR 31
 ]
-"36 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/SHT25.c
+"38 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/SHT25.c
 [e E12293 . `uc
 SHT25_MEASURE_INIT 0
 SHT25_MEASURE_TEMP_0 1
@@ -118,6 +118,27 @@ SHT25_MEASURE_RH_0 4
 SHT25_MEASURE_RH_1 5
 SHT25_CALC_TEMP_0 6
 SHT25_CALC_RH_0 7
+]
+"19 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/UART_Display.c
+[e E12284 . `uc
+UART_TEMP 0
+UATR_HUMI 1
+UART_NTC 2
+UART_Refresh_Interval 3
+]
+"14 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/AD.c
+[e E12293 . `uc
+AD_MEASURE_START 0
+AD_MEASURE_GetResult 1
+AD_MEASURE_WAIT 2
+]
+"26
+[e E12202 . `uc
+channel_AN0 0
+channel_AN4 4
+channel_Temp 29
+channel_DAC 30
+channel_FVR 31
 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\abs.c
 [v _abs abs `(i  1 e 2 0 ]
@@ -137,6 +158,8 @@ SHT25_CALC_RH_0 7
 [v ___ftmul __ftmul `(f  1 e 3 0 ]
 "44 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
 [v ___fttol __fttol `(l  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\isdigit.c
+[v _isdigit isdigit `(b  1 e 0 0 ]
 "6 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 "6 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
@@ -151,6 +174,12 @@ SHT25_CALC_RH_0 7
 [v _main main `(v  1 e 1 0 ]
 "67 E:\GitHub\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+"88
+[v _ADC_SelectChannel ADC_SelectChannel `(v  1 e 1 0 ]
+"96
+[v _ADC_StartConversion ADC_StartConversion `(v  1 e 1 0 ]
+"109
+[v _ADC_GetConversionResult ADC_GetConversionResult `(ui  1 e 2 0 ]
 "88 E:\GitHub\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
 "151
@@ -332,14 +361,28 @@ SHT25_CALC_RH_0 7
 [v _COS_TmrHandler COS_TmrHandler `(v  1 e 1 0 ]
 "133
 [v _COS_TskMan COS_TskMan `(v  1 e 1 0 ]
+"19 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/AD.c
+[v _AD_Task AD_Task `(v  1 e 1 0 ]
+"59
+[v _GetNtcTemp GetNtcTemp `(f  1 e 3 0 ]
+"75
+[v _IsADMeasureDone IsADMeasureDone `(uc  1 e 1 0 ]
 "30 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/Led.c
 [v _Led2_PWM Led2_PWM `(v  1 e 1 0 ]
-"42 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/SHT25.c
+"46 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/SHT25.c
 [v _SHT25_StateMachine SHT25_StateMachine `(v  1 e 1 0 ]
-"103
-[v _SHT3x_CalcTemperatureC SHT3x_CalcTemperatureC `(us  1 e 2 0 ]
-"143
-[v _SHT3x_CalcRelativeHumidity SHT3x_CalcRelativeHumidity `(us  1 e 2 0 ]
+"109
+[v _SHT3x_CalcTemperatureC_F SHT3x_CalcTemperatureC_F `(f  1 e 3 0 ]
+"119
+[v _SHT3x_CalcRelativeHumidity_F SHT3x_CalcRelativeHumidity_F `(f  1 e 3 0 ]
+"128
+[v _GetTemperatureC_F GetTemperatureC_F `(f  1 e 3 0 ]
+"133
+[v _GetRelativeHumidity_F GetRelativeHumidity_F `(f  1 e 3 0 ]
+"138
+[v _IsSHT31MeasureDone IsSHT31MeasureDone `(uc  1 e 1 0 ]
+"28 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/UART_Display.c
+[v _UartDisplay UartDisplay `(v  1 e 1 0 ]
 [s S701 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
@@ -554,7 +597,7 @@ SHT25_CALC_RH_0 7
 [v _ADCON2 ADCON2 `VEuc  1 e 1 @159 ]
 "2623
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S1614 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1622 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -562,19 +605,19 @@ SHT25_CALC_RH_0 7
 `uc 1 LATA5 1 0 :1:5 
 ]
 "2638
-[u S1621 . 1 `S1614 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1621  1 e 1 @268 ]
+[u S1629 . 1 `S1622 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1629  1 e 1 @268 ]
 "2673
 [v _LATB LATB `VEuc  1 e 1 @269 ]
-[s S1560 . 1 `uc 1 . 1 0 :4:0 
+[s S1568 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 LATB4 1 0 :1:4 
 `uc 1 LATB5 1 0 :1:5 
 `uc 1 LATB6 1 0 :1:6 
 `uc 1 LATB7 1 0 :1:7 
 ]
 "2687
-[u S1566 . 1 `S1560 1 . 1 0 ]
-[v _LATBbits LATBbits `VES1566  1 e 1 @269 ]
+[u S1574 . 1 `S1568 1 . 1 0 ]
+[v _LATBbits LATBbits `VES1574  1 e 1 @269 ]
 "2712
 [v _LATC LATC `VEuc  1 e 1 @270 ]
 "3048
@@ -785,8 +828,6 @@ SHT25_CALC_RH_0 7
 ]
 "165
 [v _I2C_Status I2C_Status `S239  1 e 30 0 ]
-"213 E:\GitHub\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/i2c_master.h
-[v _MSSP_InterruptHandler MSSP_InterruptHandler `*.37(v  1 e 2 0 ]
 "58 E:\GitHub\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/tmr2.c
 [v _TMR2_InterruptHandler TMR2_InterruptHandler `*.37(v  1 e 2 0 ]
 "13 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/COS/COS_Main.c
@@ -806,44 +847,60 @@ SHT25_CALC_RH_0 7
 "22
 [v _COS_tcnt_lst COS_tcnt_lst `us  1 e 2 0 ]
 [s S1519 . 3 `*.37(v 1 tptr 2 0 `uc 1 sched 1 2 ]
-"35 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/COS/COS_UserTskList.c
+"36 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/COS/COS_UserTskList.c
 [v _COS_tsk COS_tsk `DC[5]S1519  1 e 15 0 ]
+"213 E:\GitHub\PIC1619_Board\PIC1619_Board.X/mcc_generated_files/i2c_master.h
+[v _MSSP_InterruptHandler MSSP_InterruptHandler `*.37(v  1 e 2 0 ]
+"14 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/AD.c
+[v _AD_State AD_State `E12293  1 e 1 0 ]
+"15
+[v _AD_Result AD_Result `us  1 e 2 0 ]
+"16
+[v AD@TimerCounter TimerCounter `uc  1 s 1 TimerCounter ]
+"17
+[v AD@IsMeasureDone IsMeasureDone `uc  1 s 1 IsMeasureDone ]
 "24 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/Led.c
 [v _counter counter `ui  1 s 2 counter ]
 "25
 [v _BreathState BreathState `uc  1 s 1 BreathState ]
 "27
 [v _dutyValue dutyValue `ui  1 s 2 dutyValue ]
-"22 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/SHT25.c
-[v _SensirionTemperature_UBP8 SensirionTemperature_UBP8 `us  1 e 2 0 ]
-"23
-[v _SensirionRH_UBP8 SensirionRH_UBP8 `us  1 e 2 0 ]
-"24
+"24 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/SHT25.c
+[v _SensirionTemperature_float SensirionTemperature_float `f  1 e 3 0 ]
+"25
+[v _SensirionRH_float SensirionRH_float `f  1 e 3 0 ]
+"26
 [v _SHT25_Fault SHT25_Fault `uc  1 e 1 0 ]
-"30
-[v _TemperatureRaw_H TemperatureRaw_H `uc  1 e 1 0 ]
-"31
-[v _TemperatureRaw_L TemperatureRaw_L `uc  1 e 1 0 ]
 "32
-[v _TemperatureRaw TemperatureRaw `us  1 e 2 0 ]
+[v _TemperatureRaw_H TemperatureRaw_H `uc  1 e 1 0 ]
 "33
-[v _RelativeHumidityRaw_H RelativeHumidityRaw_H `uc  1 e 1 0 ]
+[v _TemperatureRaw_L TemperatureRaw_L `uc  1 e 1 0 ]
 "34
-[v _RelativeHumidityRaw_L RelativeHumidityRaw_L `uc  1 e 1 0 ]
+[v _TemperatureRaw TemperatureRaw `us  1 e 2 0 ]
 "35
-[v _RelativeHumidityRaw RelativeHumidityRaw `us  1 e 2 0 ]
+[v _RelativeHumidityRaw_H RelativeHumidityRaw_H `uc  1 e 1 0 ]
 "36
-[v _SHT25_State SHT25_State `E12293  1 e 1 0 ]
+[v _RelativeHumidityRaw_L RelativeHumidityRaw_L `uc  1 e 1 0 ]
 "37
-[v _Command Command `[2]uc  1 e 2 0 ]
+[v _RelativeHumidityRaw RelativeHumidityRaw `us  1 e 2 0 ]
 "38
-[v _RxBuff RxBuff `[8]uc  1 e 8 0 ]
+[v _SHT25_State SHT25_State `E12293  1 e 1 0 ]
+"39
+[v _Command Command `[2]uc  1 e 2 0 ]
 "40
+[v _RxBuff RxBuff `[8]uc  1 e 8 0 ]
+"42
 [v _TimerCounter TimerCounter `us  1 e 2 0 ]
-"13 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/UART_Display.c
+"43
+[v _IsMeasureDone IsMeasureDone `uc  1 s 1 IsMeasureDone ]
+"16 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/UART_Display.c
 [v _U8Message U8Message `uc  1 s 1 U8Message ]
-"14
+"17
 [v _NewMessageFlag NewMessageFlag `uc  1 s 1 NewMessageFlag ]
+"19
+[v _UART_STATE UART_STATE `E12284  1 e 1 0 ]
+"20
+[v UART_Display@TimerCounter TimerCounter `uc  1 s 1 TimerCounter ]
 "51 E:\GitHub\PIC1619_Board\PIC1619_Board.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
@@ -930,6 +987,67 @@ SHT25_CALC_RH_0 7
 {
 "180
 } 0
+"19 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/AD.c
+[v _AD_Task AD_Task `(v  1 e 1 0 ]
+{
+"57
+} 0
+"46 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/SHT25.c
+[v _SHT25_StateMachine SHT25_StateMachine `(v  1 e 1 0 ]
+{
+"98
+} 0
+"28 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/UART_Display.c
+[v _UartDisplay UartDisplay `(v  1 e 1 0 ]
+{
+"36
+[v UartDisplay@str str `[8]uc  1 a 8 10 ]
+"30
+[v UartDisplay@TempF TempF `f  1 a 3 20 ]
+"32
+[v UartDisplay@NtcTempF NtcTempF `f  1 a 3 7 ]
+"31
+[v UartDisplay@HumiF HumiF `f  1 a 3 0 ]
+"35
+[v UartDisplay@NtcTemp NtcTemp `us  1 a 2 18 ]
+"34
+[v UartDisplay@Humi Humi `us  1 a 2 5 ]
+"33
+[v UartDisplay@Temp Temp `us  1 a 2 3 ]
+"115
+} 0
+"492 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+[v sprintf@sp sp `*.4uc  1 a 1 wreg ]
+"501
+[v sprintf@width width `i  1 a 2 31 ]
+"528
+[v sprintf@val val `ui  1 a 2 29 ]
+"499
+[v sprintf@c c `c  1 a 1 34 ]
+"508
+[v sprintf@flag flag `uc  1 a 1 28 ]
+"506
+[v sprintf@prec prec `c  1 a 1 27 ]
+"494
+[v sprintf@ap ap `[1]*.4v  1 a 1 26 ]
+"492
+[v sprintf@sp sp `*.4uc  1 a 1 wreg ]
+[v sprintf@f f `*.25DCuc  1 p 2 18 ]
+"533
+[v sprintf@sp sp `*.4uc  1 a 1 33 ]
+"1541
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\isdigit.c
+[v _isdigit isdigit `(b  1 e 0 0 ]
+{
+[v isdigit@c c `uc  1 a 1 wreg ]
+[v isdigit@c c `uc  1 a 1 wreg ]
+"14
+[v isdigit@c c `uc  1 a 1 5 ]
+"15
+} 0
 "15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 {
@@ -939,104 +1057,6 @@ SHT25_CALC_RH_0 7
 [v ___wmul@multiplier multiplier `ui  1 p 2 4 ]
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 6 ]
 "53
-} 0
-"42 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/SHT25.c
-[v _SHT25_StateMachine SHT25_StateMachine `(v  1 e 1 0 ]
-{
-"91
-} 0
-"103
-[v _SHT3x_CalcTemperatureC SHT3x_CalcTemperatureC `(us  1 e 2 0 ]
-{
-"112
-[v SHT3x_CalcTemperatureC@str str `[8]uc  1 a 8 0 ]
-"105
-[v SHT3x_CalcTemperatureC@TemperatureTemp TemperatureTemp `l  1 a 4 17 ]
-"110
-[v SHT3x_CalcTemperatureC@TemperatureFloat TemperatureFloat `f  1 a 3 21 ]
-"111
-[v SHT3x_CalcTemperatureC@TemperatureInt TemperatureInt `us  1 a 2 13 ]
-"106
-[v SHT3x_CalcTemperatureC@Temperature_UBP8 Temperature_UBP8 `us  1 a 2 11 ]
-"108
-[v SHT3x_CalcTemperatureC@Temperature_L8 Temperature_L8 `uc  1 a 1 16 ]
-"107
-[v SHT3x_CalcTemperatureC@Temperature_U8 Temperature_U8 `uc  1 a 1 15 ]
-"141
-} 0
-"4 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\abs.c
-[v _abs abs `(i  1 e 2 0 ]
-{
-[v abs@a a `i  1 p 2 18 ]
-"9
-} 0
-"4 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftge.c
-[v ___ftge __ftge `(b  1 e 0 0 ]
-{
-[v ___ftge@ff1 ff1 `f  1 p 3 4 ]
-[v ___ftge@ff2 ff2 `f  1 p 3 7 ]
-"13
-} 0
-"86 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftadd.c
-[v ___ftadd __ftadd `(f  1 e 3 0 ]
-{
-"88
-[v ___ftadd@exp1 exp1 `uc  1 a 1 60 ]
-[v ___ftadd@exp2 exp2 `uc  1 a 1 59 ]
-[v ___ftadd@sign sign `uc  1 a 1 58 ]
-"86
-[v ___ftadd@f1 f1 `f  1 p 3 48 ]
-[v ___ftadd@f2 f2 `f  1 p 3 51 ]
-"148
-} 0
-"32 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awtoft.c
-[v ___awtoft __awtoft `(f  1 e 3 0 ]
-{
-"34
-[v ___awtoft@sign sign `uc  1 a 1 27 ]
-"32
-[v ___awtoft@c c `i  1 p 2 22 ]
-"42
-} 0
-"143 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/SHT25.c
-[v _SHT3x_CalcRelativeHumidity SHT3x_CalcRelativeHumidity `(us  1 e 2 0 ]
-{
-"152
-[v SHT3x_CalcRelativeHumidity@str str `[8]uc  1 a 8 0 ]
-"145
-[v SHT3x_CalcRelativeHumidity@RelativeHumidityTemp RelativeHumidityTemp `l  1 a 4 20 ]
-"150
-[v SHT3x_CalcRelativeHumidity@RelativeHumidityFloat RelativeHumidityFloat `f  1 a 3 8 ]
-"151
-[v SHT3x_CalcRelativeHumidity@RelativeHumidityInt RelativeHumidityInt `us  1 a 2 16 ]
-"146
-[v SHT3x_CalcRelativeHumidity@RelativeHumidity_UBP8 RelativeHumidity_UBP8 `us  1 a 2 14 ]
-"148
-[v SHT3x_CalcRelativeHumidity@RelativeHumidity_L8 RelativeHumidity_L8 `uc  1 a 1 19 ]
-"147
-[v SHT3x_CalcRelativeHumidity@RelativeHumidity_U8 RelativeHumidity_U8 `uc  1 a 1 18 ]
-"177
-} 0
-"492 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\doprnt.c
-[v _sprintf sprintf `(i  1 e 2 0 ]
-{
-[v sprintf@sp sp `*.4uc  1 a 1 wreg ]
-"528
-[v sprintf@val val `ui  1 a 2 29 ]
-"499
-[v sprintf@c c `c  1 a 1 32 ]
-"506
-[v sprintf@prec prec `c  1 a 1 28 ]
-"508
-[v sprintf@flag flag `uc  1 a 1 27 ]
-"494
-[v sprintf@ap ap `[1]*.4v  1 a 1 26 ]
-"492
-[v sprintf@sp sp `*.4uc  1 a 1 wreg ]
-[v sprintf@f f `*.25DCuc  1 p 2 18 ]
-"533
-[v sprintf@sp sp `*.4uc  1 a 1 31 ]
-"1541
 } 0
 "6 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
@@ -1052,41 +1072,114 @@ SHT25_CALC_RH_0 7
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 {
 "11
-[v ___lwdiv@quotient quotient `ui  1 a 2 9 ]
+[v ___lwdiv@quotient quotient `ui  1 a 2 10 ]
 "12
-[v ___lwdiv@counter counter `uc  1 a 1 11 ]
+[v ___lwdiv@counter counter `uc  1 a 1 9 ]
 "6
 [v ___lwdiv@divisor divisor `ui  1 p 2 4 ]
 [v ___lwdiv@dividend dividend `ui  1 p 2 6 ]
 "31
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+{
+[v abs@a a `i  1 p 2 46 ]
+"9
+} 0
+"44 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+{
+"47
+[v ___fttol@lval lval `ul  1 a 4 41 ]
+"46
+[v ___fttol@exp1 exp1 `uc  1 a 1 45 ]
+[v ___fttol@sign1 sign1 `uc  1 a 1 40 ]
+"44
+[v ___fttol@f1 f1 `f  1 p 3 32 ]
+"73
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftge.c
+[v ___ftge __ftge `(b  1 e 0 0 ]
+{
+[v ___ftge@ff1 ff1 `f  1 p 3 4 ]
+[v ___ftge@ff2 ff2 `f  1 p 3 7 ]
+"13
+} 0
+"32 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+{
+"34
+[v ___awtoft@sign sign `uc  1 a 1 55 ]
+"32
+[v ___awtoft@c c `i  1 p 2 50 ]
+"42
+} 0
+"138 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/SHT25.c
+[v _IsSHT31MeasureDone IsSHT31MeasureDone `(uc  1 e 1 0 ]
+{
+"141
+} 0
+"75 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/AD.c
+[v _IsADMeasureDone IsADMeasureDone `(uc  1 e 1 0 ]
+{
+"78
+} 0
+"128 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/SHT25.c
+[v _GetTemperatureC_F GetTemperatureC_F `(f  1 e 3 0 ]
+{
+"131
+} 0
+"133
+[v _GetRelativeHumidity_F GetRelativeHumidity_F `(f  1 e 3 0 ]
+{
+"136
+} 0
+"59 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/AD.c
+[v _GetNtcTemp GetNtcTemp `(f  1 e 3 0 ]
+{
+"61
+[v GetNtcTemp@NtcTemp NtcTemp `f  1 a 3 7 ]
+"73
+} 0
+"173 E:\GitHub\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/eusart.c
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+{
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 5 ]
+"194
+} 0
+"109 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/SHT25.c
+[v _SHT3x_CalcTemperatureC_F SHT3x_CalcTemperatureC_F `(f  1 e 3 0 ]
+{
+"111
+[v SHT3x_CalcTemperatureC_F@TemperatureFloat TemperatureFloat `f  1 a 3 64 ]
+"116
+} 0
+"86 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+{
+"88
+[v ___ftadd@exp1 exp1 `uc  1 a 1 60 ]
+[v ___ftadd@exp2 exp2 `uc  1 a 1 59 ]
+[v ___ftadd@sign sign `uc  1 a 1 58 ]
+"86
+[v ___ftadd@f1 f1 `f  1 p 3 48 ]
+[v ___ftadd@f2 f2 `f  1 p 3 51 ]
+"148
+} 0
+"119 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/SunSensor/SHT25.c
+[v _SHT3x_CalcRelativeHumidity_F SHT3x_CalcRelativeHumidity_F `(f  1 e 3 0 ]
+{
+"121
+[v SHT3x_CalcRelativeHumidity_F@RelativeHumidityFloat RelativeHumidityFloat `f  1 a 3 51 ]
+"126
 } 0
 "28 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwtoft.c
 [v ___lwtoft __lwtoft `(f  1 e 3 0 ]
 {
 [v ___lwtoft@c c `ui  1 p 2 12 ]
 "31
-} 0
-"15 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul32.c
-[v ___lmul __lmul `(ul  1 e 4 0 ]
-{
-"17
-[v ___lmul@product product `ul  1 a 4 12 ]
-"15
-[v ___lmul@multiplier multiplier `ul  1 p 4 4 ]
-[v ___lmul@multiplicand multiplicand `ul  1 p 4 8 ]
-"129
-} 0
-"44 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-[v ___fttol __fttol `(l  1 e 4 0 ]
-{
-"47
-[v ___fttol@lval lval `ul  1 a 4 13 ]
-"46
-[v ___fttol@exp1 exp1 `uc  1 a 1 17 ]
-[v ___fttol@sign1 sign1 `uc  1 a 1 12 ]
-"44
-[v ___fttol@f1 f1 `f  1 p 3 4 ]
-"73
 } 0
 "62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
 [v ___ftmul __ftmul `(f  1 e 3 0 ]
@@ -1123,14 +1216,6 @@ SHT25_CALC_RH_0 7
 [v ___ftpack@exp exp `uc  1 p 1 7 ]
 [v ___ftpack@sign sign `uc  1 p 1 8 ]
 "86
-} 0
-"173 E:\GitHub\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/eusart.c
-[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
-{
-[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
-[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
-[v EUSART_Write@txData txData `uc  1 a 1 5 ]
-"194
 } 0
 "111 E:\GitHub\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/examples/i2c_master_example.c
 [v _I2C_WriteNBytes I2C_WriteNBytes `(v  1 e 1 0 ]
@@ -1253,6 +1338,25 @@ SHT25_CALC_RH_0 7
 [v _I2C_MasterClearIrq I2C_MasterClearIrq `T(v  1 s 1 I2C_MasterClearIrq ]
 {
 "645
+} 0
+"96 E:\GitHub\PIC1619_Board\PIC1619_Board.X\mcc_generated_files/adc.c
+[v _ADC_StartConversion ADC_StartConversion `(v  1 e 1 0 ]
+{
+"100
+} 0
+"88
+[v _ADC_SelectChannel ADC_SelectChannel `(v  1 e 1 0 ]
+{
+[v ADC_SelectChannel@channel channel `E11990  1 a 1 wreg ]
+[v ADC_SelectChannel@channel channel `E11990  1 a 1 wreg ]
+"91
+[v ADC_SelectChannel@channel channel `E11990  1 a 1 5 ]
+"94
+} 0
+"109
+[v _ADC_GetConversionResult ADC_GetConversionResult `(ui  1 e 2 0 ]
+{
+"113
 } 0
 "92 E:\GitHub\PIC1619_Board\PIC1619_Board.X\SourceFiles/COS/COS_Main.c
 [v _COS_TmrHandler COS_TmrHandler `(v  1 e 1 0 ]

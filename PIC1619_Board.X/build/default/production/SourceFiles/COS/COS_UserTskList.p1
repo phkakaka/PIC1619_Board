@@ -6,6 +6,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S1211 . tptr sched ]
 "63 SourceFiles/COS/../SunSensor/SHT25.h
 [v _SHT25_StateMachine `(v ~T0 @X0 0 ef ]
+"23 SourceFiles/COS/../SunSensor/AD.h
+[v _AD_Task `(v ~T0 @X0 0 ef ]
+"24 SourceFiles/COS/../SunSensor/UART_Display.h
+[v _UartDisplay `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -11005,8 +11009,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart.h: 506: void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
 [; ;mcc.h: 75: void SYSTEM_Initialize(void);
 [; ;mcc.h: 88: void OSCILLATOR_Initialize(void);
-[; ;UART_Display.h: 15: extern void SendByUart(uint8_t Txt);
-[; ;UART_Display.h: 16: extern void UartDisplay(void);
+[; ;UART_Display.h: 15: typedef enum
+[; ;UART_Display.h: 16: {
+[; ;UART_Display.h: 17: UART_TEMP,
+[; ;UART_Display.h: 18: UATR_HUMI,
+[; ;UART_Display.h: 19: UART_NTC,
+[; ;UART_Display.h: 20: UART_Refresh_Interval,
+[; ;UART_Display.h: 21: }UART_tt;
+[; ;UART_Display.h: 23: extern void SendByUart(uint8_t Txt);
+[; ;UART_Display.h: 24: extern void UartDisplay(void);
 [; ;SHT25.h: 15: typedef enum
 [; ;SHT25.h: 16: {
 [; ;SHT25.h: 17: SHT25_MEASURE_INIT,
@@ -11024,18 +11035,44 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SHT25.h: 66: extern UINT_16 SHT2x_CalcRelativeHumidity(void);
 [; ;SHT25.h: 67: extern UINT_16 SHT3x_CalcTemperatureC(void);
 [; ;SHT25.h: 68: extern UINT_16 SHT3x_CalcRelativeHumidity(void);
-"35 SourceFiles/COS/COS_UserTskList.c
+[; ;SHT25.h: 69: extern float SHT3x_CalcTemperatureC_F(void);
+[; ;SHT25.h: 70: extern float SHT3x_CalcRelativeHumidity_F(void);
+[; ;SHT25.h: 71: extern float GetTemperatureC_F(void);
+[; ;SHT25.h: 72: extern float GetRelativeHumidity_F(void);
+[; ;SHT25.h: 73: extern UINT_8 IsSHT31MeasureDone(void);
+[; ;AD.h: 15: typedef enum
+[; ;AD.h: 16: {
+[; ;AD.h: 17: AD_MEASURE_START,
+[; ;AD.h: 18: AD_MEASURE_GetResult,
+[; ;AD.h: 19: AD_MEASURE_WAIT,
+[; ;AD.h: 20: }AD_tt;
+[; ;AD.h: 23: extern void AD_Task(void);
+[; ;AD.h: 24: extern float GetNtcTemp(void);
+[; ;AD.h: 25: extern UINT_8 IsADMeasureDone(void);
+"36 SourceFiles/COS/COS_UserTskList.c
 [v _COS_tsk `CS1211 ~T0 @X0 + -> 3 `i -> 2 `i e ]
 [i _COS_tsk
 :U ..
 :U ..
 "42
 &U _SHT25_StateMachine
+-> -> 128 `i `uc
+..
+:U ..
+"43
+&U _AD_Task
 -> -> 64 `i `uc
+..
+:U ..
+"44
+&U _UartDisplay
+-> -> 1 `i `uc
 ..
 ..
 ]
-[; ;COS_UserTskList.c: 35: const task COS_tsk[(3+2)] =
-[; ;COS_UserTskList.c: 36: {
-[; ;COS_UserTskList.c: 42: {SHT25_StateMachine, 0x40}
-[; ;COS_UserTskList.c: 60: };
+[; ;COS_UserTskList.c: 36: const task COS_tsk[(3+2)] =
+[; ;COS_UserTskList.c: 37: {
+[; ;COS_UserTskList.c: 42: {SHT25_StateMachine, 0x80},
+[; ;COS_UserTskList.c: 43: {AD_Task, 0x40},
+[; ;COS_UserTskList.c: 44: {UartDisplay, 0x01}
+[; ;COS_UserTskList.c: 62: };

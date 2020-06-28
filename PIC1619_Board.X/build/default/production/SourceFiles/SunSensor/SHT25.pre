@@ -15172,8 +15172,21 @@ extern UINT_16 SHT2x_CalcTemperatureC(void);
 extern UINT_16 SHT2x_CalcRelativeHumidity(void);
 extern UINT_16 SHT3x_CalcTemperatureC(void);
 extern UINT_16 SHT3x_CalcRelativeHumidity(void);
+extern float SHT3x_CalcTemperatureC_F(void);
+extern float SHT3x_CalcRelativeHumidity_F(void);
+extern float GetTemperatureC_F(void);
+extern float GetRelativeHumidity_F(void);
+extern UINT_8 IsSHT31MeasureDone(void);
 
 # 15 "SourceFiles/SunSensor/UART_Display.h"
+typedef enum
+{
+UART_TEMP,
+UATR_HUMI,
+UART_NTC,
+UART_Refresh_Interval,
+}UART_tt;
+
 extern void SendByUart(uint8_t Txt);
 extern void UartDisplay(void);
 
@@ -15297,6 +15310,8 @@ extern char * ftoa(float f, int * status);
 # 22 "SourceFiles/SunSensor/SHT25.c"
 UINT_16 SensirionTemperature_UBP8;
 UINT_16 SensirionRH_UBP8;
+float SensirionTemperature_float;
+float SensirionRH_float;
 UINT_1 SHT25_Fault;
 UINT_8 ErrorStat;
 UINT_16 I2C_Timer;
@@ -15314,6 +15329,8 @@ UINT_8 Command[2] = {0x22,0x20};
 UINT_8 RxBuff[8];
 UINT_8 AddressW = 128;
 UINT_16 TimerCounter = 0;
+static UINT_8 IsMeasureDone = 0;
+
 
 void SHT25_StateMachine(void)
 {
@@ -15354,9 +15371,12 @@ RelativeHumidityRaw = ((UINT_16)(RelativeHumidityRaw_H) << 8) + RelativeHumidity
 SHT25_State = SHT25_CALC_TEMP_0;
 break;
 case SHT25_CALC_TEMP_0:
-SensirionTemperature_UBP8 = SHT3x_CalcTemperatureC();
-SensirionRH_UBP8 = SHT3x_CalcRelativeHumidity();
+SensirionTemperature_float = SHT3x_CalcTemperatureC_F();
+SensirionRH_float = SHT3x_CalcRelativeHumidity_F();
+
+
 SHT25_State = SHT25_CALC_RH_0;
+IsMeasureDone = 1;
 break;
 case SHT25_CALC_RH_0:
 SHT25_State = SHT25_MEASURE_TEMP_WAIT;
@@ -15375,41 +15395,50 @@ SHT25_Fault = 1;
 SHT25_State = SHT25_CALC_TEMP_0;
 }
 
+float SHT3x_CalcTemperatureC_F(void)
+{
+float TemperatureFloat;
+
+TemperatureFloat = (float)TemperatureRaw * 175 / 65535 - 45;
+
+return TemperatureFloat ;
+}
+
+
+float SHT3x_CalcRelativeHumidity_F(void)
+{
+float RelativeHumidityFloat;
+
+RelativeHumidityFloat = (float)RelativeHumidityRaw * 100 / 65535;
+
+return RelativeHumidityFloat ;
+}
+
+float GetTemperatureC_F(void)
+{
+return SensirionTemperature_float;
+}
+
+float GetRelativeHumidity_F(void)
+{
+return SensirionRH_float;
+}
+
+UINT_8 IsSHT31MeasureDone(void)
+{
+return IsMeasureDone;
+}
 
 UINT_16 SHT3x_CalcTemperatureC(void)
 {
 SINT_32 TemperatureTemp;
 UINT_16 Temperature_UBP8;
-UINT_8 Temperature_U8;
+UINT_16 Temperature_U16;
 UINT_8 Temperature_L8;
 
-FLOAT_24 TemperatureFloat;
-UINT_16 TemperatureInt;
-UINT_8 str[8];
-
 TemperatureTemp = (UINT_32)TemperatureRaw * 175;
-Temperature_U8 = (UINT_8)(TemperatureTemp >> 16);
-Temperature_L8 = (UINT_8)(TemperatureTemp >> 8);
-Temperature_UBP8 = (UINT_16)Temperature_U8 << 8 + Temperature_L8;
-
-# 123
-TemperatureFloat = 100 *((float)TemperatureRaw * 175 / 65535 - 45);
-if (TemperatureFloat < 0)
-{
-TemperatureFloat = abs(TemperatureFloat);
-EUSART_Write('-');
-}
-TemperatureInt = (UINT_16)(TemperatureFloat);
-sprintf(str, "%d" , TemperatureInt);
-
-EUSART_Write('T');
-EUSART_Write(str[0]);
-EUSART_Write(str[1]);
-EUSART_Write('.');
-EUSART_Write(str[2]);
-EUSART_Write(str[3]);
-
-
+Temperature_U16 = (UINT_16)(TemperatureTemp >> 16);
+Temperature_UBP8 = (UINT_16)Temperature_U16 - 45;
 return Temperature_UBP8 ;
 }
 
@@ -15417,68 +15446,12 @@ UINT_16 SHT3x_CalcRelativeHumidity(void)
 {
 SINT_32 RelativeHumidityTemp;
 UINT_16 RelativeHumidity_UBP8;
-UINT_8 RelativeHumidity_U8;
+UINT_8 RelativeHumidity_U16;
 UINT_8 RelativeHumidity_L8;
 
-FLOAT_24 RelativeHumidityFloat;
-UINT_16 RelativeHumidityInt;
-UINT_8 str[8];
-
-RelativeHumidityFloat = 100 * ((float)RelativeHumidityRaw * 100 / 65535);
-RelativeHumidityInt = (UINT_16)(RelativeHumidityFloat);
-
-sprintf(str, "%d" , RelativeHumidityInt);
-
-EUSART_Write(' ');
-EUSART_Write('H');
-EUSART_Write(str[0]);
-EUSART_Write(str[1]);
-EUSART_Write('.');
-EUSART_Write(str[2]);
-EUSART_Write(str[3]);
-
 RelativeHumidityTemp = (UINT_32)RelativeHumidityRaw * 100;
-RelativeHumidity_U8 = (UINT_8)(RelativeHumidityTemp >> 16);
-RelativeHumidity_L8 = (UINT_8)(RelativeHumidityTemp >> 8);
-RelativeHumidity_UBP8 = (UINT_16)RelativeHumidity_U8 << 8 + RelativeHumidity_L8;
-
-# 176
+RelativeHumidity_U16 = (UINT_16)(RelativeHumidityTemp >> 16);
+RelativeHumidity_UBP8 = (UINT_16)RelativeHumidity_U16;
 return RelativeHumidity_UBP8 ;
-}
-
-UINT_16 SHT2x_CalcTemperatureC(void)
-{
-SINT_32 TemperatureTemp;
-UINT_16 Temperature_UBP8;
-
-
-
-TemperatureTemp = (SINT_32)TemperatureRaw * (SINT_32)(175 * 256);
-TemperatureTemp -= (SINT_32)(45 * 65536 * 256);
-if(TemperatureTemp < 0)TemperatureTemp = 0;
-TemperatureTemp >>= 8;
-TemperatureTemp >>= 8;
-Temperature_UBP8 = (UINT_16)TemperatureTemp;
-return(Temperature_UBP8);
-}
-
-UINT_16 SHT2x_CalcRelativeHumidity(void)
-{
-SINT_32 RelativeHumidityTemp;
-UINT_16 RelativeHumidity_UBP8;
-
-
-
-RelativeHumidityTemp = (SINT_32)RelativeHumidityRaw * (SINT_32)(125 * 256);
-RelativeHumidityTemp -= (SINT_32)(6 * 65536 * 256);
-if(RelativeHumidityTemp < 0)RelativeHumidityTemp = 0;
-RelativeHumidityTemp >>= 8;
-RelativeHumidityTemp >>= 8;
-RelativeHumidity_UBP8 = (UINT_16)RelativeHumidityTemp;
-if(RelativeHumidity_UBP8 >(UINT_16)(100.0 * 256))
-{
-RelativeHumidity_UBP8 = (UINT_16)(100.0 * 256);
-}
-return(RelativeHumidity_UBP8);
 }
 
